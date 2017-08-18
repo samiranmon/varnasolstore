@@ -1,0 +1,30 @@
+<div class="std testimonials_container">
+    <h1 class="testimonials_title"><?php echo $this->__("Our Testimonials"); ?></h1>
+<!--        <div class="form-button" style="float:right;">
+            <button class="button" title="<?php //echo Mage::helper('testimonialmanager')->__('Let us know how we are doing') ?>" onclick="javascript:window.location.assign('<?php //echo $this->_getWriteUrl()?>')"><span><span><?php //echo Mage::helper('testimonialmanager')->__('Let us know how we are doing') ?></span></span></button>
+        </div>-->
+
+    <div class="testimonials">
+    <?php $testimonials = $this->_getCollection(); ?>
+    <?php $i = 0;?>
+    <?php if (count($testimonials) > 0): ?>
+    <?php foreach ($testimonials as $testimonial): ?>
+	<div class="testimonial_<?php $i++; echo (is_int($i/2) ? "r" : "l")?>">
+	    <?php if ($testimonial->getTestimonialImg()): ?>
+	    <div class="testimonial_image"><img alt="<?php echo $testimonial->getTestimonialName(); ?>" src="<?php echo Mage::getBaseUrl('media').'/'.$testimonial->getTestimonialImg(); ?>" width="120" height="120"/></div>
+	    <?php endif; ?>
+	    <div class="testimonial_text">
+        	<div class="description-box">
+				<?php echo $testimonial->getTestimonialText(); ?>
+            </div>
+        	<div class="rating-box"><div class="rating" style="width:<?php echo ceil($testimonial->getRatingSummary() * 20) ?>%;"></div></div>
+		    <h2><?php echo $testimonial->getTestimonialName(); ?></h2>
+		    <?php if($testimonial->getTestimonialCompany() != '') { ?><h3><?php echo $testimonial->getTestimonialCompany(); ?></h3><?php } ?>
+		    <?php if($testimonial->getTestimonialWebsite() != '') { ?><h4><?php echo $testimonial->getTestimonialWebsite(); ?></h4><?php } ?>
+	    </div>
+        <div class="clearer"></div>
+	</div>
+    <?php endforeach; ?>
+    <?php endif;?>
+    </div>
+</div>

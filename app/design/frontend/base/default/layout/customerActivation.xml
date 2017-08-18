@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <customer_account_login>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="customer_form_login">
+            <action method="setTemplate">
+                <template>customerActivation/customerActivation.phtml</template>
+            </action>
+        </reference>
+    </customer_account_login>
+    <!-- <default>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="customer" ifconfig="customer/customeractivation/disable_ext">
+                <label>Quick Order</label>
+                <url>customeractivation/quickorder/quickorderproduct</url>
+                <title>Wholesale Registration</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>100</position>
+            </action>
+        </reference>
+    </default>  -->
+
+    <customer_logged_out>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="customer" ifconfig="customer/customeractivation/disable_ext">
+                <label>Wholesale Registration</label>
+                <url>customerActivation/index/wholesale</url>
+                <title>Wholesale Registration</title>
+                <prepare>true</prepare>
+                <urlParams/>
+                <position>155</position>
+            </action>
+        </reference>
+    </customer_logged_out>
+    <customeractivation_index_wholesale>
+        <remove name="customer_form_register"/>
+        <reference name="content">
+            <block type = 'customer/form_register' name = 'wholesaleregister' template = 'customerActivation/wholesaleRegister.phtml'></block>
+        </reference>
+    </customeractivation_index_wholesale>
+    <customeractivation_index_wholesalelogin>
+        <remove name="customer_form_login"/>
+        <reference name="content">
+            <block type = 'customer/form_login' name = 'wholesalelogin' template = 'customerActivation/wholesaleLogin.phtml'></block>
+        </reference>
+    </customeractivation_index_wholesalelogin>
+    
+	<checkout_cart_index translate="label">
+        <reference name="checkout.cart">
+			<block type="checkout/cart_shipping" name="checkout.cart.shipping" as="shipping" template="customerActivation/checkout/cart/shipping.phtml"/>
+        </reference>
+    </checkout_cart_index>
+
+	<paypal_express_review translate="label">
+        <reference name="paypal.express.review">
+			<block type="paypal/express_review" name="express.review.shipping.method" as="shipping_method" template="customerActivation/review/shipping/method.phtml"/>
+        </reference>
+    </paypal_express_review>
+        
+    <checkout_onepage_paymentmethod>
+        <block type="checkout/onepage_payment_methods" name="root" output="toHtml" template="customerActivation/checkout/onepage/payment/methods.phtml">
+            <action method="setMethodFormTemplate">
+                <method>purchaseorder</method>
+                <template>payment/form/purchaseorder.phtml</template>
+            </action>
+        </block>
+    </checkout_onepage_paymentmethod>
+    <checkout_onepage_shippingmethod>
+        <!-- Mage_Checkout -->
+        <remove name="right"/>
+        <remove name="left"/>
+
+        <block type="checkout/onepage_shipping_method_available" name="root" output="toHtml" template="customerActivation/checkout/onepage/shipping_method/available.phtml"/>
+    </checkout_onepage_shippingmethod>
+    <customeractivation_productorder_quickorderproduct>         
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>   
+        <update handle="customer_account" />         
+        <reference name="my.account.wrapper">             
+            <block type="customeractivation/orderproduct" name="ordermgt" template="customerActivation/quickorderproduct.phtml"/>
+        </reference>     
+    </customeractivation_productorder_quickorderproduct>  
+    <customeractivation_quickorder_quickorderproduct>         
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>   
+        <update handle="customer_account" />         
+        <reference name="my.account.wrapper">             
+            <block type="customeractivation/orderproduct" name="ordermgt" template="customerActivation/quickorderproduct.phtml"/>
+        </reference>     
+    </customeractivation_quickorder_quickorderproduct>  
+</layout>

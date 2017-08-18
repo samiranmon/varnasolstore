@@ -1,0 +1,31 @@
+a:5:{i:0;s:111:"Invalid method CommerceLab_News_Model_News::date_format(Array
+(
+    [0] => 2017-05-19 02:25:21
+    [1] => Y
+)
+)";i:1;s:3543:"#0 /home2/rajiv/public_html/varnasolstore/app/design/frontend/impherialtouch/default/template/clnews/list.phtml(159): Varien_Object->__call('date_format', Array)
+#1 /home2/rajiv/public_html/varnasolstore/app/design/frontend/impherialtouch/default/template/clnews/list.phtml(159): CommerceLab_News_Model_News->date_format('2017-05-19 02:2...', 'Y')
+#2 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Template.php(241): include('/home2/rajiv/pu...')
+#3 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Template.php(272): Mage_Core_Block_Template->fetchView('frontend/impher...')
+#4 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Template.php(286): Mage_Core_Block_Template->renderView()
+#5 /home2/rajiv/public_html/varnasolstore/app/code/community/CommerceLab/News/Block/Abstract.php(274): Mage_Core_Block_Template->_toHtml()
+#6 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Abstract.php(919): CommerceLab_News_Block_Abstract->_toHtml()
+#7 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Text/List.php(43): Mage_Core_Block_Abstract->toHtml()
+#8 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Abstract.php(919): Mage_Core_Block_Text_List->_toHtml()
+#9 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Abstract.php(637): Mage_Core_Block_Abstract->toHtml()
+#10 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Abstract.php(581): Mage_Core_Block_Abstract->_getChildHtml('content', true)
+#11 /home2/rajiv/public_html/varnasolstore/app/design/frontend/impherialtouch/default/template/page/1column.phtml(55): Mage_Core_Block_Abstract->getChildHtml('content')
+#12 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Template.php(241): include('/home2/rajiv/pu...')
+#13 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Template.php(272): Mage_Core_Block_Template->fetchView('frontend/impher...')
+#14 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Template.php(286): Mage_Core_Block_Template->renderView()
+#15 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Block/Abstract.php(919): Mage_Core_Block_Template->_toHtml()
+#16 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Model/Layout.php(555): Mage_Core_Block_Abstract->toHtml()
+#17 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Action.php(390): Mage_Core_Model_Layout->getOutput()
+#18 /home2/rajiv/public_html/varnasolstore/app/code/community/CommerceLab/News/controllers/IndexController.php(46): Mage_Core_Controller_Varien_Action->renderLayout()
+#19 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Action.php(418): CommerceLab_News_IndexController->indexAction()
+#20 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#21 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#22 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#23 /home2/rajiv/public_html/varnasolstore/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#24 /home2/rajiv/public_html/varnasolstore/impherialtouch/index.php(83): Mage::run('imperialtouch_c...', 'website')
+#25 {main}";s:3:"url";s:42:"/~rajiv/varnasolstore/impherialtouch/blog/";s:11:"script_name";s:46:"/~rajiv/varnasolstore/impherialtouch/index.php";s:4:"skin";s:17:"imperialtouch_com";}

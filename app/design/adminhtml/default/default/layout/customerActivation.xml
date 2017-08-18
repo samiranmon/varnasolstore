@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    
+   <!--  <adminhtml_customer_edit>
+        <reference name="customer_edit_tabs">
+            <action method="addTab">
+                <name>customer_edit_tab_customerimages</name>
+                <block>customeractivation/adminhtml_customer_edit_tab_customerimages</block>
+            </action>
+        </reference>
+    </adminhtml_customer_edit>  
+     -->
+</layout>

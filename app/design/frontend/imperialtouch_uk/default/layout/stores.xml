@@ -1,0 +1,29 @@
+<layout version="0.1.0">
+	<default>
+		<reference name="top.links">
+				<action method="addLink" translate="label title" module="stores">
+					<label>Stores</label>
+					<url helper="stores/getStoresUrl"/>
+					<title>Stores</title>
+					<position>0</position>
+				</action>
+		</reference>
+	</default>
+     <stores_index_index>     
+					<reference name="root">				
+								<action method="setTemplate"><template>page/1column.phtml</template></action>
+						</reference>
+								<reference name="content">
+								<block type="stores/stores" name="stores" template="stores/map.phtml" />				    		
+					</reference>
+    </stores_index_index>
+    <stores_index_searchresult>     
+					<reference name="root">				
+								<action method="setTemplate"><template>page/1column.phtml</template></action>
+						</reference>
+								<reference name="content">
+								<block type="stores/searchstores" name="stores" template="stores/map.phtml" />				    		
+					</reference>
+    </stores_index_searchresult>
+         
+</layout>

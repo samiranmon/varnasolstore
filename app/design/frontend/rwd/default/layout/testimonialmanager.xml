@@ -1,0 +1,37 @@
+<?xml version="1.0"?>   
+<layout version="0.1.0">   
+<!--	<default>
+		<reference name="head">
+			<action method="addCss"><stylesheet>testimonialmanager/testimonialmanager.css</stylesheet></action>
+			<action method="addCss"><stylesheet>testimonialmanager/jquery.bxslider.css</stylesheet></action>
+			<action method="addItem"><type>skin_js</type><name>testimonialmanager/jquery-1.8.3.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>testimonialmanager/jqueryNoConfig.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>testimonialmanager/jquery.bxslider.min.js</name></action>
+		</reference>
+		<reference name="right">
+			<block type="testimonialmanager/testimonials" after="-" name="right.testimonials" template="testimonialmanager/testimonials_box.phtml"/>
+		</reference>
+	</default>-->
+
+   <testimonialmanager_index_index>   
+    <reference name="root">   
+      <action method="setTemplate"><template>page/1column.phtml</template></action>   
+    </reference>
+    <reference name="content">   
+      <block type="testimonialmanager/testimonials" name="testimonialmanager_index" template="testimonialmanager/testimonials.phtml"/>   
+    </reference>   
+  </testimonialmanager_index_index>   
+<!--    <testimonialmanager_index_form>
+		<label>Write Testimonials</label>
+		<reference name="head">
+		    <action method="setTitle"><title>Write Testimonials</title></action>		    
+		</reference>
+		<reference name="root">
+		    <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+	    </reference>
+		<reference name="content">
+			<block type="testimonialmanager/testimonials" name="write_testimonials" template="testimonialmanager/write_testimonials.phtml" />
+		</reference>
+    </testimonialmanager_index_form>-->
+</layout>   
+	

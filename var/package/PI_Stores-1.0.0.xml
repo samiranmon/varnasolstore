@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>PI_Stores</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This extension helps you to display your store locations on Google map.</summary>
+    <description>This extension helps your customers to find the physical location of your store through Google map. </description>
+    <notes>This is a stable version.</notes>
+    <authors><author><name>pureimagination</name><user>pureimagination</user><email>johncarter15oct@gmail.com</email></author></authors>
+    <date>2014-11-23</date>
+    <time>07:36:46</time>
+    <contents><target name="magecommunity"><dir name="PI"><dir name="Stores"><dir name="Block"><dir name="Adminhtml"><file name="Country.php" hash="009ddccfff71e7c866262c199eccff45"/><dir name="Stores"><dir name="Edit"><file name="Form.php" hash="d81be21e6f9ccc8fd374613765ee5128"/><dir name="Tab"><file name="Personal.php" hash="5d3967992df04aaac85a27f25ec83115"/></dir><file name="Tabs.php" hash="49390951151f6c8590fe76c75292a59f"/></dir><file name="Edit.php" hash="dcbbbad73f0d2c692fa1faaa37a4b8a1"/><file name="Grid.php" hash="faad7d18db1835b1f22421b57cef6b46"/></dir><file name="Stores.php" hash="3968eba807c5a87b6ccb4287a37cda97"/></dir><file name="Searchstores.php" hash="ed5ad8e8c47d1ec9160bfeed1e1fcb45"/><file name="Stores.php" hash="c94f5a018d43bf620be9d8a220190409"/></dir><dir name="Helper"><file name="Data.php" hash="de88de2c86854a65b3df5de9a3d168ee"/></dir><dir name="Model"><file name="Location.php" hash="8c09600654b5e1aed0fe002434c26d5d"/><dir name="Mysql4"><dir name="Stores"><file name="Collection.php" hash="aa03a42f25a543cc336205a7daafbebd"/></dir><file name="Stores.php" hash="b445304eb6ce7488cb8e1f8107bc3bea"/></dir><file name="Stores.php" hash="6eb031452e3b48253fd9e2656e20ac1d"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="IndexController.php" hash="6d2a10e63d5008d5471057a86a63b94b"/></dir><file name="IndexController.php" hash="5c97c9e0a49dc1f134251188d5952818"/></dir><dir name="etc"><file name="config.xml" hash="836c8460ed5aabcc6421da0c1df02416"/><file name="system.xml" hash="4b74a424bb3284d8fa68ffea110921a7"/></dir><dir name="sql"><dir name="stores_setup"><file name="mysql4-install-0.1.0.php" hash="87e20b3fd0e999abe09b804c3f4a71ac"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="PI_Stores.xml" hash="3c42f94b72bfcae18fe713420eec63cb"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="stores.xml" hash="8f790e51c80120435f06ce20b7d1dfc5"/></dir><dir name="template"><dir name="stores"><file name="map.phtml" hash="ebb8b47a260ade8f65ef3b0eac1b677c"/></dir></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="stores"><file name="country.phtml" hash="68dcb4e05773f79fa868b926e4894bf9"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><file name="stores.css" hash="c4174d0ea211ab77deb1efb07b3e2a39"/></dir></dir></dir></dir></target><target name="mageweb"><dir name="js"><dir name="stores"><file name="jquery-1.7.1.min.js" hash="ddb84c1587287b2df08966081ef063bf"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pwpp_Contacts>
+            <version>0.0.1.0</version>
+        </Pwpp_Contacts>
+    </modules>
+    <frontend>
+        <routers>
+            <contacts>
+                <args>
+                    <modules>
+                        <Pwpp_Contacts before="Mage_Contacts">Pwpp_Contacts</Pwpp_Contacts>
+                    </modules>
+                </args>
+            </contacts>
+        </routers>
+    </frontend>
+    <global>
+        <resources>
+            <pwpp_contacts_setup>
+                <setup>
+                    <module>Pwpp_Contacts</module>
+                </setup>
+            </pwpp_contacts_setup>
+        </resources>
+        <template>
+            <email>
+                <contacts_email_email_template translate="label" module="contacts">
+                    <label>Contact Form</label>
+                    <file>contact_form.html</file>
+                    <type>text</type>
+                </contacts_email_email_template>
+                <contacts_email_autoreply_template translate="label" module="contacts">
+                    <label>Contact Form Autoreply</label>
+                    <file>contact_form_autoreply.html</file>
+                    <type>text</type>
+                </contacts_email_autoreply_template>
+            </email>
+        </template>
+    </global>
+</config>

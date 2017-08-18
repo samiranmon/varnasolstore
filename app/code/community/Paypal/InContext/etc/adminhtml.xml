@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <payment translate="title" module="cms">
+                                    	<children>
+                                    		<incontext>
+                                        		<title>Paypal Express Checkout In-Context</title>
+                                        	</incontext>
+                                        </children>
+                                    </payment>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

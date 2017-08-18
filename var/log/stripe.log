@@ -1,0 +1,56 @@
+2017-04-10T01:29:57+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_ARkrIo2KoIkAnx
+    [fraud] => 1
+)
+
+2017-04-11T21:12:28+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_ASRAeFNK7jhke6
+    [fraud] => 1
+)
+
+2017-04-13T08:27:08+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_ASzGaOm3ruCY83
+    [fraud] => 0
+)
+
+2017-04-14T07:38:17+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_ATLhkyRSJe72fc
+    [fraud] => 1
+)
+
+2017-04-14T09:22:06+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_ATNNQhy4hsSZpa
+    [fraud] => 1
+)
+
+2017-04-14T10:40:47+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_ATOeUHtQa7qQtG
+    [fraud] => 0
+)
+
+2017-04-14T10:49:37+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_ATOnLGHhRzFUVT
+    [fraud] => 0
+)
+
+2017-04-17T04:11:13+00:00 DEBUG (7): Array
+(
+    [status] => 1
+    [transaction_id] => ch_AUQ2SPX8Mn9ji8
+    [fraud] => 1
+)
+

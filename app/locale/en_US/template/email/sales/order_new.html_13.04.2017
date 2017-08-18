@@ -1,0 +1,137 @@
+<!--@subject {{var store.getFrontendName()}}: New Order # {{var order.increment_id}} @-->
+<!--@vars
+{"store url=\"\"":"Store Url",
+"var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
+"htmlescape var=$order.getCustomerName()":"Customer Name",
+"var store.getFrontendName()":"Store Name",
+"store url=\"customer/account/\"":"Customer Account Url",
+"var order.increment_id":"Order Id",
+"var order.getCreatedAtFormated('long')":"Order Created At (datetime)",
+"var order.getBillingAddress().format('html')":"Billing Address",
+"var payment_html":"Payment Details",
+"var order.getShippingAddress().format('html')":"Shipping Address",
+"var order.getShippingDescription()":"Shipping Description",
+"layout handle=\"sales_email_order_items\" order=$order":"Order Items Grid",
+"var order.getEmailCustomerNote()":"Email Order Note"}
+@-->
+<!--@styles
+@-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="email-heading">
+                        <h1>Thank you for your order from {{var store.getFrontendName()}}.</h1>
+                        <p>Once your package ships we will send an email with a link to track your order. Your order summary is below. Thank you again for your business.</p>
+                    </td>
+                    <td class="store-info">
+                        <h4>Order Questions?</h4>
+                        <p>
+                            {{depend store_phone}}
+                            <b>Call Us:</b>
+                            <a href="tel:{{var phone}}">{{var store_phone}}</a><br>
+                            {{/depend}}
+                            {{depend store_hours}}
+                            <span class="no-link">{{var store_hours}}</span><br>
+                            {{/depend}}
+                            {{depend store_email}}
+                            <b>Email:</b> <a href="mailto:{{var store_email}}">{{var store_email}}</a>
+                            {{/depend}}
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="order-details">
+            <h3>Your order <span class="no-link">#{{var order.increment_id}}</span></h3>
+            <p>Placed on {{var order.getCreatedAtFormated('long')}}</p>
+        </td>
+    </tr>
+    <tr class="order-information">
+        <td>
+            {{if order.getEmailCustomerNote()}}
+            <table cellspacing="0" cellpadding="0" class="message-container">
+                <tr>
+                    <td>{{var order.getEmailCustomerNote()}}</td>
+                </tr>
+            </table>
+            {{/if}}
+            {{layout handle="sales_email_order_items" order=$order}}
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    {{if order.getBillingAddress() != order.getShippingAddress()}}
+                    <td class="address-details">
+                        <h6>Bill to:</h6>
+                        <p><span class="no-link">{{var order.getBillingAddress().format('html')}}</span></p>
+                    </td>
+                     {{/if}}
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="address-details" align="right">
+                        <h6>Ship to:</h6>
+                        <p><span class="no-link">{{var order.getShippingAddress().format('html')}}</span></p>
+                    </td>
+                    {{/depend}}
+                </tr>
+                <tr>
+                    {{depend order.getIsNotVirtual()}}
+                    <td class="method-info">
+                        <h6>Shipping method:</h6>
+                        <p>{{var order.shipping_description}}</p>
+                    </td>
+                    {{/depend}}
+                    <td class="method-info">
+                        <h6>Payment method:</h6>
+                        {{var payment_html}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="50%" style="padding:5px;">Want to check your order status?  </td>
+                    <td style="padding:5px;">See your order details Click <a href="{{store url=""}}impherialtouch/shippingtracking/">Track Order</a></td>
+                </tr>
+                <tr>
+                    <td width="50%" style="padding:5px;">See our Frequently Ask Questions or out returns policy by contacting </td>
+                    <td style="padding:5px;"><a href="{{store url=""}}impherialtouch/customercare/">Customer Care</a></td>
+                </tr>
+                
+                <tr style="background: #e1f0f8; padding: 11px;">
+                    
+                    <td width="50%" style="padding:5px;">
+                        
+                        <p> Customer Care <br />
+                         ImperialTouch.com<br />
+                         800-504-8606<br />
+                         Monday through Friday 9 a.m. to 5 p.m. (EST)<br />
+                         sales@imperialtouch.com</p>
+                       <!-- <h5 class="closing-text">Thank you, {{var store.getFrontendName()}}!</h5>-->
+                        <p><a href="{{store url=""}}impherialtouch/customer/account/">My Account</a>, <a href="{{store url=""}}impherialtouch/customercare/">Customer Care</a>, <a href="{{store url=""}}impherialtouch/contacts/">Contact Us</a>, <a href="{{store url=""}}impherialtouch/privacy-policy/">Privacy Policy</a>, <a href="{{store url=""}}impherialtouch/faq/">FAQ</a>, <a href="{{store url=""}}impherialtouch/shippingtracking/">Track Order</a></p>
+                    </td>
+                    <td>
+                        <p>By placing your order, you agree to Imperial Touch Skin Care's Privacy Policy and Legal Notice.</p>
+                        <p>company address : 14625 Baltimore Ave. <br/>Suite 288 Laurel, <br/>MD  20707 </p>
+                        
+                        <p><a href="{{store url=""}}impherialtouch/face/razor-bumps-treatment.html">Treat Razor Bumps</a>, 
+                            <a href="{{store url=""}}impherialtouch/face/facial-scrubs.html">Hair Solutions</a>, 
+                            <a href="{{store url=""}}impherialtouch/face/shaving-gels.html">Dynamic Shave Solution</a>
+                             
+                        </p>
+                    </td>
+                    
+                </tr>
+
+
+
+            </table>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer"}}

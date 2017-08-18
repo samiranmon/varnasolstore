@@ -1,0 +1,349 @@
+<div id="container">
+                <div id="content">
+                    
+    <div class="myaccountpage">
+        <div style="margin-right:14px;">
+            <script type="text/javascript">
+                function openQuestion(el) {
+                    $('.faqAnswer').slideUp(125);
+                    $('.faqQuestion').css('color', '#6b7279');
+                    $('.faqAnswer', el).slideToggle(175);
+                    $('.faqQuestion', el).css('color', '#000000');
+                }
+                        </script>
+            <h1>Ask Jack</h1>
+            <h6 style="border-bottom:1px dotted #BCBDC0;padding-bottom:25px;">Take our advice. We know what we are talking about.</h6>
+            <div style="padding:25px 0px; margin-bottom:25px; border-bottom:1px dotted #BCBDC0;">
+                <h2 style="padding:0;">Got a question? We've got answers.</h2>
+                <p style="margin-right: 14px;">E-mail us what you want to know. If we feature it on our site, you'll receive $50 worth of Jack Black products. You'll be smarter. And better-looking. And it doesn't take Jack to tell you that's a pretty good deal. <a href="mailto:info@getjackblack.com?Subject=Ask%20Jack" style="font-weight: normal;text-decoration: none;color:#000000;">Ask Jack your question at info@getjackblack.com</a></p>
+            </div>
+
+            <h3 style="padding-bottom:25px;">Click on any question below for the answer.</h3>
+
+            <h2 id="ctl00_MainContentHolder_Sk" style="padding-top: 10px;">Skincare</h2>
+            <div>
+	<table class="tblAskJack boldedLinks" cellspacing="0" border="0" id="ctl00_MainContentHolder_gvTestimonialSkin" style="border-collapse:collapse;">
+		<tbody><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Do I really need a separate product for the eye area? Why can't I use my moisturizer?</div>
+                                <div class="faqAnswer" style="display: none;">The skin around the eye is much thinner and has fewer sebaceous glands than skin elsewhere on your face and body. It's also more delicate, and more sensitive than the rest of your facial skin. In fact, it's probably the most fragile skin on the entire body and is therefore most likely to show signs of premature aging and sun damage.<br>
+Eye creams and eye gels are carefully formulated to treat this thin, delicate tissue. Eye area products contain more emollients than facial moisturizers to address the lack of sebum and dryness. They are also formulated with targeted&nbsp;anti-aging ingredients selected to address specific concerns in the eye area such as puffiness, dark circles, fine lines and wrinkles, and dryness.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(0, 0, 0);">Q: What is Jack Black’s policy on animal testing?</div>
+                                <div class="faqAnswer" style="display: block;">Jack Black has a strict cruelty-free philosophy, no animals are harmed in the development, testing or manufacturing of Jack Black products. Jack Black has not and will never engage in animal testing, for either raw materials or finished goods, nor do we ask outside parties to do animal testing on our behalf.&nbsp;<br>
+<br>
+Virtually all of our products are vegan and do not contain animal derived ingredients or animal by-products. The few exceptions are the use of Beeswax, Silk Amino Acids (derived from the cocoon of silk worms) and Lanolin (made from sheep’s wool). &nbsp;Beeswax is found in our Intense Therapy Lip Balm, The Stick Natural Lip Balm and Wax Pomade. Lanolin is found in our Intense Therapy Lip Balm and Sleek Finish Texture Cream. &nbsp;Silk Amino Acids is found in our Sleek Finish Texture Cream<br>
+<br>
+You will see our cruelty-free bunny symbol on our packaging to indicate that Jack Black products are developed and tested following cruelty-free standards.<br>
+&nbsp;</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: What is the difference between Glycolic Acid, Salicylic Acid, and Lactic Acid?</div>
+                                <div class="faqAnswer" style="display: none;">Glycolic Acid, an Alpha-Hydroxy Acid (AHA) is perhaps the best-known of a group of chemicals called fruit acids. It is derived from sugar cane, so it can be considered a natural product. Citric acid, from oranges and other citrus fruits, and Lactic Acid, from milk, also fall under the same classification as Alpha Hydroxy Acid.<br>
+<br>
+Glycolic Acid works as an exfoliating agent because of its high acidity but easy solubility. When placed on the skin as part of an exfoliating cream or gel, Glycolic Acid goes under the damaged upper layers of skin and destroys the 'glue' which holds dead skin to the surface.<br>
+<br>
+Glycolic Acid has a sloughing effect (removal of dead cells) on the skin. By accelerating the normal rate of sloughing it helps the regeneration of your skin by growing new cells faster. Jack Black’s Line Smoother Face Moisturizer contains 8% glycolic acid.<br>
+<br>
+Salicylic Acid is the only Beta Hydroxy Acid (BHA).<br>
+<br>
+The main difference between Alpha Hydroxy Acids and Beta Hydroxy Acid is their lipid (oil) solubility. Alpha Hydroxy Acids are water soluble only, while Beta Hydroxy Acid is lipid (oil) soluble.<br>
+<br>
+This means that Beta Hydroxy Acid is able to penetrate into the pore which contains sebum and exfoliate the dead skin cells that are built up inside the pore. Because of this difference in properties, Beta Hydroxy Acid works very well on oily skin with acne, blackheads and whiteheads.<br>
+<br>
+Alpha Hydroxy Acids work well on thickened, sun-damaged skin where breakouts are not the main problem. In theory it penetrates the skin faster. For acne, Salicylic Acid (BHA) is with no doubt the best choice.<br>
+<br>
+Salicylic Acid is also effective in treating ingrown hairs. Jack Black’s Clear Complexion Razor Bump &amp; Acne Treatment contains 2% salicylic acid and lactic acid, to treat ingrown hairs, and acne blemishes.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I've heard pros and cons about whether to use products containing alcohol. What's your opinion? And what does it mean to be alcohol free?</div>
+                                <div class="faqAnswer" style="display: none;">Alcohol is not all bad. In fact, most skin care products do contain some type of alcohol even if they claim to be "alcohol-free".<br>
+<br>
+This is because there are both moisturizing alcohols and more drying alcohols. When skin care product labels read "alcohol free" it means they are free of the stronger, harsher types of alcohol called ethyl alcohol (aka: grain alcohol), SD Alcohol, or Alcohol Denaturant. These alcohols are considered harsh because they can dry and irritate skin.<br>
+<br>
+However, "Alcohols" in general are a huge, diverse family of ingredients (with different names and varying effects on the skin), and there are many types of very beneficial, moisturizing, non-irritating alcohols used in skin care, hair care and shaving products. And just because a product claims to be "alcohol-free", it may still contain emollient alcohols called fatty alcohols–like cetyl, stearyl, cetearyl and lanolin alcohol–which provide skin and hair benefits. Rather than dry or damage, these alcohols actually provide beneficial moisture and hydration.<br>
+<br>
+Our advice: check to see what type of alcohol a product contains before making your decision.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I have extremely oily skin. I wash my face in the morning, but within a few hours, my skin is very shiny and oily-looking. What can I do to eliminate the shine and control the oil and greasiness?</div>
+                                <div class="faqAnswer" style="display: none;">A lot of men suffer from oily skin, so you are not alone. And while extremely oily skin requires special care, the great advantage is that it tends to age at a slower rate than other skin types.<br>
+<br>
+To care for oily skin. special cleansing will help prevent pores from becoming clogged. Avoid harsh products that can strip your complexion of oil and encourage flakiness, as this paradoxically causes your skin to produce even more oil than usual. Harsh cleansers can also cause the oil glands to work overtime to compensate for the loss of natural oils. Use Clean Formula Face bar &amp; Shave Soap both morning night; this 2-in-1 facial cleansing bar and lathering shave soap effectively cleanses, normalizes oiliness and nourishes the skin. One of our PureScience formulas, this&nbsp;soap also locks in nature’s best to please even the most sensitive skin—using a blend of fragrance-free, colorant-free natural coconut and oat derived surfactants and certified organic ingredients, it provides a rich lather that cleanses without over-drying. Plus, it's dermatologist tested (as are all Jack Black skin care products).<br>
+<br>
+Next, control facial oiliness with All Day Oil Control Lotion, a non-comedogenic, oil-free product specifically designed for oily skin. Its unique formula contains superior oil controlling ingredients—Cotton, Nylon 12 and China Clay—that help reduce sebum production, absorb excess facial oils and control oil throughout the day without over-drying.<br>
+<br>
+At night after cleansing, but before applying a moisturizer, treat skin with our 3-in-1 Clear Complexion Solution. The powerful combination of 2% Salicylic and Lactic acids are effective astringents for oily and acne prone skin. Clear Complexion Solution also removes and dissolves excess oil and pore clogging residue to help keep blemishes and blackheads under control.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I consider myself a pretty evolved guy. But then I hear about things like exfoliation. Antioxidants. Alpha hydroxy acids. Should I know? And will it make a difference?</div>
+                                <div class="faqAnswer" style="display: none;">The fact that you know enough to ask puts you way ahead of the game. And once you start incorporating the corresponding techniques and products into your routine, we guarantee you'll notice the benefits.<br>
+<br>
+First, let's talk about exfoliation. Put simply, this is the process of scrubbing the skin to remove the top layer of dead skin cells, exposing newer, fresher cells underneath. Why bother? Because removing the dead cells (and accompanying dirt and oil) helps your razor get closer to the skin for a smoother, easier shave. And as an extra bonus, you're helping to prevent ingrown hairs.<br>
+<br>
+What to use: Jack Black Face Buff Energizing Scrub. Small, highly uniform scrubbing particles work gently yet effectively to improve skin's overall appearance and radiance. Click for product details.<br>
+<br>
+To understand the importance of antioxidants, we need to discuss free radicals—unstable oxygen molecules produced by ultraviolet light, pollution and stress. The effect? Healthy skin cells are robbed of electrons and collagen is corroded, causing wrinkles. The solution? Skin care products containing antioxidants, which work to help neutralize free radicals and minimize their damage.<br>
+<br>
+Let's take a closer look at some of the antioxidants found in Jack Black products and what they do: Vitamin A, also known as Retinyl Palmitate, which helps improve skin's appearance and treat the effects of aging. Found in: Line Smoother Face Moisturizer, Eye Balm Age Minimizing Gel<br>
+Vitamin C, with anti-inflammatory properties, which helps repair sun-damaged skin and encourage collagen production. Found in: Face Buff Energizing Scrub, Eye Balm Age Minimizing Gel<br>
+Sea Parsley, containing a combination of naturally occurring vitamins (A and C) and minerals which help improve skin's appearance. Found in: Double Duty Face Mositurizer SPF 20<br>
+Vitamin E, also known as Tocopheryl Acetate, which helps fight damaging free radicals and slow the natural aging process. Found in: Line Smoother Face Moisturizer, Eye Balm Age Minimizing Gel, Cool Moisture Body Lotion, Intense Therapy Lip Balm SPF 25<br>
+Blue Algae Extract, a rich source of Vitamin E. Found in: Double Duty Face Moisturizer SPF 20<br>
+Balm Mint, which helps protect skin from UV-induced free radicals. Found in: Post Shave Cooling Gel<br>
+Green Tea, which contains anti-inflammatory properties. Found in: Intense Therapy Lip Balm SPF 25.<br>
+<br>
+And finally, alpha hydroxy acids, derived from fruit and milk sugars, work gently and naturally to slough off the top layer of skin cells, revealing younger, smoother skin underneath. With regular use, alpha hydroxy acids can help improve wrinkling, roughness and uneven pigmentation—all important for a more youthful, radiant complexion.<br>
+<br>
+Some of the AHAs in Jack Black products include:<br>
+<strong>Glycolic Acid,</strong> which helps stimulate cell regeneration to treat the effects of aging. Found in: Line Smoother Face Moisturizer<br>
+<strong>Grape Seed Extract,</strong> which helps reduce the appearance of fine lines and wrinkles by removing the top layer of skin cells. Found in: Eye Balm Age Minimizing Gel, Line Smoother Face Moisturizer<br>
+<strong>Apple Fruit Extract,</strong> which helps promote and maintain elasticity. Found in: Double Duty Face Moisturizer SPF 20.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: My wife has invested a small fortune in skin care products. Can we—or better yet, should we—share? Our retirement may be resting on your answer.</div>
+                                <div class="faqAnswer" style="display: none;">At last men are realizing what their wives and girlfriends have known for a long time—the right skin care products really do make a difference. But what to use (and how much to spend) can be tricky.<br>
+<br>
+Should you share? That depends. First, consider what's different about a guy's skin. It's thicker than a woman's and in most cases, produces more oil. But even more importantly, a man's skin care needs revolve around a daily shaving regimen, which has its own unique set of requirements. Jack Black's Beard Lube happens to be the ultimate guy product, offering three benefits—pre-shave oil, shave cream and skin conditioner—in one easy-to-use product.<br>
+<br>
+That said, there is an important point to be made in the case of sharing products in the anti-aging category. According to an NBC news report, prices for these creams and lotions are generally higher on the women's side of the counter, based more on who they're marketed to (women or men) rather than their effectiveness. In fact, a comparison of Jack Black's <a href="/Products/Line-Smoother-Face-Moisturizer-with-Natural-Fruit-Acids__2001.aspx">Line Smoother Face Moisturizer</a> and a comparative women's anti-aging cream showed the Jack Black product to contain more beneficial ingredients—and it was less than half the price. With that in mind, it makes sense to us that she should be using your products. (Similar results can be found comparing men's and women's eye treatments.)<br>
+<br>
+We'll end this discussion with a few more recommendations, continuing in the spirit of what's yours is hers. Other Jack Black products we think she'll like include our Eye Balm Age Minimizing Gel, Industrial Strength Hand Healer, Intense Therapy Lip Balm SPF 25 and Sleek Finish Texture Cream.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Do Jack Black bottles and tubes contain BPA (Bisphenol A)?</div>
+                                <div class="faqAnswer" style="display: none;">Jack Black product containers - made from High Density Polyethylene (HDPE), Low Density Polyethylene (LDPE) and Polyethylene Terephthalate (PET) – do not contain BPA.  Our containers are not formulated with BPA, and BPA is not used in the manufacture of Jack Black bottles, or the inks and coatings for our containers.<br>
+<br>
+Bisphenol A has been discussed in many articles in recent years due to the potential health risk to humans exposed to this chemical.  BPA exhibits hormone-like properties that raise concern about its suitability in consumer products and food containers.  Since 2008, several governments have questioned its safety, which prompted some retailers to withdraw polycarbonate products.<br>
+<br>
+BPA is used to make certain plastics and epoxy resins; it has been in commercial use since 1957. BPA-based plastic is clear and tough, and was historically used to make a variety of common consumer goods, such as baby and water bottles, sports equipment, and CDs and DVDs, and for industrial purposes, like lining water pipes. Epoxy resins containing BPA are also used as coatings on the inside of many food and beverage cans, and in the making of thermal paper such as that used in sales receipts.</div>
+                            </div>
+                        </td>
+		</tr>
+	</tbody></table>
+</div>
+            <h2 id="ctl00_MainContentHolder_B" style="padding-top: 10px;">Body</h2>
+            <div>
+	<table class="tblAskJack boldedLinks" cellspacing="0" border="0" id="ctl00_MainContentHolder_gvTestimonialBody" style="border-collapse:collapse;">
+		<tbody><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: What is the difference between an antiperspirant and deodorant?</div>
+                                <div class="faqAnswer" style="display: none;">Antiperspirants are classified as over-the-counter drugs by the FDA. They contain an aluminum based chemical compound that reacts with the electrolytes in sweat to block the duct of the sweat gland, stopping the discharge of perspiration. The odor is controlled by reducing the amount of sweat released. (To be classified as an antiperspirant the product must contain an FDA approved aluminum based active ingredient)<br>
+<br>
+Deodorants allow the body to perspire naturally and do not control wetness or&nbsp;stop sweat production. They can work through using a fragrance&nbsp;to cover&nbsp;the odor, or some deodorants stop odor&nbsp;by using anti-bacterial and anti-fungal ingredients to kill odor-causing bacteria. <br>
+<br>
+Jack Black's Cool CTRL is a Deodorant that stops odor through the use of anti-bacterial and anti-fungal ingredients. <br>
+<br>
+Jack Black’s Pit Boss is both an Antiperspirant and Deodorant.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: What is the difference between physical and chemical sunscreens?</div>
+                                <div class="faqAnswer" style="display: none;">Physical sunscreens contain extremely fine particles of minerals such as zinc oxide, titanium dioxide and iron oxide that stay on the skin’s surface, creating a barrier that reflects the sun’s rays. Advantages include its ability to keep skin cool, the protection is natural, and it’s unlikely to cause skin irritation because it doesn’t get absorbed into the skin.<br>
+<br>
+Chemical sunscreens contain chemical compounds like Avobenzone and Octinoxate as active ingredients, and they absorb ultraviolet radiation that causes sunburn, damages DNA and can lead to skin cancer. Advantages of chemical sunscreens include its ability to defend the deeper layers of skin—including collagen fibers and other tissue—against the aging effects of UVA rays, and prevention of penetration by the UVB rays responsible for tanning and sunburn. Formulations containing chemical sunscreens are usually more pleasant to use, as they are lighter weight, less heavy and greasy, and do not leave the “whitening” effect on skin that some physical sunblocks do.<br>
+<br>
+Jack Black’s Sun Guard SPF 45 Oil-Free Very Water/Sweat Resistant Sunscreen contains both physical and chemical sunscreens. Double Duty Face Moisturizer SPF 20 and Intense Therapy Lip Balm SPF 25 contain chemical sunscreens.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I've been hearing a lot about sunscreens lately and some potentially harmful ingredients in them. Are Jack Black sunscreens safe?</div>
+                                <div class="faqAnswer" style="display: none;">Yes, Jack Black sunscreens are completely safe and very beneficial to your skin. Some people are concerned that&nbsp;some&nbsp;sunscreen ingredients&nbsp;can be absorbed through the skin and cause hormonal changes. This concern came from one study where rats were bathed in sunscreen daily and even forced to eat sunscreen. We are not aware of any proof of estrogen-like effects in humans. The vast majority of doctors and dermatologists agree that the benefits of sunscreen far outweigh the outside risk of any effects due to skin absorption. There are hundreds of published, peer-reviewed studies from medical and research centers all over the world proving sunscreen can prevent deadly&nbsp;skin cancers as well as help prevent premature wrinkles and skin discolorations. In fact a study published in 2013 showed that regular, daily use of sunscreen not only&nbsp;helps prevent skin cancer, it also reduces the visible signs of skin aging (lines, wrinkles, discoloration) by 24% compared to people who did not use sunscreen regularly.<br>
+Ingredients used in sunscreen products that are compliant with government&nbsp;regulations&nbsp;have been carefully and extensively reviewed for safety and efficacy by governing bodies all over the world, including the FDA, before they can be put on the market.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Why do I need to wear sunscreen every day if I'm not outside?</div>
+                                <div class="faqAnswer" style="display: none;">Sun exposure is the number one cause of premature aging of the skin, and is also the number one cause of skin cancer. Daily sun protection with a broad spectrum sunscreen of at least SPF 20&nbsp;is the single most important thing you can do to protect your skin's health and appearance. Regular use of sunscreen helps prevent skin cancer and also reduces the&nbsp;signs of skin&nbsp;aging (lines, wrinkles, dark spots)&nbsp;by&nbsp;24% according to a 2013 study.&nbsp;<br>
+Some people only use sunscreen when they go to the beach. But sun damage is cumulative and the real damage comes from cumulative sun exposure over a lifetime,&nbsp;especially incidental sun exposure. <br>
+Incidental sun exposure is what happens when you are getting in your car to go to the office, walking across the parking lot, getting the mail in, walking the dog,&nbsp;or sitting by a window while working. UVA rays go through the glass in the car and while you are sitting inside, near a window. When you add up all the incidental sun exposure you get day in and day out, you are outside quite a bit and this exposure each day for years is a lot! That's why using&nbsp;sun protection in your daily grooming regimen&nbsp;is so crucial in protecting your skin's health and appearance. <br>
+Incorporating broad spectrum sunscreens in your daily use products, such as Double Duty Face Moisturizer and Intense Therapy Lip Balm, make it&nbsp;quick and easy&nbsp;to protect your skin every day.</div>
+                            </div>
+                        </td>
+		</tr>
+	</tbody></table>
+</div>
+            <h2 id="ctl00_MainContentHolder_Sh" style="padding-top: 10px;">Shave</h2>
+            <div>
+	<table class="tblAskJack boldedLinks" cellspacing="0" border="0" id="ctl00_MainContentHolder_gvTestimonialShave" style="border-collapse:collapse;">
+		<tbody><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: What is the difference between Beard Lube Conditioning Shave and Supreme Cream Triple Cushion Shave Lather?</div>
+                                <div class="faqAnswer" style="display: none;"><p>Both Beard Lube and Supreme Cream offer an exceptional shave. They both incorporate Macadamia Nut Oil and Jojoba Oil as pre-shave oils to help with razor glide as well as Glycerin to help create a cushion of protection against razor burn and irritation.</p>
+<p>The choice boils down to personal aesthetic preference. Beard Lube is a translucent lotion-like product that allows you to shave with relatively little water. Its clear form is great for guys who have facial hair or shave their heads because you can easily see where you are shaving. </p>
+<p>Supreme Cream, on the other hand, is an opaque, rich lather shave cream. It offers the same great shave as Beard Lube, but is formulated for guys who like a more traditional, white cream that whips into a lather. The Supreme Cream is available in an 8 oz jar that makes it a great companion product to use with our Pure Performance Shave Brush. </p>
+<p>Additionally, Supreme Cream is a PureScience® Formula which means it has been formulated with without parabens and contains certified organic ingredients.&nbsp;It is ideal for sensitive skin, because it does not contain menthol or peppermint oil, two ingredients that are in Beard Lube Conditioning Shave. These ingredients give a very refreshing, tingling feeling and a nice aroma, but are not always tolerable on sensitive skin.</p></div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I suffer from painful razor bumps on my neck and cheeks. What can I do to treat these, and how can I prevent them in the future?</div>
+                                <div class="faqAnswer" style="display: none;">Let's start by understanding why you're having these problems. Ingrowns and razor bumps are pretty much a cause-and-effect deal—when the shortened hair does not grow straight out of the follicle opening, but instead curls around and re-enters the skin (the ingrown), it creates a bump. The culprits? Coarse, thick, curly hair or products that are either overly drying or contain harsh ingredients that can cause irritation.<br>
+<br>
+For those prone to ingrowns, we recommend two products. First, add Jack Black's Face Buff Energizing Scrub to your shaving routine to open congested pores and sweep away oil, dirt and dead skin cells. In addition to allowing for a closer shave (and fewer ingrown hairs by lifting the whisker from the skin's surface), regular use of an exfoliating scrub will improve skin's appearance and texture by removing old cells to expose newer, younger ones underneath.<br>
+<br>
+Secondly, after cleansing skin, apply Clear Complexion Solution directly to bumps on the neck and face to help heal and clear skin. This unique product has a powerful combination of 2% Salicylic and Lactic Acids which exfoliate the top layer of dead skin cells, unearthing the skin-trapped facial hairs that cause razor bumps. The hairs are then free to grow up and out, instead of below the skin. In addition, Clear Complexion Solution will also dissolve pore-clogging facial oils that can cause acne and blackheads. One note: When first starting to use Clear Complexion Solution, avoid use immediately after shaving; the active ingredients may cause slight irritation until your skin becomes acclimated to the product.<br>
+<br></div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I hate to shave...I have horrible razor burn and irritation. What can I do?</div>
+                                <div class="faqAnswer" style="display: none;">Razor burn is the result of removing too much skin when you shave. The wrong product (one that doesn’t provide enough protection from your blade) or applying too much pressure may be to blame.<br>
+<br>
+Start by using Face Buff Energizing Scrub to cleanse the face before shaving. The small scrubbing particles help to gently but effectively remove dead skin cells and oil, so your razor can get closer to your skin. This means you can shave with less pressure, which means less chance of irritation.<br>
+<br>
+Next, shave with revolutionary Beard Lube Conditioning Shave to help end your razor burn troubles. The unique formula offers three benefits in a single product—it's a pre-shave oil, shave cream and skin conditioner in one. The lightweight, lubricating lotion has high-quality conditioning oils and special silicone technology to form a superior cushion between the skin and blade. The unique formula penetrates whiskers to soften even the toughest beard, allowing for an easier, less stressful shave. Finally, soothing anti-irritants like Heather help reduce the chance of irritation.<br>
+<br>
+An alcohol-free, fragrance-free after-shave treatment will also help alleviate razor burn and irritation—try Jack Black's Post Shave Cooling Gel, which soothes skin and minimizes redness. Plus, the non-oily formula provides lightweight moisturization without burning or stinging.<br>
+<br></div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Beard Lube has cetearyl alcohol in it. Isn't alcohol drying to the skin?</div>
+                                <div class="faqAnswer" style="display: none;">Cetearyl alcohol is not drying to the skin, it belongs to the fatty based alcohol family.<br>
+Alcohol is a chemical term that means a hydrogen atom and an oxygen atom are attached at the end of a carbon chain.&nbsp;Most alcohols are actually fatty based, with a creamy emollient texture. They are&nbsp;used as emollients in cream and lotion&nbsp;formulations, as we have done with Beard Lube. <br>
+The drying alcohols include isopropyl (rubbing) alcohol&nbsp;and SD alcohol. These type of alcohols&nbsp;can be very drying and may sting the skin, and are vastly different from the fatty based alcohols like cetearyl alcohol.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: What’s the difference between my current 3, 4 or 5-blade razor and the Jack Black Double Edge Safety Razor?</div>
+                                <div class="faqAnswer" style="display: none;">Your current cartridge system uses multiple blades to remove more hair with every stroke. However, more blade contact with your skin equals more friction, irritation and an increased possibility of ingrown hairs. The Double Edge Safety Razor uses a single blade and focuses on reducing whiskers rather than removing them. This skin-friendly approach to shaving helps reduce unnecessary friction, which leads to less irritation.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Why does the Double Edge Safety Razor cost so much?</div>
+                                <div class="faqAnswer" style="display: none;">At Jack Black, we make only the finest quality products and our shave accessories are no exception. Handcrafted exclusively for Jack Black by MÜHLE® in Germany, the leader in luxury shave accessories, the Double Edge Safety Razor features a custom crafted extended handle for better grip and a durable chrome head that will last for years with the proper care.<br>
+<br>
+Keep in mind that the refill blades cost 5x less than traditional cartridge refills. On average, you can expect to save $90 per year in blade replenishment costs. Over time, that is significant savings.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Where do I buy the refill blades?</div>
+                                <div class="faqAnswer" style="display: none;">Double edge safety blades can be purchased at local drug stores, pharmacies and some mass and grocery stores.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Multi-blade razors claim that they are better on sensitive skin. Is the Double Edge Safety Razor okay to use on sensitive skin?</div>
+                                <div class="faqAnswer" style="display: none;">Yes. Sensitivity from shaving is usually the result of your razor and the amount of blades coming into contact with your skin. The less a blade touches your skin, the less likely you are to have irritation from shaving. Most dermatologists actually recommend using a razor that has no more than 2 blades to avoid razor burn, bumps or ingrown hairs.<br>
+<br>
+Products that claim to be better on sensitive skin usually include some sort of lubricating strip, a tiny piece of film at the end of the razor that contain numbing or cooling agents such as aloe and mineral oil that help with the aftermath, not the prevention of razor burn.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I have a very thick coarse beard. Is a safety razor right for me?</div>
+                                <div class="faqAnswer" style="display: none;">Yes, double edge safety razors are actually better for thicker, longer and coarser beards. The single blade design will not clog like multi-blade cartridges, resulting in a smoother shave without the drag and pull you might experience with other razors.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Are there different types of double edge blades?</div>
+                                <div class="faqAnswer" style="display: none;">Yes, double edge blades come in different gauges or thicknesses. The thicker the blade, the stiffer the blade becomes. These thicker blades are better for course, thick beards. The blade we include with our Double Edge Safety Razor is a medium gauge. We suggest you start out with our supplied blade and experiment from there.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: How should I store my double edge blades between shaves?</div>
+                                <div class="faqAnswer" style="display: none;">Towel dry the razor to prevent rust from compromising the blade. For those who prefer a more elegant way of displaying the razor, razor and brush stands are available for purchase on our website.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: I’ve heard that a natural hair shaving brush out performs a man-made synthetic brush. Is that true?</div>
+                                <div class="faqAnswer" style="display: none;">No. Modern technology has allowed us to manufacture bristles that function better than natural hair. Instead of rubbing animal hair all over their faces, guys now have the option to use a synthetic hair brush that is more hygienic because it’s less likely to harbor and grow bacteria. The Jack Black Shave Brush bristles feel great against the skin. Plus, since the bristles are non-absorbent, you need less product to produce a rich, creamy lather.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: Is it true that some natural hair badger brushes don’t result in the death of the animal – that the hair is harvested by shearing the badger like a sheep?</div>
+                                <div class="faqAnswer" style="display: none;">No. The animal is killed for the pelt. In order to create the bristles for a shave or cosmetic brush, the hairs must be pulled by hand from the skin. Today, most badger hair comes from China where animals are raised specifically for this purpose.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: What’s the difference between the Jack Black Shave Brush and other synthetic brushes?</div>
+                                <div class="faqAnswer" style="display: none;">Most other non-natural hair brushes use very stiff, cheap synthetic hair that is rough and inflexible. These brushes usually look inexpensive and only last for a short time. Each Silvertip Fibre® bristle is handcrafted to create a perfect cupcake shape for optimal control and application of the shave cream. They are designed to be tangibly soft and pliable but rigid enough to lift hair from the skin. In addition, the state-of-the-art fibers are designed to ensure an exceptionally long brush life and with superior bristle memory and strength.</div>
+                            </div>
+                        </td>
+		</tr><tr>
+			<td>
+                            <div class="faqItem" onclick="openQuestion(this);">
+                                <div class="faqQuestion" style="color: rgb(107, 114, 121);">Q: How long will the Jack Black Shave Brush last?</div>
+                                <div class="faqAnswer" style="display: none;">With proper care, the brush should last 10+ years.</div>
+                            </div>
+                        </td>
+		</tr>
+	</tbody></table>
+</div>
+            
+            <div>
+
+</div>
+            
+            <div>
+
+</div>
+        </div>
+    </div>
+
+                </div>
+            </div>
+
+        <script type="text/javascript">
+                function openQuestion(el) {
+                    $('.faqAnswer').slideUp(125);
+                    $('.faqQuestion').css('color', '#6b7279');
+                    $('.faqAnswer', el).slideToggle(175);
+                    $('.faqQuestion', el).css('color', '#000000');
+                }
+                        </script>

@@ -1,0 +1,357 @@
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=<?php echo $this->getGoogleApiKey();?>&sensor=false&libraries=geometry"></script>
+<script src="http://www.google.com/uds/api?file=uds.js&v=1.0" type="text/javascript"></script>
+<?php
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category 	Magestore
+ * @package 	Magestore_Storelocator
+ * @copyright 	Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license 	http://www.magestore.com/license-agreement.html
+ */
+/**
+ * storelocator template
+ * 
+ * @see Magestore_Storelocator_Block_Storelocator
+ */  
+$coordinates = $this->getCoordinatesCurrent();
+$levleRadiusConvert = $this->getLeveRadiusConvert();
+$levelRadius = $this->getLevelRadius();
+$lscollection = $this->getListStore();
+$countries = $this->getListCountry();
+$search_config = $this->getSearchConfig();
+$unit = $this->getUnitRadius();
+$taglist = $this->getTagList();
+$sortDefault = $this->getSortDefaultContry()
+?>
+<div class="page-title">
+    <h1><?php echo $this->getPageTitle(); ?></h1>
+</div>
+        <form method="Post" action="<?php echo (Mage ::getBaseUrl() . "storelocator/index/index"); ?>" name="store_search" id="store_search">
+        <div class="store-locator-search-box">
+            <ul class="form-list">
+                <li class="fields store-locator-list">                                               
+                    <label for="address"><?php echo $this->__('Your location') ?></label>
+                    <input id ="address" name="address" type="text" value="<?php echo $this->getRequest()->getParam('address') ?>" />
+					<div style="clear:both;"></div>
+                 </li>
+                 <?php if(($search_config != NULL)&&(count($search_config)) && (!in_array(5, $search_config))):?>
+                <?php foreach ($search_config as $item): ?>                
+                    <?php if ($item == 0): ?>                                                                                    
+                    <?php elseif ($item == 1): ?>                   
+                        <li class="fields store-locator-list" style="text-align:right">                            
+                            <label for="country"><?php echo $this->__('Country') ?></label>
+                            <select name="country" id="country" class="validate-select"> 
+                                <option value="nothing" selected><?php echo $this->__('Select Country') ?></option>
+                                <?php if (count($countries)): ?>
+                                    <?php foreach ($countries as $country): ?>
+                                        <?php
+										if($this->getRequest()->getParam('country')){
+											$selected = '';
+											if ($country['value'] == $this->getRequest()->getParam('country')) {
+												$selected = 'selected';
+											}
+										}
+										else{
+											$selected = '';
+											if ($country['value'] == $this->getDefaultCountry()) {
+												$selected = 'selected';
+											}
+										}
+                                        ?>
+                                        <option value="<?php echo $country['value'] ?>" <?php echo $selected; ?>><?php echo $country['label'] ?></option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                                                            
+                            </select>
+							<div style="clear:both;"></div>
+                        </li>                                
+                    <?php elseif ($item == 2): ?>                               
+                        <li class="fields store-locator-list">                                        
+                            <label for="state"><?php echo $this->__('State/Province') ?></label>
+                            <input id="state_province" name="state" type="text" value="<?php echo $this->getRequest()->getParam('state') ?>"/>
+							<div style="clear:both;"></div>
+                        </li>                                
+                    <?php elseif ($item == 3): ?>                               
+                        <li class="fields store-locator-list"  style="text-align:right">                                        
+                            <label for="city"><?php echo $this->__('City') ?></label>
+                            <input id="city" name="city" type="text" value="<?php echo $this->getRequest()->getParam('city') ?>"/>
+							<div style="clear:both;"></div>
+                        </li>                                
+                    <?php elseif ($item == 4) : ?>                               
+                        <li class="fields store-locator-list">                                         
+                            <label for="zipcode"><?php echo $this->__('Zip Code') ?></label>
+                            <input id="zipcode" name="zipcode" type="text" value="<?php echo $this->getRequest()->getParam('zipcode') ?>"/>
+							<div style="clear:both;"></div>
+                        </li>
+                                                   
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php endif;?>                   
+                    <li class="fields store-locator-list"  style="text-align:right">                                         
+                            <label for="radius"><?php echo $this->__('Radius') ?></label>
+                            <select name="radius" id="radius" class="validate-select">                                
+                                <?php $i = 0; $deaultRadius = $this->chekRadiusDefault();?>
+                                <?php $radius = $this->getRadius();?>
+                                <?php if($levelRadius): ?>
+                                    <?php foreach ($radius as $item): ?>
+                                <option value="<?php echo $item ?>" <?php if($item == $levelRadius) echo 'selected';?>><?php echo $item.$unit; ?></option>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                     <?php if($deaultRadius < 0):?>                                    
+                                        <?php foreach ($radius as $item): ?>
+                                    <option value="<?php echo $item ?>" <?php if($i++ == 0) echo 'selected';?>><?php echo $item.$unit; ?></option>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <?php foreach ($radius as $item):?>
+                                    <option value="<?php echo $item ?>" <?php if($i++ == $deaultRadius) echo 'selected';?>><?php echo $item.$unit; ?></option>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                               
+                            </select>
+							<div style="clear:both;"></div>
+                        </li>
+                    <li class="fields store-locator-list last">    
+                        <div style="float: right;">
+                            <button type="button" class="button" title="reset" onclick="setLocation('<?php echo $this->getUrl('storelocator/index/index') ?>');"><span><span><?php echo $this->__('Reset') ?></span></span></button>
+                            <button type="submit" class="button" title="search"><span><span><?php echo $this->__('Search') ?></span></span></button>
+                        </div>
+                    </li>                                                
+            </ul>
+                                    
+            <div class="clear"></div>
+        </div>
+    </form>  
+<!--LIST STORE & MAP-->
+<div class="store-locator-content">
+    <?php if ($coordinates || count($lscollection)) {?>    
+    <div class="store-locator-list-store-box">
+        <div class="store-locator-list-store-title"><?php echo $this->__('Store List'); ?></div>
+            <div class="store-locator-list-store" id="store-locator-list-store">            
+            </div>
+        </div>        
+        <!--MAP-->
+        <div class="store-locator-map" id="map"></div>
+        <div class="clear"></div>        
+<script type="text/javascript">
+    //<![CDATA[       
+    var arrayHtml = [];
+    var arrayInfo = [];
+    var storeloactor = new StorelocatorFrontEnd(-34.397, 150.644, 8, 'map');  
+    var infoWindow = new google.maps.InfoWindow();
+    var htmlInput= '';
+    <?php if ($coordinates): ?>
+      latitude = <?php echo $coordinates['lat']?>;
+      longitude = <?php echo $coordinates['lng']?>;  
+      htmlInput +=  '<input id="storelocator-lat-100000000000" type="hidden" value="hfghdr66666"/>'
+        +'<input id="storelocator-lng-100000000000" type="hidden" value="3436hhj"/>';
+    var pointFind = new google.maps.LatLng(latitude, longitude);
+     <?php endif; ?>
+    //]]>
+</script>         
+<?php foreach ($lscollection as $store) {?>                 
+<script type="text/javascript">
+    //<![CDATA[       
+    var setLat = <?php echo $store->getLatitude() ?>;
+    var setLon = <?php echo $store->getLongtitude() ?>;
+    var storeId = <?php echo $store->getStorelocatorId(); ?>;
+    storeloactor.markearryIdStore.push(storeId);
+    <?php if ($store->getImageIcon()) { ?>
+        var image = '<?php echo $this->getImageIconByStore($store->getId(), $store->getImageIcon()); ?>';     
+    <?php }else{ ?>
+        var image = null ;
+    <?php } ?>
+    var zoomLevel = <?php echo $store->getZoomLevel(); ?>;                           
+    var store_info = '<div style="width: 200px"><?php echo $store->getAddress() . ", " . $store->getCity() . ", " . $store->getState(); ?><br/></div>' +
+        '<div>' +'<?php echo $store->getCountryName() . "&nbsp; &nbsp;" . $store->getZipcode(); ?>' +'<br/></div>' +
+        '<div><?php echo $store->getPhone(); ?><br/></div>' +'<div>' +
+        '<a href="<?php echo Mage::getBaseUrl() . "storelocator/index/view/id/" . $store->getStorelocatorId(); ?>" style="float:left">View Detail</a>' +
+        '<a href="<?php echo $store->getLink(); ?>" style="float:right" target="_blank"><i><?php echo $this->CutLink($store->getLink()); ?></i></a>' +
+        '</div>';
+
+    marker_point = new google.maps.LatLng(setLat, setLon);
+    storeloactor.extendPoint(marker_point);
+    
+    //info
+    infoPop = new InfoPopup(storeId, store_info, zoomLevel, marker_point);
+    arrayInfo.push(infoPop);
+    html = '<div id="<?php echo 'id' . $store->getStorelocatorId(); ?>" class="store-locator-list-store-item"'
+        +'onclick="javascript:setActive(<?php echo $store->getStorelocatorId() ?>);">'
+        +'<input id="storelocator-lat-<?php echo $store->getStorelocatorId() ?>" type="hidden" value="<?php echo $store->getLatitude()?>"/>'
+        +'<input id="storelocator-lng-<?php echo $store->getStorelocatorId() ?>" type="hidden" value="<?php echo $store->getLongtitude()?>"/>'
+        +'<div class="store-locator-item-content">'
+        +'<div class="store-locator-item-name"><?php echo $store->getName() ?><br/></div>'
+        +'<div><?php echo $store->getAddress() . ", " . $store->getCity() . ", " . $store->getState(); ?><br/></div>'   
+        +'<div><?php echo $store->getCountryName() . "&nbsp; &nbsp;" . $store->getZipcode(); ?><br/></div>'
+        +'<div><?php echo $store->getPhone(); ?><br/></div>'
+        +'<div>'
+        +' <a href="<?php echo Mage::getBaseUrl() . "storelocator/index/view/id/" . $store->getStorelocatorId(); ?>" style="float:left">View Detail</a>'
+        +'<a href="<?php echo $store->getLink(); ?>" style="float:right" target="_blank"><i><?php echo $this->CutLink($store->getLink()); ?></i></a>' 
+        +'</div>'
+        +'</div>'
+        <?php $urlImageBig = Mage::helper('storelocator')->getBigImagebyStore ($store->getStorelocatorId()); ?>
+        <?php if($urlImageBig):?>
+        +'<div class="store-locator-item-image"><img src="<?php echo $urlImageBig ?>" width="70px" height="100px"/> </div>'
+        <?php endif; ?>                            
+        +'<div class="clear"></div>'
+        +'</div> '
+        +'<div class="magestore-storelocator-getdirection" id="magestore-storelocator-getdirection-<?php echo $store->getStorelocatorId();?>" style="display: none;">'
+        +'<div onclick ="javascript:showDirections(<?php echo $store->getStorelocatorId() ?>)" class="magestore-storelocator-navigation" id="<?php echo 'store-locator-navigation'.$store->getStorelocatorId();?>"><span class="store-locator-navigation_image"></span><font size="-1" color="#ccc">Click here to show direction</font></div>'
+        +'<div onclick ="javascript:hideDirections(<?php echo $store->getStorelocatorId() ?>)" class="magestore-storelocator-navigation-up" id="<?php echo 'store-locator-navigation-up'.$store->getStorelocatorId();?>" style="display:none"></div>'
+        +'<div class="magestore-storelocator-directionsPanel" id="magestore-storelocator-directionsPanel-<?php echo $store->getStorelocatorId()?>" style="display: none;"></div>'
+        +'</div>'
+        +'<div class="clear"></div>';
+                                    
+        <?php if ($coordinates): ?>
+        storeObject = new StorelocatorObject(html, google.maps.geometry.spherical.computeDistanceBetween (pointFind, marker_point), storeId, null)
+        storeloactor.placeMarker(marker_point, store_info, storeId, image,zoomLevel, infoWindow, 1, storeObject);                                    
+        <?php else: ?>
+        storeObject = new StorelocatorObject(html, 0, storeId, null)
+        storeloactor.placeMarker(marker_point, store_info, storeId, image,zoomLevel, infoWindow, 0, storeObject);                                    
+        <?php endif;?>                 
+        arrayHtml.push(storeObject);
+                   //]]>
+    </script>                
+<?php } ?>
+<script type="text/javascript">
+    //<![CDATA[          
+    var renderHtml='';
+   
+    function fillterByTag(storeids, x, tagid){     
+      setTagActiveForm(tagid);
+      checkShow = x;  
+      renderhtmlToTag ='';
+       if (checkShow){
+           id_array = storeids.split(",").map(Number);
+            for(j=0;j<arrayHtml.length;j++){
+                for(k=0;k<id_array.length;k++){
+                    if(arrayHtml[j].storeId==id_array[k]){
+                        arrayHtml[j].marker.setMap(storeloactor.map);
+                        renderhtmlToTag += arrayHtml[j].html;
+                        break;
+                    }else{
+                        arrayHtml[j].marker.setMap(null);
+                    }
+                }
+
+            }            
+        }else{
+            for(i = 0; i<arrayHtml.length;i ++){
+                renderhtmlToTag += arrayHtml[i].html;
+                arrayHtml[i].marker.setMap(storeloactor.map);
+            }           
+        }
+        infoWindow.close();
+        storeloactor.directionsDisplay.setMap(null);;      
+        storeloactor.setBoundFill();
+        document.getElementById("store-locator-list-store").innerHTML=htmlInput+renderhtmlToTag ;  
+    }
+    <?php if ($sortDefault == 'distance'):?>
+        arrayHtml.sort(function(a,b){return a.distance-b.distance});
+    <?php endif; ?>
+    for(i = 0; i<arrayHtml.length;i ++){
+         renderHtml += arrayHtml[i].html;
+    } 
+    
+    document.getElementById("store-locator-list-store").innerHTML=htmlInput+renderHtml ;  
+    //]]>
+</script> 
+<script type="text/javascript">
+    //<![CDATA[    
+       function showDirections(id){                                
+            $('store-locator-navigation-up'+id).style.display = 'block';
+            $('magestore-storelocator-directionsPanel-'+id).style.display = 'block';                                
+            $('store-locator-navigation'+id).style.display = 'none';
+            
+        }
+        function hideDirections(id){
+            $('magestore-storelocator-directionsPanel-'+id).style.display = 'none';
+            $('store-locator-navigation-up'+id).style.display = 'none';
+            $('store-locator-navigation'+id).style.display = 'block';
+        }                                            
+        <?php if ($coordinates): ?>            
+            storeloactor.createMarker(pointFind);
+            function setActive(id) {
+                storeloactor.setActiveForm(id, 1);    
+                for(i=0 ; i<arrayInfo.length; i++){
+                    if(arrayInfo[i].storeId == id){
+                        storeloactor.directionsDisplay.setMap(storeloactor.map);    
+                        infoWindow.setContent(arrayInfo[i].html);
+                        infoWindow.setPosition(arrayInfo[i].point);                      
+                        storeloactor.map.setCenter(arrayInfo[i].point);            
+                        infoWindow.open(storeloactor.map);
+                        if(arrayInfo[i].zoom!=0){
+                            storeloactor.map.setZoom(arrayInfo[i].zoom);
+                        }
+                        break;
+                    }
+                }                
+            }
+        <?php else: ?>
+            function setActive(id) {
+                storeloactor.setActiveForm(id, 0);   
+                for(i=0 ; i<arrayInfo.length; i++){
+                    if(arrayInfo[i].storeId == id){
+                        storeloactor.directionsDisplay.setMap(storeloactor.map);
+                        infoWindow.setContent(arrayInfo[i].html);
+                        infoWindow.setPosition(arrayInfo[i].point);                      
+                        storeloactor.map.setCenter(arrayInfo[i].point);            
+                        infoWindow.open(storeloactor.map);
+                        if(arrayInfo[i].zoom!=0){
+                            storeloactor.map.setZoom(arrayInfo[i].zoom);
+                        }
+                        break;
+                    }
+                }                
+            }
+        <?php endif; ?>
+            storeloactor.setBoundFill();
+        <?php if($coordinates):?>
+            storeloactor.createRadius(<?php echo $levleRadiusConvert;?>);      
+            //storeloactor.calcRoute(10, 2);
+         <?php endif; ?>                     
+            //]]>
+</script> 
+           
+            <?php if (count($taglist)): ?>
+                    <div class="store-locator-tag">
+                    <span class="store-locator-span-tag"><?php echo $this->__('Filter by Tags') ?></span>
+					<ul>
+						<li style="float: left; margin-right: 10px">
+							<a id="storelocator_tag_0" href="javascript:void(0)" class="tag_active" onclick="javascript:fillterByTag('all', 0,0)"><?php echo $this->__('Show All'); ?></a>
+						</li>
+						<?php $tagnumber = 1; ?>  
+						<?php foreach ($taglist as $tag): ?> 
+						<li style="float: left; margin-right: 10px">
+							<a id="<?php echo 'storelocator_tag_'.$tagnumber;?>" href="javascript:void(0)" onclick="javascript:fillterByTag('<?php echo $tag['ids']; ?>', 1,<?php echo $tagnumber; $tagnumber++ ?>)"><?php echo $tag['value']; ?></a>
+						</li>
+						<?php endforeach; ?>						
+					</ul>                    
+                    <div class="clear"></div>
+                </div>        
+            <?php endif; ?>
+        <?php
+    } else {
+        echo $this->__('Store Not Found!');
+    }
+    ?>
+        <script type="text/javascript">
+           function setTagActiveForm(id){
+            $$('.store-locator-tag a').invoke('removeClassName', 'tag_active');               
+            $('storelocator_tag_'+ id).addClassName('tag_active');
+            }
+        </script>
+</div>
+<div class="clear"></div>

@@ -1,0 +1,241 @@
+<div class="std testimonials_container">
+    <h1 class="testimonials_title" style="color: #e49e2e;"><?php echo $this->__("<span>Our</span> Testimonials"); ?></h1>
+          <!-- <div class="form-button" style="float:right;">
+            <button class="button" title="<?php //echo Mage::helper('testimonialmanager')->__('Let us know how we are doing') ?>" onclick="javascript:window.location.assign('<?php echo $this->_getWriteUrl()?>')"><span><span><?php //echo Mage::helper('testimonialmanager')->__('Click Here To Write') ?></span></span></button>
+        </div>-->
+    <div class="testimonials-thumb">
+        
+       
+        <?php $read = Mage::getSingleton('core/resource')->getConnection('core_read'); 
+        //$results = $read->fetchAll("SELECT * FROM `testimonialmanager` WHERE `menufecturer_id`='3' and status='2' ORDER BY testimonial_id desc LIMIT 3");
+        $results = $read->fetchAll("SELECT testimonial_text,testimonial_website,testimonial_img,rating_summary,testimonial_company FROM testimonialmanager WHERE menufecturer_id='3' and status='2' ORDER BY RAND() LIMIT 10");
+       
+        foreach($results as $result){  ?>
+         <div class="testimonial_<?php $i++; echo (is_int($i/2) ? "r " : "l ")?>">
+                            <?php if ($result['testimonial_img']): ?>
+                                <?php endif; ?>
+                                    <div class="testimonial_text">
+                                        <div class="description-box">
+                                            <?php echo $result['testimonial_text']; ?>
+                                        
+                                            <?php if($result['testimonial_website'] != '') { ?> <span><?php echo '<br>'.$result['testimonial_website']; ?></span>
+                                                        <?php } ?>
+                                        </div>
+                                         
+                                        
+                                        <div class="rating-box">
+                                            <div class="rating" style="width:<?php echo ceil($result['rating_summary'] * 20) ?>%;"></div>
+                                        </div>
+                                        <div class="testimonial_image"><?php if($result['testimonial_img'] != '') { ?> <img alt="<?php echo $result['testimonial_name']; ?>" src="<?php echo Mage::getBaseUrl('media').'/'.$result['testimonial_img']; ?>" width="120" height="120" /> <?php }  ?>   <span><?php echo $result['testimonial_name']; ?></span>
+                                          <?php if($result['testimonial_company'] != '') { ?> <span style="display: inline;"><?php echo '<br>'.$result['testimonial_company']; ?></span>
+                                                <?php }  ?>  
+                                        </div>
+                                         
+                                    </div>
+                                    
+                        </div>
+                         
+<?php } ?>
+    
+                            <div class="clearer"></div>
+    </div>
+
+<!--------aneel-------->
+<div class="testimonial-page">
+<form id="my-custom-form" action="<?php echo $this->_getSubmitUrl() ?>" method="post" enctype="multipart/form-data">
+            <table cellspacing="0" class="form-list" width="500">
+                <tbody>
+                   <tr> <!-- for store name and brand name-->
+                        <td class="label"><label for="testimonial_brand"><?php //echo Mage::helper('testimonialmanager')->__('Contact Name') ?> </label></td>
+                        <td class="value"><input type="hidden" class="" value="3" name="menufecturer_id" id="testimonial_name"></td>
+                    </tr>
+                    <tr> 
+                        <td class="label"><label for="testimonial_brand"><?php //echo Mage::helper('testimonialmanager')->__('Contact Name') ?> </label></td>
+                        <td class="value"><input type="hidden" class="" value="3" name="stores" id="testimonial_name"></td>
+                    </tr>
+                    <!-- store name and brand name end-->
+                    <tr>
+                        <td class="label"><label for="testimonial_name"><?php echo Mage::helper('testimonialmanager')->__('Contact Name') ?> <span class="required"></span></label></td>
+                        <td class="value"><input type="text" class=" input-text required-entry" value="" name="testimonial_name" id="testimonial_name"></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="testimonial_company"><?php echo Mage::helper('testimonialmanager')->__('Product Name') ?></label></td>
+                        <td class="value"><input type="text" class="required-entry input-text" value="" name="testimonial_company" id="testimonial_company"></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="testimonial_email"><?php echo Mage::helper('testimonialmanager')->__('Email') ?> <span class="required"></span></label></td>
+                        <td class="value"><input type="text" class=" validate-email input-text required-entry" value="" name="testimonial_email" id="testimonial_email"></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="testimonial_website"><?php echo Mage::helper('testimonialmanager')->__('City And State') ?><span class="required"></span></label></td>
+                        <!--<td class="value"><input type="text" class="validate-clean-url input-text" value="" name="testimonial_website" id="testimonial_website"></td>-->
+                        <td class="value"><input type="text" class="input-text required-entry" value="" name="testimonial_website" id="testimonial_website"></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="testimonial_img"><?php echo Mage::helper('testimonialmanager')->__('Image') ?></label></td>
+                        <td class="value"><input type="file" class="input-file" name="testimonial_img" id="testimonial_img"></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="detailed_rating" class="rating"><?php echo Mage::helper('testimonialmanager')->__('Rating') ?> <span class="required"></span></label></td>
+                        <td class="value">
+                            <span id="detailed_rating"><div id="rating_detail"><div class="product-review-box">
+                            <table cellspacing="0" id="product-review-table" width="250">
+                                <thead>
+                                <tr>
+                                        <th><span class="nobr"><b><?php echo '1 star'; ?></b> </span></th>
+                  <?php for ($i=2; $i<=5; $i++) { ?>
+                                        <th><span class="nobr"><b><?php echo $i . ' stars'; ?></b> </span></th>
+                                    <?php } ?>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd last">
+                    <?php for ($i=1; $i<=5; $i++) { ?>
+                                            <td<?php if($i == 5): ?> class="last"<?php endif; ?>><input type="radio" name="rating_summary" id="rating_<?php echo $i;?>" value="<?php echo $i ?>" checked="checked" /></td>
+                                        <?php } ?>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div></div></span>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="label"><label for="testimonial_text"><?php echo Mage::helper('testimonialmanager')->__('Text') ?> <span class="required"></span></label></td>
+                        <td class="value">
+                            <textarea class=" required-entry textarea" cols="15" rows="2" style="width:100%;height:200px;" title="Text" name="testimonial_text" id="testimonial_text"></textarea>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        <div class="g-recaptcha" id="g-recaptcha-response" data-sitekey="6Le-wRYUAAAAAM3Cyvc2IssrUhffw-Q9pzk6xP_x"></div>
+             <?php echo $this->getChildHtml('form.additional.info'); ?>
+            <div class="buttons-set">
+                <button class="button" name="submit" title="Submit Review" type="submit"><span><span><?php echo Mage::helper('testimonialmanager')->__('Submit Testimonial') ?></span></span></button>
+            </div>
+        </form>
+
+<?php
+
+ foreach($results as $result){ 
+$count==1;
+if($count>=3):
+  ?>
+         <hr><div class="testimonial_<?php $i++; echo (is_int($i/2) ? "r " : "l ")?>">
+                            <?php if ($result['testimonial_img']): ?>
+                                <?php endif; ?>
+                                    <div class="testimonial_text">
+                                        <div class="description-box">
+                                            <?php echo $result['testimonial_text']; ?>
+                                        
+                                            <?php if($result['testimonial_website'] != '') { ?> <span><?php echo '<br>'.$result['testimonial_website']; ?></span>
+                                                        <?php } ?>
+                                        </div>
+                                         
+                                        
+                                        <div class="rating-box">
+                                            <div class="rating" style="width:<?php echo ceil($result['rating_summary'] * 20) ?>%;"></div>
+                                        </div>
+                                        <div class="testimonial_image"><?php if($result['testimonial_img'] != '') { ?> <img alt="<?php echo $result['testimonial_name']; ?>" src="<?php echo Mage::getBaseUrl('media').'/'.$result['testimonial_img']; ?>" width="120" height="120" /> <?php }  ?>   <span><?php echo $result['testimonial_name']; ?></span>
+                                          <?php if($result['testimonial_company'] != '') { ?> <span style="display: inline;"><?php echo '<br>'.$result['testimonial_company']; ?></span>
+                                                <?php }  ?>  
+                                        </div>
+                                         
+                                    </div>
+                                    
+                        </div>
+                         
+<?php  endif; $count++; } ?>
+
+
+
+        <script type="text/javascript">
+  jQuery("form").submit(function(event) {
+
+   var recaptcha = jQuery("#g-recaptcha-response").val();
+   if (recaptcha === "") {
+      event.preventDefault();
+      alert("Please check the recaptcha");
+   }
+});
+</script>
+    
+
+        
+        <script type="text/javascript">
+            //< ![CDATA[
+                var customForm = new VarienForm('my-custom-form');
+            //]]>
+        </script>
+        <script>jQuery.noConflict();</script>
+      </div>
+<!--------aneel end------>
+
+
+
+
+</div>
+<!--<script type="text/javascript">
+<script type="text/javascript">
+    //< ![CDATA[
+        var customForm = new VarienForm('my-custom-form');
+    //]]>
+</script>-->
+
+<!--<script type="text/javascript">
+//<![CDATA[
+    var testimonialForm = new VarienForm('testimonialForm', true);
+//]]>
+</script>-->
+
+<style>
+.testimonial_l,.testimonial_r{padding: 7px 15px !important; }
+</style>
+<script>
+equalheight = function(container){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+ $(container).each(function() {
+
+   $el = $(this);
+   $($el).height('auto')
+   topPostion = $el.position().top;
+
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+}
+
+$(window).load(function() {
+  equalheight('.testimonial_l, .testimonial_r');
+});
+
+
+$(window).resize(function(){
+  equalheight('.testimonial_l, .testimonial_r');
+});
+
+</script>
+<!--<script type="text/javascript">
+//<![CDATA[
+    //var testimonialForm = new VarienForm('testimonialForm', true);
+//]]>
+</script>-->

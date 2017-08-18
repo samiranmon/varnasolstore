@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Exinent_CustomerActivation>
+            <version>0.1.5</version>
+        </Exinent_CustomerActivation>
+    </modules>
+    <global>
+        <rewrite>
+            <customeractivation>
+                <from><![CDATA[#^/customer/account/createpost/#]]></from>
+                <to>/customerActivation/account/createpost/</to>
+            </customeractivation>
+        </rewrite>
+        <models>
+            <customeractivation>
+                <class>Exinent_CustomerActivation_Model</class>
+                <resourceModel>customeractivation_resource</resourceModel>
+            </customeractivation>
+            <customeractivation_resource>
+                <class>Exinent_CustomerActivation_Model_Resource</class>
+            </customeractivation_resource>
+            <customer>			
+                <rewrite>
+                    <customer>Exinent_CustomerActivation_Model_Customer</customer>
+                </rewrite>
+            </customer>
+            <sales>
+                <rewrite>
+                    <order>Exinent_CustomerActivation_Model_Order</order>
+                </rewrite>
+            </sales>
+        </models>
+        <helpers>
+            <customeractivation>
+                <class>Exinent_CustomerActivation_Helper</class>
+            </customeractivation>
+        </helpers>
+        <blocks>
+            <customeractivation>
+                <class>Exinent_CustomerActivation_Block</class>
+            </customeractivation>
+            <page>
+                <rewrite>
+                    <html_topmenu>Exinent_CustomerActivation_Block_Page_Html_Topmenu</html_topmenu>
+                </rewrite>
+            </page>
+
+              
+      <adminhtml>
+         <rewrite>
+             <widget_form_renderer_fieldset>Exinent_CustomerActivation_Block_Adminhtml_Rewrite_Fieldset</widget_form_renderer_fieldset>
+        </rewrite>
+      </adminhtml>
+   
+   
+
+        </blocks>
+        <resources>
+            <customeractivation_setup>
+                <setup>
+                    <module>Exinent_CustomerActivation</module>
+                    <class>Mage_Customer_Model_Entity_Setup</class>
+                </setup>
+            </customeractivation_setup>
+        </resources>
+        <template>
+            <email>
+                <customer_customeractivation_registration_admin_template translate="label" module="customeractivation">
+                    <label>Customer Registration Admin Notification</label>
+                    <file>Exinent/customeractivation/customer_registration_admin.html</file>
+                    <type>html</type>
+                </customer_customeractivation_registration_admin_template>
+                <customer_customeractivation_activation_template translate="label" module="customeractivation">
+                    <label>Customer Activation Notification</label>
+                    <file>Exinent/customeractivation/customer_activation.html</file>
+                    <type>html</type>
+                </customer_customeractivation_activation_template>
+            </email>
+        </template>
+        <events>
+
+
+            <customer_save_before>
+                <observers>
+                    <customeractivation>
+                        <type>singleton</type>
+                        <class>customeractivation/observer</class>
+                        <method>customerSaveBefore</method>
+                    </customeractivation>
+                </observers>
+            </customer_save_before>
+            <customer_save_after>
+                <observers>
+                    <customeractivation>
+                        <type>model</type>
+                        <class>customeractivation/observer</class>
+                        <method>customerSaveAfter</method>
+                    </customeractivation>
+                </observers>
+            </customer_save_after>
+
+        </events>
+    </global>
+    <frontend>
+
+        <events>
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <customeractivation>
+                        <type>singleton</type>
+                        <class>customeractivation/observer</class>
+                        <method>page_block_html_topmenu_gethtml_before</method>
+                    </customeractivation>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+        </events>
+        <routers>
+            <customeractivation>
+                <use>standard</use>
+                <args>
+                    <module>Exinent_CustomerActivation</module>
+                    <frontName>customerActivation</frontName>
+                </args>
+            </customeractivation>
+
+            <cms>
+                <use>standard</use>
+                <args>
+                    <modules>
+                        <Exinent_CustomerActivation before="Mage_Cms">Exinent_CustomerActivation</Exinent_CustomerActivation>
+                    </modules>
+                </args>
+            </cms>
+            <catalog> 
+                <args> 
+                    <modules> 
+                        <Exinent_CustomerActivation before="Mage_Catalog">Exinent_CustomerActivation</Exinent_CustomerActivation>
+                    </modules> 
+                </args> 
+            </catalog> 
+        </routers>
+        <layout>
+            <updates>
+                <customeractivation>
+                    <file>customerActivation.xml</file>
+                </customeractivation>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <customeractivation>
+                <use>admin</use>
+                <args>
+                    <module>Exinent_CustomerActivation</module>
+                    <frontName>customeractivation</frontName>
+                </args>
+            </customeractivation>
+        </routers>
+    </admin>
+    <frontend>
+        <events>
+            <customer_login>
+                <observers>
+                    <customeractivation>
+                        <type>singleton</type>
+                        <class>customeractivation/observer</class>
+                        <method>customerLogin</method>
+                    </customeractivation>
+                </observers>
+            </customer_login>
+            <sales_convert_quote_address_to_order>
+                <observers>
+                    <customeractivation>
+                        <type>singleton</type>
+                        <class>customeractivation/observer</class>
+                        <method>salesCovertQuoteAddressToOrder</method>
+                    </customeractivation>
+                </observers>
+            </sales_convert_quote_address_to_order>
+        </events>
+        <translate>
+            <modules>
+                <Exinent_CustomerActivation>
+                    <files>
+                        <default>Exinent_CustomerActivation.csv</default>
+                    </files>
+                </Exinent_CustomerActivation>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <customer>
+            <customeractivation>
+                <disable_ext>0</disable_ext>
+                <always_active_in_admin>1</always_active_in_admin>
+                <alert_admin>1</alert_admin>
+                <admin_email></admin_email>
+                <registration_admin_template>customer_customeractivation_registration_admin_template</registration_admin_template>
+                <alert_customer>0</alert_customer>
+                <activation_template>customer_customeractivation_activation_template</activation_template>
+                <activation_status_default>0</activation_status_default>
+                <always_send_admin_email>0</always_send_admin_email>
+                <require_activation_for_specific_groups>0</require_activation_for_specific_groups>
+                <require_activation_groups></require_activation_groups>
+            </customeractivation>
+        </customer>
+        <payment>
+            <net30>
+                <active>0</active>
+                <model>customeractivation/net30</model>
+                <order_status>pending</order_status>
+                <title>NET 30</title>
+                <group>offline</group>
+                <allowspecific>0</allowspecific>
+            </net30>
+            <net15>
+                <active>0</active>
+                <model>customeractivation/net15</model>
+                <order_status>pending</order_status>
+                <title>NET 15</title>
+                <group>offline</group>
+                <allowspecific>0</allowspecific>
+            </net15>
+        </payment>
+
+        <carriers>
+            <thirdpartyfedex>
+                <active>1</active>
+                
+                <model>Exinent_CustomerActivation_Model_Thirdpartyfedex</model>               
+                <title>3rd Party Fed Ex</title>                
+                <sort_order>10</sort_order>                
+                <sallowspecific>0</sallowspecific>
+            </thirdpartyfedex>
+            
+            <thirdpartyups>
+                <active>1</active>                
+                <model>Exinent_CustomerActivation_Model_Thirdpartyups</model>                
+                <title>3rd Party UPS</title>                
+                <sort_order>10</sort_order>               
+                <sallowspecific>0</sallowspecific>
+            </thirdpartyups>
+			
+        </carriers>
+    </default>
+
+
+       
+          <adminhtml>
+        <layout>
+            <updates>
+                <customeractivation>
+                    <file>customerActivation.xml</file>
+                </customeractivation>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Exinent_CustomerActivation>
+                    <files>
+                        <default>Exinent_CustomerActivation.csv</default>
+                    </files>
+                </Exinent_CustomerActivation>
+            </modules>
+        </translate>
+        <events>
+            <!-- The massaction block can't be added in the block abstract event, this needs to be used -->
+            <adminhtml_block_html_before>
+                <observers>
+                    <customeractivation>
+                        <type>model</type>
+                        <class>customeractivation/observer</class>
+                        <method>adminhtmlBlockHtmlBefore</method>
+                    </customeractivation>
+                </observers>
+            </adminhtml_block_html_before>
+            
+            <!-- Add attribute to grid collection -->
+            <eav_collection_abstract_load_before>
+                <observers>
+                    <customeractivation>
+                        <type>model</type>
+                        <class>customeractivation/observer</class>
+                        <method>eavCollectionAbstractLoadBefore</method>
+                    </customeractivation>
+                </observers>
+            </eav_collection_abstract_load_before>
+
+        
+        </events>
+    </adminhtml>
+    <phpunit>
+        <suite>
+            <modules>
+                <Exinent_CustomerActivation/>
+            </modules>
+        </suite>
+    </phpunit>
+</config>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<quickorder translate="title" module="quickorder">
+											<title>Quickorder</title>
+											<sort_order>0</sort_order>
+										</quickorder>
+									</children>
+									
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</config>

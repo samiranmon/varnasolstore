@@ -1,0 +1,489 @@
+<?php ?>
+<div class="account-create">
+    <div class="page-title">
+        <h1><?php echo $this->__('Create WholesaleAccount') ?></h1>
+    </div>
+    <?php
+    $email_error = Mage::getSingleton('core/session')->getEmailError();
+    $url = Mage::getBaseUrl() . 'customer/account/forgotpassword/';
+    if ($email_error) {
+        $this->getMessagesBlock()->addError('There is already an account with this email address. If you are sure that it is your email address, <a href="' . $url . '">click here</a> to get your password and access your account.');
+        echo $this->getMessagesBlock()->getGroupedHtml();
+        Mage::getSingleton('core/session')->unsEmailError();
+    }
+    ?>
+    <?php echo $this->getChildHtml('form_fields_before') ?>
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="form-validate" onsubmit="return Validate(this);" name="frmSample" enctype="multipart/form-data">
+        <div class="fieldset">
+            <input type="hidden" name="customer_activation" value="customerActivation" />
+            <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
+            <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
+            <h2 class="legend"><?php echo $this->__('Personal Information') ?></h2>
+            <ul class="form-list">
+                <input type="hidden" name="group_id" id="group_id" value="2"/>
+                <?php Mage::getSingleton('customer/session')->setNewRegistration(1); ?>
+                <li class="fields">
+                    <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->toHtml() ?>
+                </li>
+                <li>
+                    <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="email" id="email_address" value="<?php echo $this->htmlEscape($this->getFormData()->getEmail()) ?>" title="<?php echo $this->__('Email Address') ?>" class="input-text validate-email required-entry" />
+                    </div>
+                </li>
+                <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
+                <?php if ($_dob->isEnabled()): ?>
+                    <li><?php echo $_dob->setDate($this->getFormData()->getDob())->toHtml() ?></li>
+                <?php endif ?>
+                <?php $_taxvat = $this->getLayout()->createBlock('customer/widget_taxvat') ?>
+                <?php if ($_taxvat->isEnabled()): ?>
+                    <li><?php echo $_taxvat->setTaxvat($this->getFormData()->getTaxvat())->toHtml() ?></li>
+                <?php endif ?>
+                <?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
+                <?php if ($_gender->isEnabled()): ?>
+                    <li><?php echo $_gender->setGender($this->getFormData()->getGender())->toHtml() ?></li>
+                <?php endif ?>
+            </ul>
+        </div>
+
+        <div class="fieldset">
+
+            <ul class="form-list">
+                <?php $addressconfig = Mage::getStoreConfig('customer/customeractivation/address_field', Mage::app()->getStore()); ?>
+                <?php if ($addressconfig == 1): ?>
+                    <input type="hidden" name="create_address" value="1" />
+                    <li class="fields">
+                        <div class="field">
+                            <label for="company"><?php echo $this->__('Company') ?></label>
+                            <div class="input-box">
+                                <input type="text" name="company" id="company" value="<?php echo $this->htmlEscape($this->getFormData()->getCompany()) ?>" title="<?php echo $this->__('Company') ?>" class="input-text" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="telephone" class="required"><em>*</em><?php echo $this->__('Telephone') ?></label>
+                            <div class="input-box">
+                                <input type="text" name="telephone" id="telephone" value="<?php echo $this->htmlEscape($this->getFormData()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text required-entry" />
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
+                    <li class="wide">
+                        <label for="street_1" class="required"><em>*</em><?php echo $this->__('Address line 1') ?></label>
+                        <div class="input-box">
+                            <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(1)) ?>" title="<?php echo $this->__('Street Address') ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
+                        </div>
+                    </li>
+
+
+                    <?php $_streetValidationClass = trim(str_replace('required-entry', '', $_streetValidationClass)); ?>
+
+                    <?php for ($_i = 2, $_n = $this->helper('customer/address')->getStreetLines(); $_i <= $_n; $_i++): ?>
+                        <li class="wide">
+                            <label for="street_1"><?php echo $this->__('Address line 2') ?></label>
+                            <div class="input-box">
+                                <input type="text" name="street[]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet($_i)) ?>" title="<?php echo $this->__('Street Address %s', $_i) ?>" id="street_<?php echo $_i ?>" class="input-text <?php echo $_streetValidationClass ?>" />
+                            </div>
+                        </li>
+
+                        <li class="fields">
+                            <div class="field">
+                                <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                                <div class="input-box">
+                                    <input type="text" name="city" value="<?php echo $this->htmlEscape($this->getFormData()->getCity()) ?>" title="<?php echo $this->__('City') ?>" class="input-text required-entry" id="city" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="region_id" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
+                                <div class="input-box">
+                                    <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
+                                        <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                                    </select>
+                                    <script type="text/javascript">
+                                //<![CDATA[
+                                $('region_id').setAttribute('defaultValue', "<?php echo $this->getFormData()->getRegionId() ?>");
+                                //]]>
+                            </script>
+                                    <input type="text" id="region" name="region" value="<?php echo $this->htmlEscape($this->getRegion()) ?>" title="<?php echo $this->__('State/Province') ?>" class="input-text" style="display:none;" />
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fields">
+                            <div class="field">
+                                <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
+                                <div class="input-box">
+                                    <input type="text" name="postcode" value="<?php echo $this->htmlEscape($this->getFormData()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international required-entry" />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
+                                <div class="input-box">
+                                    <?php echo $this->getCountryHtmlSelect() ?>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fields">
+                            <input type="hidden" name="default_billing" value="1" />
+                            <input class="checkbox" id="termas" type="radio" name="default_shipping" onClick="shippingCheck()" />
+                            <label for="termas"><?php echo $this->__('Select if Billing and Shipping address are same') ?></label><br/><br/>
+                            <input class="checkbox" id="notcheck" type="radio" name="default_shipping" onclick="showMe('div_1', this)"/>
+                            <label for="notcheck"><?php echo $this->__('Select if Billing and Shipping address are not same') ?></label>
+                        </li>
+                        <div id="div_1" class="fieldset" style="display:none">
+							<input type="hidden" name="both_not_same" id="both_not_same" value="1" />
+                            <div>  
+                                <label for="shipping_address">Default Shipping Address</label>
+                            </div>
+                            <br/>
+                            <div>
+                                <ul class="form-list">
+                                    <li class="fields">
+                                        <?php /*<div class="field">
+                                            <label for="company"class="required"><em>*</em><?php echo $this->__('Company') ?></label>
+                                            <div class="input-box">
+                                                <input type="text" name="shipping[company]" id="company" value="<?php echo $this->htmlEscape($this->getFormData()->getCompany()) ?>" title="<?php echo $this->__('Company') ?>" class="input-text required-entry" />
+                                            </div>
+                                        </div> */?>
+                                        <div class="field">
+                                            <label for="telephone" class="required"><em>*</em><?php echo $this->__('Telephone') ?></label>
+                                            <div class="input-box">
+                                                <input type="text" name="shipping[telephone]" id="telephone" value="<?php echo $this->htmlEscape($this->getFormData()->getTelephone()) ?>" title="<?php echo $this->__('Telephone') ?>" class="input-text required-entry" />
+                                            </div>
+                                        </div> 
+                                    </li>
+                                    <?php $_streetValidationClass = $this->helper('customer/address')->getAttributeValidationClass('street'); ?>
+                                    <li class="wide">
+                                        <label for="street_1" class="required"><em>*</em><?php echo $this->__('Address line 1') ?></label>
+                                        <div class="input-box">
+                                            <input type="text" name="shipping[street][]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet(1)) ?>" title="<?php echo $this->__('Street Address') ?>" id="street_1" class="input-text <?php echo $_streetValidationClass ?>" />
+                                        </div>
+                                    </li>
+                                    <?php $_streetValidationClass = trim(str_replace('required-entry', '', $_streetValidationClass)); ?>
+                                    <?php for ($_i = 2, $_n = $this->helper('customer/address')->getStreetLines(); $_i <= $_n; $_i++): ?>
+                                        <li class="wide">
+                                            <label for="street_1"><?php echo $this->__('Address line 2') ?></label>
+                                            <div class="input-box">
+                                                <input type="text" name="shipping[street][]" value="<?php echo $this->escapeHtml($this->getFormData()->getStreet($_i)) ?>" title="<?php echo $this->__('Street Address %s', $_i) ?>" id="street_<?php echo $_i ?>" class="input-text <?php echo $_streetValidationClass ?>" />
+                                            </div>
+                                        </li>
+                                    <?php endfor; ?>
+                                    <li class="fields">
+                                        <div class="field">
+                                            <label for="city" class="required"><em>*</em><?php echo $this->__('City') ?></label>
+                                            <div class="input-box">
+                                                <input type="text" name="shipping[city]" value="<?php echo $this->htmlEscape($this->getFormData()->getCity()) ?>" title="<?php echo $this->__('City') ?>" class="input-text required-entry" id="city" />
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <label for="shipping[region_id]" class="required"><em>*</em><?php echo $this->__('State/Province') ?></label>
+                                            <div class="input-box">
+                                                <select id="shipping[region_id]" name="shipping[region_id]" title="<?php echo $this->__('State/Province') ?>" class="validate-select" style="display:none;">
+                                                    <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
+                                                </select>
+                                                 <script type="text/javascript">
+                                //<![CDATA[
+                                $('shipping[region_id]').setAttribute('defaultValue', "<?php echo $this->getFormData()->getRegionId() ?>");
+                                //]]>
+                            </script>
+                                                <input type="text" id="shipping[region]" name="shipping[region]" value="<?php echo $this->htmlEscape($this->getRegion()) ?>" title="<?php echo $this->__('State/Province') ?>" class="input-text" style="display:none;" />
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="fields">
+                                        <div class="field">
+                                            <label for="zip" class="required"><em>*</em><?php echo $this->__('Zip/Postal Code') ?></label>
+                                            <div class="input-box">
+                                                <input type="text" name="shipping[postcode]" value="<?php echo $this->htmlEscape($this->getFormData()->getPostcode()) ?>" title="<?php echo $this->__('Zip/Postal Code') ?>" id="zip" class="input-text validate-zip-international required-entry" />
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="country" class="required"><em>*</em><?php echo $this->__('Country') ?></label>
+                                            <div class="input-box">
+                                                <?php echo $this->getCountryHtmlSelect(null, 'shipping[country_id]', 'shipping[country_id]', 'Shipping Country') ?>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>  
+                            </div>
+                        </div>
+                    <?php endfor; ?>
+                <?php endif; ?>
+                <li class="fields">
+                    <div class="field">
+                        <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                        <div class="input-box">
+                            <input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password" />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
+                        <div class="input-box">
+                            <input type="password" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" id="confirmation" class="input-text required-entry validate-cpassword" />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <label for="accountpayble_email" ><?php echo $this->__('Accounts Payable Email Address') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="accountpayble_email" id="email_address" value="<?php echo $this->htmlEscape($this->getFormData()->getEmail()) ?>" title="<?php echo $this->__('Accounts Payable Email Address') ?>" class="input-text validate-email " />
+                    </div>
+                </li>
+                <li>
+                    <label for="storetype" ><?php echo $this->__('Store Type') ?></label>
+                    <div class="input-box">
+                        <select id="storetype" name="storetype" title="<?php echo $this->__('Store Type') ?>" class="select" >
+                            <option selected="selected"value="default">Please select store type</option>
+                            <option value="outdoor">Outdoor</option>
+                            <option value="surf">Surf</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="naturalfood">Natural_Food</option>
+                            <option value="wellness">Wellness - Yoga/Pilates/Medical/Spa/Beauty</option>
+                            <option value="hospitalityh">Hospitality - Hotels/Tourism</option>
+                            <option value="sportinggoods">Sporting_Goods</option>
+                            <option value="giftshop">Gift_Shop</option>
+                            <option value="footwear">Footwear_Only</option>
+                        </select>
+
+                    </div>
+                </li>
+                <li>
+                    <label for="website_url" ><?php echo $this->__('Website (If Any)') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="website_url" id="website_url"  title="<?php echo $this->__('Website URL') ?>" class="input-text validate-clean-url" />
+                    </div>
+                </li>
+                <li>
+                    <label for="iswebsitelive" ><?php echo $this->__('Is Website Live?') ?></label>
+                    <div class="input-box">
+                        <select id="iswebsitelive" name="iswebsitelive" title="<?php echo $this->__('Is Website Live?') ?>" class="select" >
+                            <option selected="selected"value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <label for="datefounded"><?php echo $this->__("Date Founded")."  (mm/dd/yyyy)";?></label>
+                    <div class="input-box">
+                        <input type="text" id="datefounded" name="datefounded" class="input-text" />
+                    </div>
+                    <div id="dateerror"></div>
+                </li>
+                <!-- <li>
+                    <label for="uploadimage"><?php //echo $this->__('Upload Image of store') ?></label>
+                    &nbsp;<input name="MAX_FILE_SIZE" type="hidden" value="2000000" />
+                    <input name="attachment" id="attachment"  type="file" />
+                    <div id="imgerror"></div>
+                </li> -->
+                <li id="payment-terms">
+                    <label for="paymentterms" ><?php echo $this->__('Payment-terms Options') ?></label>
+                    <div class="input-box">
+                        <select id="paymentterms" name="paymentterms" title="<?php echo $this->__('Payment-terms Options') ?>" class="select" >
+                            <option selected="selected"value="default">Please select Payment-terms</option>
+                            <option value="net30">Net30</option>
+                            <option value="net15">Net15</option>
+                        </select>
+                    </div>
+                    <div id ="information_msg" style="display:none;"><?php echo 'if selected net30,please include credit reference'; ?> 
+                        <input name="MAX_FILE_SIZE" type="hidden" value="2000000" />
+                        <input name="net30reference" id="net30reference"  type="file" />
+                    </div>
+                </li>
+                <li id="brandsyoucarry">
+                    <label for="brandsyoucarry" ><?php echo $this->__('Brands youCarry') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="brandsyoucarry[]" id="brandsyoucarry"  value="<?php echo $this->htmlEscape($this->getFormData()->getAccountNumber()) ?>"title="<?php echo $this->__('Account Number') ?>" class="input-text" />
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="brandsyoucarry[]" id="brandsyoucarry"  value="<?php echo $this->htmlEscape($this->getFormData()->getAccountNumber()) ?>"title="<?php echo $this->__('Account Number') ?>" class="input-text" />
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="brandsyoucarry[]" id="brandsyoucarry"  value="<?php echo $this->htmlEscape($this->getFormData()->getAccountNumber()) ?>"title="<?php echo $this->__('Account Number') ?>" class="input-text" />
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="brandsyoucarry[]" id="brandsyoucarry"  value="<?php echo $this->htmlEscape($this->getFormData()->getAccountNumber()) ?>"title="<?php echo $this->__('Account Number') ?>" class="input-text" />
+                    </div>
+                </li>
+                <li id="ups">
+                    <label for="ups number" ><?php echo $this->__('UPS Account number') ?></label>
+                    <div class="input-box">
+                        <input type="text" name="upsnumber" id="account_number"  value="<?php echo $this->htmlEscape($this->getFormData()->getAccountNumber()) ?>"title="<?php echo $this->__('Account Number') ?>" class="input-text" />
+                    </div>
+                </li>
+                <!--       <li class="control">
+                          <input class="checkbox required-entry" id="termas" name="termas"  type="checkbox" value="1" />
+                          <label for="termas" class="required" ><?php echo $this->__('Terms and Conditions') ?></label>
+                </li> -->
+            </ul>
+        </div>
+        <?php if (Mage::getStoreConfig("fontis_recaptcha/recaptcha/customer", Mage::app()->getStore())): ?>
+            <?php echo $this->getChildHtml('recaptcha_box') ?>
+        <?php endif; ?>
+
+        <div class="buttons-set">
+            <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+            <p class="back-link"><a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+            <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+        </div>
+    </form>
+    </div>
+    <script type="text/javascript">
+        jQuery.noConflict();
+        var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
+        function Validate() {
+
+            var dt = document.frmSample.datefounded
+            if (dt.value != '') {
+                if (isDate(dt.value) == false) {
+                    dt.focus()
+                    return false
+                }
+            }
+            var fup = document.getElementById('attachment');
+            var fileName = fup.value;            
+            var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+            if (fileName != ''){
+                if (ext == "png" || ext == "PNG" || ext == "JPG" || ext == "jpg" || ext == "JPEG" || ext == "jpeg" || ext == "pdf")
+                {
+                    jQuery('#imgerror').removeClass('validation-advice');
+                    document.getElementById("imgerror").innerHTML = "";
+
+                }
+                else
+                {
+                    jQuery('#imgerror').addClass('validation-advice');
+                    document.getElementById("imgerror").innerHTML = "Upload PNG or JPG or PDF Files only";
+                    return false;
+                }
+            }
+        }
+        var paymentterms = jQuery('#paymentterms').val();
+        jQuery(document).ready(function () {
+            jQuery("#paymentterms").change(function (event) {
+                if (jQuery(this).val() == 'net30' || jQuery(this).val() == 'net15') {
+                    jQuery("#information_msg").show();
+                } else {
+                    jQuery("#information_msg").hide();
+                }
+            });
+        });
+        //<![CDATA[
+        var dataForm = new VarienForm('form-validate', true);
+        new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip');
+        new RegionUpdater('country', 'shipping[region]', 'shipping[region_id]', <?php echo $this->helper('directory')->getRegionJson() ?>, undefined, 'zip'); </script>
+
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(); ?>js/jquery-ui-main.js"></script>
+<script type="text/javascript">
+        function showMe() {
+            jQuery("#div_1").css("display", "block");
+            jQuery("#both_not_same").val(0);
+        }
+        function shippingCheck() {
+            jQuery("#div_1").css("display", "none");
+            jQuery("#both_not_same").val(1);
+        }
+</script>
+<style type="text/css">
+    #payment-terms, #brandsyoucarry, #ups{display: none;}
+</style>
+<script language = "Javascript">
+
+    var dtCh = "/";
+    var minYear = 1900;
+    var maxYear = 2100;
+
+    function isInteger(s) {
+        var i;
+        for (i = 0; i < s.length; i++) {
+            // Check that current character is number.
+            var c = s.charAt(i);
+            if (((c < "0") || (c > "9")))
+                return false;
+        }
+        // All characters are numbers.
+        return true;
+    }
+
+    function stripCharsInBag(s, bag) {
+        var i;
+        var returnString = "";
+        // Search through string's characters one by one.
+        // If character is not in bag, append to returnString.
+        for (i = 0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if (bag.indexOf(c) == -1)
+                returnString += c;
+        }
+        return returnString;
+    }
+
+    function daysInFebruary(year) {
+        // February has 29 days in any year evenly divisible by four,
+        // EXCEPT for centurial years which are not also divisible by 400.
+        return (((year % 4 == 0) && ((!(year % 100 == 0)) || (year % 400 == 0))) ? 29 : 28);
+    }
+    function DaysArray(n) {
+        for (var i = 1; i <= n; i++) {
+            this[i] = 31
+            if (i == 4 || i == 6 || i == 9 || i == 11) {
+                this[i] = 30
+            }
+            if (i == 2) {
+                this[i] = 29
+            }
+        }
+        return this
+    }
+
+    function isDate(dtStr) {
+        var daysInMonth = DaysArray(12)
+        var pos1 = dtStr.indexOf(dtCh)
+        var pos2 = dtStr.indexOf(dtCh, pos1 + 1)
+        var strMonth = dtStr.substring(0, pos1)
+        var strDay = dtStr.substring(pos1 + 1, pos2)
+        var strYear = dtStr.substring(pos2 + 1)
+        strYr = strYear
+        if (strDay.charAt(0) == "0" && strDay.length > 1)
+            strDay = strDay.substring(1)
+        if (strMonth.charAt(0) == "0" && strMonth.length > 1)
+            strMonth = strMonth.substring(1)
+        for (var i = 1; i <= 3; i++) {
+            if (strYr.charAt(0) == "0" && strYr.length > 1)
+                strYr = strYr.substring(1)
+        }
+        month = parseInt(strMonth)
+        day = parseInt(strDay)
+        year = parseInt(strYr)
+        if (pos1 == -1 || pos2 == -1) {
+            jQuery('#dateerror').addClass('validation-advice');
+            document.getElementById("dateerror").innerHTML = "The date format should be : mm/dd/yyyy";
+            //alert("The date format should be : mm/dd/yyyy")
+            return false
+        }
+        if (strMonth.length < 1 || month < 1 || month > 12) {
+            jQuery('#dateerror').addClass('validation-advice');
+            document.getElementById("dateerror").innerHTML = "The date format should be : mm/dd/yyyy";
+            return false
+        }
+        if (strDay.length < 1 || day < 1 || day > 31 || (month == 2 && day > daysInFebruary(year)) || day > daysInMonth[month]) {
+            jQuery('#dateerror').addClass('validation-advice');
+            document.getElementById("dateerror").innerHTML = "The date format should be : mm/dd/yyyy";
+            return false
+        }
+        if (strYear.length != 4 || year == 0 || year < minYear || year > maxYear) {
+            jQuery('#dateerror').addClass('validation-advice');
+            document.getElementById("dateerror").innerHTML = "The date format should be : mm/dd/yyyy";
+            return false
+        }
+        if (dtStr.indexOf(dtCh, pos2 + 1) != -1 || isInteger(stripCharsInBag(dtStr, dtCh)) == false) {
+            jQuery('#dateerror').addClass('validation-advice');
+            document.getElementById("dateerror").innerHTML = "The date format should be : mm/dd/yyyy";
+            return false
+        }
+        jQuery('#dateerror').removeClass('validation-advice');
+        document.getElementById("dateerror").innerHTML = "";
+        return true
+    }
+</script>

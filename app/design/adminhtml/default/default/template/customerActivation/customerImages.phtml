@@ -1,0 +1,52 @@
+<?php
+$customerData = $this->getCustomerimages();
+?>
+<div id="customer_info_tabs_customer_edit_tab_action_content">
+
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend">Customer Logo</h4> 
+        </div>
+        <div id="group_fields4" class="fieldset fieldset-wide"> 
+            <div class="hor-scroll">
+                <table class="form-list" cellspacing="0">  
+                    <tbody>  
+                        <tr>  
+
+                            <td>
+                                <?php if ($customerData->getLogoImage() != ''): ?>
+                                    <a target="_blank" href ="<?php echo Mage::getBaseUrl('media') . $customerData->getLogoImage() ?>"><img src  = "<?php echo Mage::getBaseUrl('media') . $customerData->getLogoImage() ?>"/></a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>  
+                    </tbody>  
+                </table> 
+            </div>
+        </div>
+
+    </div>
+    <?php if ($customerData->getNet30Reference() != ''): ?>
+        <div class="entry-edit">
+            <div class="entry-edit-head">
+                <h4 class="icon-head head-edit-form fieldset-legend">Net30 Reference</h4> 
+            </div>
+            <div id="group_fields4" class="fieldset fieldset-wide"> 
+                <div class="hor-scroll">
+                    <table class="form-list" cellspacing="0">  
+                        <tbody>  
+                            <tr>  
+
+                                <td>
+
+                                    <a target="_blank" href ="<?php echo Mage::getBaseUrl('media') . $customerData->getNet30Reference() ?>"><img src  = "<?php echo Mage::getBaseUrl('media') . $customerData->getNet30Reference() ?>" width="100px" height="100px"/></a>
+
+                                </td>
+                            </tr>  
+                        </tbody>  
+                    </table> 
+                </div>
+            </div>
+
+        </div>
+    <?php endif; ?>
+</div>

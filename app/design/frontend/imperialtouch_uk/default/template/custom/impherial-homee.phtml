@@ -1,0 +1,58 @@
+<div class="slideshow-container">
+    <ul class="slideshow">
+        <?php
+        $storeid = Mage::app()->getStore('imperialtouch_com')->getId();
+        $collection = Mage::getModel('banner/banner')->getCollection();
+        $collection->addFieldToFilter('status', '1');
+        $collection->addFieldToFilter('store_id', $storeid);
+        ?>
+        <?php foreach ($collection as $item): ?>
+            <li> 
+                <a href="<?php echo $item->getUrl(); ?>"> <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "banner/" . $item->getImage(); ?>" alt="<?php echo $item->getTitle(); ?>">
+                    <div class="banner-text">
+                        <div class="banner-text-mid">
+                            <h2><?php echo $item->getTitle(); ?></h2>
+                            <p><?php echo $item->getDescription(); ?></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <div class="slideshow-pager">&nbsp;</div>
+    <span class="slideshow-prev">&nbsp;</span> 
+    <span class="slideshow-next">&nbsp;</span>
+</div>
+
+<div class="Home_page_slot_1">
+   <div class="container">
+    <div style="background-color: #e9e9e9" class="Home_lower_bparent full_width"> 
+        <?php
+        $i = 1;
+        $children = Mage::getModel('catalog/category')->load(28)->getChildrenCategories();
+        foreach ($children as $category):
+            $category = Mage::getModel('catalog/category')->load($category->getId());
+            ?>
+            <?php if ($i % 2 == 0) { ?>
+                <div class="Home_lower_bcontent text_even">
+                <?php } else { ?>  
+                    <div class="Home_lower_bcontent text_odd">
+                    <?php } ?>  
+                    <div class="Home_lower_bimg">
+                        <img src="<?php echo $category->getImageUrl(); ?>" alt="<?php echo $category->getName(); ?>" class="banner_first"/></div>
+                    <div class="Home_lower_btext">
+                        <div class="valign_height">
+                            <h2 class="heading"><?php echo $category->getName(); ?></h2>
+                            <p class="heading_description"><?php echo $category->getDescription(); ?></p>
+                            <p class="button_common">
+                                <a class="primary_button" title="SHOP NOW" href="<?php echo $category->getUrl() ?>" data-action-detail="pgshop-home-cycle2" tabindex="1">SHOP NOW</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <?php $i++; ?>  
+            <?php endforeach; ?>  
+        </div>
+       </div>
+    </div>
+

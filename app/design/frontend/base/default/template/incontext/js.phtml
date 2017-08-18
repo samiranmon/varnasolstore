@@ -1,0 +1,68 @@
+<?php if (!Mage::getStoreConfig('opc/global/status')):?>
+<?php if (Mage::getStoreConfig('payment/incontext/enable')):?>
+<script>
+var PayPalLightboxConfig = '<?php echo $this->getJsonConfig();?>';
+<?php 
+    $list = Mage::getSingleton('core/session')->getIdsButtons(); 
+    Mage::getSingleton('core/session')->unsIdsButtons();
+?>
+<?php if (is_array($list) && count($list)>0):?>
+var IDS = <?php echo json_encode($list);?>;
+<?php endif;?>
+    <?php if(Mage::getStoreConfig('onestepcheckout/general/rewrite_checkout_links')){
+        ?>
+        function idev_incontext_init_dialog(){
+            if (typeof(PayPalLightboxConfig) != 'undefined' && PayPalLightboxConfig.isActive==1 && (payment.currentMethod=='paypal_express' || payment.currentMethod=='paypaluk_express')){
+                already_placing_order = true;
+                if (payment.currentMethod=='paypal_express'){
+                    var urlConnect = PayPalLightboxConfig.setExpressCheckout
+                }
+
+                if (payment.currentMethod=='paypaluk_express'){
+                    var urlConnect = PayPalLightboxConfig.setExpressCheckoutUk;
+                }
+
+                paypal.checkout.initXO();
+                $ji.support.cors = true;
+                $ji.ajax({
+                    url: urlConnect,
+                    type: "GET",
+                    async: true,
+                    crossDomain: false,
+
+                    success: function (token) {
+
+                        if (token.indexOf('cart') != -1 ){
+                            paypal.checkout.closeFlow();
+                            setLocation(token);
+
+                        }else{
+                            var url = paypal.checkout.urlPrefix + token;
+                            paypal.checkout.startFlow(url);
+                        }
+
+                    },
+                    error: function (responseData, textStatus, errorThrown) {
+                        alert("Error in ajax post"+responseData.statusText);
+                        //Gracefully Close the minibrowser in case of AJAX errors
+                        paypal.checkout.closeFlow();
+                    }
+                });
+            }else{
+                already_placing_order = false;
+            }
+        }
+        $$('#checkout-payment-method-load dt input').invoke('observe', 'click', function() {
+            setTimeout(function(){
+                idev_incontext_init_dialog();
+            },200);
+        });
+        $('onestepcheckout-place-order').observe('click', function(e)   {
+            idev_incontext_init_dialog();
+        });
+        <?php
+    }?>
+</script>
+<script type="text/javascript" src="//www.paypalobjects.com/api/checkout.js" async></script>
+<?php endif;?>
+<?php endif;?>

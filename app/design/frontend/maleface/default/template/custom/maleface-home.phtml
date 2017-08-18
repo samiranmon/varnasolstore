@@ -1,0 +1,197 @@
+<div class="slideshow-container">
+    <ul class="slideshow">
+        <?php
+        $storeid = Mage::app()->getStore('maleface_com')->getId();
+        $collection = Mage::getModel('banner/banner')->getCollection();
+        $collection->addFieldToFilter('status', '1');
+        $collection->addFieldToFilter('store_id', $storeid);
+        ?>
+        <?php //echo '<pre>';print_r($collection);exit;?>
+        <?php foreach ($collection as $item): ?>
+            <li> 
+                <a href="<?php echo $item->getUrl(); ?>"> <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "banner/" . $item->getImage(); ?>" alt="<?php echo $item->getTitle(); ?>">
+                    <div class="banner-text">
+                        <div class="banner-text-mid">
+                            <h2><?php echo $item->getTitle(); ?></h2>
+                            <p><?php echo $item->getDescription(); ?></p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <div class="slideshow-pager">&nbsp;</div>
+    <span class="slideshow-prev">&nbsp;</span> 
+    <span class="slideshow-next">&nbsp;</span>
+</div>
+
+<!--<div class="Home_page_slot_1">
+    <div class="container">
+        <div class="Home_lower_bparent full_width"> 
+            <?php
+            $i = 1;
+            $children = Mage::getModel('catalog/category')->load(28)->getChildrenCategories();
+            foreach ($children as $category):
+                $category = Mage::getModel('catalog/category')->load($category->getId());
+                ?>
+                <?php if ($i % 2 == 0) { ?>
+                    <div class="Home_lower_bcontent text_even">
+                    <?php } else { ?>  
+                        <div class="Home_lower_bcontent text_odd">
+                        <?php } ?>  
+                        <div class="Home_lower_bimg">
+                            <img src="<?php echo $category->getImageUrl(); ?>" alt="<?php echo $category->getName(); ?>" class="banner_first"/></div>
+                        <div class="Home_lower_btext">
+                            <div class="valign_height">
+                                <h2 class="heading"><?php echo $category->getName(); ?></h2>
+                                <p class="heading_description"><?php echo $category->getDescription(); ?></p>
+                                <p class="button_common">
+                                    <a class="primary_button" title="SHOP NOW" href="<?php echo $category->getUrl() ?>" data-action-detail="pgshop-home-cycle2" tabindex="1">SHOP NOW</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php $i++; ?>  
+                <?php endforeach; ?>  
+            </div>
+        </div>
+    </div>-->
+    
+    <!---new page design integration start-->
+    
+    <div class="best-section">
+      <h2 class="best-heading">BEST SELLERS</h2>
+
+      <div class="container-section">
+        <div class="product-section-box">
+          <div class="product-search">
+            <span class="search-circle"><img src="<?php echo $this->getSkinUrl(); ?>/images/search.jpg" alt=""></span>
+          </div>
+          <div class="product-section-image">
+            <img src="<?php echo $this->getSkinUrl(); ?>/images/prepare_2.jpg">
+          </div>
+          <div class="product-section-price">
+                PREPARE <br>
+                $18.50 
+          </div>
+          <div class="product-section-btn">
+            <a href="">Add To Bag</a>
+          </div>
+        </div>
+
+        <div class="product-section-box">
+          <div class="product-search">
+            <span class="search-circle"><img src="<?php echo $this->getSkinUrl(); ?>/images/search.jpg" alt=""></span>
+          </div>
+          <div class="product-section-image">
+            <img src="<?php echo $this->getSkinUrl(); ?>/images/shavegel_ultra_2.jpg">
+          </div>
+          <div class="product-section-price">
+                PREPARE <br>
+                $18.50 
+          </div>
+          <div class="product-section-btn">
+            <a href="">Add To Bag</a>
+          </div>
+        </div>
+
+        <div class="product-section-box">
+          <div class="product-search">
+            <span class="search-circle"><img src="<?php echo $this->getSkinUrl(); ?>/images/search.jpg" alt=""></span>
+          </div>
+          <div class="product-section-image">
+            <img src="<?php echo $this->getSkinUrl(); ?>/images/scrub_3.jpg">
+          </div>
+          <div class="product-section-price">
+                PREPARE <br>
+                $18.50 
+          </div>
+          <div class="product-section-btn">
+            <a href="">Add To Bag</a>
+          </div>
+        </div>
+
+        <div class="product-section-box">
+          <div class="product-search">
+            <span class="search-circle"><img src="<?php echo $this->getSkinUrl(); ?>/images/search.jpg" alt=""></span>
+          </div>
+          <div class="product-section-image">
+            <img src="<?php echo $this->getSkinUrl(); ?>/images/zirhclean250.jpg">
+          </div>
+          <div class="product-section-price">
+                PREPARE <br>
+                $18.50 
+          </div>
+          <div class="product-section-btn">
+            <a href="">Add To Bag</a>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="clear"></div>
+    <div class="product-label">
+      <div class="container-section">
+        <h2>what you want, when you want, always at 15% off</h2>
+        <p>join our <span>auto-ship program,</span> you may cancel at any time details</p>
+      </div>
+
+    </div>
+    <div class="slider-place">
+    
+     <div id="owl-demo-1" class="owl-carousel owl-theme">
+                <div>
+                <div class="slider-label-name">
+                  <h3> <a href=""> FACE </a> </h3>
+                  
+                </div>
+
+                 <div class="image-effect">
+                  <img  src="<?php echo $this->getSkinUrl(); ?>/images/1.jpg" alt="">
+                  </div>
+
+              </div>
+
+              <div>
+                <div class="slider-label-name">
+                  <h3> <a href=""> SAVE </a> </h3>
+                  
+                </div>
+
+                 <div class="image-effect">
+                  <img src="<?php echo $this->getSkinUrl(); ?>/images/2.jpg"  alt="">
+                  </div>
+
+              </div>
+
+              <div>
+                <div class="slider-label-name">
+                  <h3> <a href=""> HAIR & BODY </a> </h3>
+                  
+                </div>
+                 <div class="image-effect">
+                  <img src="<?php echo $this->getSkinUrl(); ?>/images/3.jpg" alt="">
+                  </div>
+
+              </div>
+
+              <div>
+                <div class="slider-label-name">
+                  <h3> <a href=""> PROBLEM SOLVERS </a> </h3>
+
+                </div>
+
+                <div class="image-effect">
+                  <img src="<?php echo $this->getSkinUrl(); ?>/images/1.jpg" alt="">
+                  </div>
+
+                  <div class="image-overlay"></div>
+
+              </div>
+
+              </div>
+    
+    <!-new page design integration end-->
+ 

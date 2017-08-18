@@ -1,0 +1,4 @@
+
+<?php  $_proId  = $this->getProduct()->getId();
+$_product= Mage::getModel('catalog/product')->load($_proId); 
+echo $_product->getData('ingredients'); ?>

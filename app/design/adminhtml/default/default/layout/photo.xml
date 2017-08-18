@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+  <photo_adminhtml_index_index>
+     <reference name="content">
+             <block type="photo/adminhtml_grid"  name="afficher_monbloc"
+                   />
+      </reference>
+   </photo_adminhtml_index_index>
+</layout>

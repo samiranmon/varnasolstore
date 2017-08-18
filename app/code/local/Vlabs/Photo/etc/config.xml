@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vlabs_Photo>
+            <version>1.0.0</version>
+        </Vlabs_Photo>
+    </modules>
+    <frontend>
+        <routers>
+            <routeurfrontend>
+                <use>standard</use>
+                <args>
+                    <module>Vlabs_Photo</module>
+                    <frontName>photo</frontName>
+                </args>
+            </routeurfrontend>
+        </routers>
+        
+        <layout>
+            <updates>
+                <photo>
+                    <file>photo.xml</file>
+                </photo>
+            </updates>
+        </layout>
+    </frontend>
+    
+    <admin>
+        <routers>
+            <photo>
+                <use>admin</use>
+                <args>
+                    <module>Vlabs_Photo</module>
+                    <frontName>adminphoto</frontName>
+                </args>
+            </photo>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <photo>
+                    <file>photo.xml</file>
+                </photo>
+            </updates>
+        </layout>
+        <menu>
+            <photo translate="title" module="adminhtml">
+                <title>Ingredient</title>
+                <sort_order>110</sort_order>
+                <children>
+                    <set_time>
+                        <title>Add Ingredient</title>
+                        <action>adminphoto/adminhtml_index</action>
+                    </set_time>
+                </children>
+            </photo>
+        </menu>
+    </adminhtml>
+    
+    <global>
+        
+        <blocks>
+            <photo>
+                <class>Vlabs_Photo_Block</class>
+            </photo>
+        </blocks>
+        
+        <models>
+            <photo>
+                <class>Vlabs_Photo_Model</class>
+                <resourceModel>photo_mysql4</resourceModel>
+            </photo>
+            <photo_mysql4>
+                <class>Vlabs_Photo_Model_Mysql4</class>
+                <entities>
+                    <photo>
+                        <table>ingredient</table>
+                    </photo>
+                </entities>
+            </photo_mysql4>
+        </models>
+        
+        <helpers>
+            <photo>
+                <class>Vlabs_Photo_Helper</class>
+            </photo>
+        </helpers>
+        
+        <resources>
+            <photo_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </photo_write>
+            <photo_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </photo_read>
+        </resources>
+    </global>
+</config>

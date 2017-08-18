@@ -1,0 +1,11 @@
+<div>
+<?php
+$collection = Mage::getModel('banner/banner')->getCollection();
+$collection->addFieldToFilter('status','1');
+foreach ($collection as $item):
+?>
+    <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "banner/" . $item->getImage(); ?>" data-thumb="" title="#<?php echo $item->getTitle(); ?>" alt="" data-transition="slideInLeft" />
+    <?php echo $item->getDescription();?>
+    <a href="<?php echo $item->getUrl(); ?>"><?php echo $this->__('shop now'); ?></a>
+<?php endforeach; ?>
+</div>

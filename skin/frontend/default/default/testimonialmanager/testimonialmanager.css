@@ -1,0 +1,74 @@
+.testimonial_text h2 {
+    color: #43A3AC;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: right;
+}
+.testimonial_text h3 {
+    color: #43A3AC;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: right;
+	font-weight:normal;
+	padding:0;
+}
+
+.testimonial_text h4 {
+    color: #43A3AC;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: right;
+}
+table.form-list{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D9DDE3;
+    border-radius: 5px 5px 5px 5px;
+    padding: 20px;
+    width: 100%;
+}
+span.required{color: #EB340A;}
+.form-list input.input-text {
+    margin: 0 0 10px;
+    width: 254px;
+}
+table#product-review-table{margin:10px 0 10px;}
+label.rating { padding:10px 0 0 0;}
+
+.testimonial_image {
+	float:left;
+	width:120px;
+	height:120px;
+}
+.testimonial_text {
+	float:left;
+	width:565px;
+}
+.description-box {
+	min-height:50px;
+}
+.testimonials { margin:40px 0 0 0;}
+
+
+.testimonial_sidebar_name {
+  font-style: italic;
+  margin: 10px 10px 7px;
+  overflow: hidden;
+}
+.testimonial_sidebar_box .rating-box {
+  margin-left: 52px;
+  margin-top: -16px;
+  padding-bottom: 8px;
+}
+.testimonial_sidebar_text {
+	min-height:200px;
+	padding: 6px 9px;
+	text-align: left;
+	font-style:italic;
+}
+.testimonials_sidebar .block-content a {
+  float: none;
+  font-size: 11px;
+  line-height: 1.25;
+  text-align: right;
+  text-decoration: underline;
+}

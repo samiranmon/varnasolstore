@@ -1,0 +1,36 @@
+<!--@subject Newsletter subscription success @-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+  
+    <title>:: Welcome to Page::</title>
+    
+   
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+
+     </head>
+
+    
+   
+    <div style="background: url(http://www.varnasol.com/skin/frontend/rwd/default/images/our-feature.jpg) no-repeat;background-size:100%;padding-bottom:50px;">
+    <div style="text-align:center;padding-top:50px;">
+      <a href="http://www.varnasol.com/"> <img src="http://www.varnasol.com/skin/frontend/rwd/default/images/logo.png" alt="logo"> </a>
+       
+        </div>
+        <div style="margin-top:50px;text-align:center;width:100%;">
+        <p style="color:#fff;">You have been successfully subscribed to the newsletter.</p>
+        <a style="color:#fff;font-weight: 700;" href="{{var subscriber.getConfirmationLink()}}">Click Here For Subscribe.</a>
+        <p style="color:#fff;">Thank you, <a style="color:#fff;font-weight: 700;" href="http://www.varnasol.com/">varnasol.com</a>!</p>
+        </div>
+    </div>
+   
+</body>
+
+</html>

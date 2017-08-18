@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <banner_index_index>
+        <reference name="content">
+            <block type="banner/banner" name="banner" template="banner/banner.phtml" />
+        </reference>
+    </banner_index_index>
+</layout> 

@@ -1,0 +1,199 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
+
+
+.toll-free { font-family: "Open Sans",sans-serif; font-weight: 600; right: 240px; position: absolute;  top: 38px; }
+.toll-free p { color: #010101; font-size: 18px; }
+.toll-free span { color:#4d4d4d; font-weight: 300;}
+
+.banner-text { position: absolute; top: 0; left: 0; width: 100%;}
+.banner-text-mid { margin: 0 auto; max-width: 1115px; padding:0 15px; transform: translateY(40%); position: relative; top: 40%;}
+.banner-text h2 { font-size: 42px; color: #fff; font-weight: 400; max-width: 500px; margin: 0;}
+.banner-text h2 span { font-weight: 700;}
+.banner-text p { font-size: 14px; color: #fff; font-weight: 300; max-width: 500px; padding: 10px 0; font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.banner-text a { border: 1px solid #d0902a;  border-radius: 20px;  clear: both;  color: #d0902a;  display: inline;   float: left; font-size: 14px; margin-top: 15px; padding: 10px 29px; text-transform: uppercase; }
+.banner-text a:hover { text-decoration: none; background: #d0902a; color: #fff;}
+
+.cms-index-index  .main-container { padding: 0; width: 100%; max-width: 100%;}
+
+.about-varnasol-div {padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;}
+
+.about-varnasol-left { background: url(../images/av-left.jpg); padding: 5px;  width: 50%; background-size: 100% 100%;  }
+.about-varnasol-right { background: url(../images/av-right.jpg); padding: 5px; background-size: 100% 100%;  width: 50%;   }
+
+@media only screen and (max-width: 1366px) {
+.about-varnasol-left { background: url(../images/1366px-left.png); padding: 5px; width: 50%; background-size: 100% 100%;  }
+.about-varnasol-right { background: url(../images/1366px-right.png);padding: 5px;background-size: 100% 100%;width: 50%; }
+.our-feature {background: url(../images/1366px-feature-products.png); }    
+}
+
+.content-text-left { width: 70%; float: right; text-align: left; padding-top: 30px; margin-right: 50px; padding-bottom: 15px;  }
+.content-text-left h2 { color: #000000; font-size: 34px; text-transform: capitalize; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+.content-text-left p {font-family: "Open Sans",sans-serif; color: #454545; font-size: 15px;  line-height: normal; padding:0px 0 10px; margin: 0; font-weight: 300;}
+
+.content-text-left a {border: 1px solid #d0902a;  border-radius: 20px;  clear: both;  color: #d0902a;  display: inline;   float: left; font-size: 14px; margin-top: 15px; padding: 10px 29px;}
+.content-text-left a:hover { text-decoration: none; background: #d0902a; color: #fff;}
+
+.content-text-right { width: 70%; float: left; text-align: left; padding-top: 30px;  margin-left: 50px; }
+.content-text-right h2 { color: #000000; font-size: 34px; text-transform: capitalize; border-bottom: 1px solid #ddd; padding-bottom: 10px; position: relative; }
+.content-text-right h2 a { color: #cf8313; font-size: 14px; position: absolute; right: 0; bottom: 15px; }
+.content-text-right h2 a span img { display: inline;}
+.content-text-right h2 a:hover { text-decoration: none;}
+.about-varnasol-right li { list-style: none; margin: 0 0 10px!important; border-bottom: 1px dotted #9d9d9d; padding-bottom: 15px;  }
+.about-varnasol-right li:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0!important; }
+.about-varnasol-right .rating-box { display: none; }
+.testimonial_sidebar_name > img { border-radius: 50%; height: 80px; width: 80px;}
+.about-varnasol-right .testimonial_sidebar_name { float: left; }
+.about-varnasol-right .testimonial_sidebar_text { margin-left: 105px; font-family: "Open Sans",sans-serif; color: #454545; font-size: 15px; font-weight: 300; position: relative;}
+.author-name { font-size: 13px; color: #454545; font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-style: italic; display: block; width: 95%; padding: 0px 0 0; text-align: right; text-transform: capitalize; font-weight: 500;}
+
+
+@media only screen and (min-width: 1420px) {
+    .logo { max-width: 235px; }
+    .banner-text-mid { top: 40%;}
+    .content-text-left { padding-bottom: 80px; padding-top: 80px; width: 51%; }
+    .content-text-left p { font-size: 18px;}
+    .content-text-right { padding-bottom: 80px; padding-top: 80px; width: 50%;}
+    .banner-text p {  font-size: 18px; padding: 30px 0; }
+    .about-varnasol-right .testimonial_sidebar_text { font-size: 18px;}
+    .author-name { font-size: 15px;}
+}
+
+.our-feature {background: url(../images/our-feature.jpg); width: 100%; padding: 75px 0; }
+.theme-product { max-width: 960px; margin: 0 auto; }
+.theme-product h2 { font-size: 34px; color: #fff; text-align: center; padding-bottom: 40px; margin: 0;}
+.our-feature .item { background: #fff; padding: 10px; margin: 0 10px;}
+.our-feature .img-box { border: 1px solid #ddd; padding: 10px; text-align: center; }
+.our-feature .img-box img { display: inline;}
+.prod-text-box { text-align: center; font-family: "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; padding-bottom: 20px;}
+.prod-text-box p { margin: 0; padding: 0 0 5px; color: #515151; font-size: 16px; font-weight: 400;}
+.prod-text-box a {margin: 0; padding: 0; color: #e49e2e; font-size: 14px;}
+.prod-text-box a:hover { text-decoration: none; }
+.prod-text-box a span { font-size: 10px; padding-left: 5px;}
+.theme-product .owl-prev{ float: left; position: relative; left: -60px; background: url(../images/prev-img.png); width: 41px; height: 79px;}
+.theme-product .owl-next { float: right; position: relative; right: -60px; background: url(../images/next-img.png); width: 41px; height: 79px;}
+.list-section-mid { max-width: 1140px; padding: 0 15px; margin: 0 auto; text-align: center; }
+.list-section-mid li { float: left; position: relative; list-style: none; width: 23%; margin: 0 10px!important;}
+.list-section-mid li:first-child { margin-left: 0;}
+.list-section-mid li:last-child { margin-right: 0;}
+.list-section-mid li img { width: 100%;}
+.list-text-content { position: absolute; right: 0; top: 0; padding: 25px 15px; text-align: left;}
+.list-text-content img { width: auto!important; }
+.list-text-content h2 { color: #fff; font-size: 18px; margin:  0; padding: 0; font-weight: 500; }
+.list-text-content a { color: #eaa332; font-size: 12px; margin:  0; padding: 0 10px 0 0; background: url(../images/list-aerow.png) no-repeat 100% 5px;}
+.list-text-content a:hover { text-decoration: underline; }
+.list-section { padding-bottom: 80px; overflow: hidden; padding-top: 50px;}
+.t-1 img { padding: 15px 0; margin-left: 20px; }
+.t-1 a { position: relative; left: 20px;}
+.t-3 img { padding: 15px 0;}
+.t-4 img { padding: 15px 0;}
+
+
+.footer-all { border-top: 4px solid #d0d0d0; background: #f0f0f0;}
+.footer-address { border-top: 1px solid #d7d7d7; position: relative; padding-top: 25px; }
+.footer-address:before { position: absolute; left: 0; width: 100%; top: 0; border-top: 1px solid #fff; content: "";}
+
+.footer-row { margin: 0 ;}
+.one-part { float: left; padding: 15px 0; width: 30%; }
+.two-part { float: left; padding: 15px 0; width: 20%;  }
+.three-part {float: left; padding: 15px 0; width: 30%;  }
+.four-part {float: left; padding: 15px 0; width: 20%; }
+.footer-row .links { width: 100%;}
+.footer-toll-free { position: relative; left: 0; border: 1px solid #dedede; display: inline-block; padding: 14px; top: 20px;}
+.social-media { clear: both;}
+.social-media li { float: left; padding-right: 5px;}
+
+/* responsive design */
+@media (min-width:992px) and (max-width:1199px) {
+    .banner-text h2 { font-size: 30px;}
+    .banner-text-mid { transform: translateY(20%)}
+    .theme-product { margin: 0 auto; max-width: 80%;}
+    .list-section-mid li { width: 22%;}
+    .content-text-left { width: 85%;}
+    .content-text-left h2 { font-size: 20px; }
+    .content-text-left p { font-size: 13px; }
+    .content-text-right { width: 85%; }
+    .content-text-right h2 { font-size: 20px; }
+    .about-varnasol-right .testimonial_sidebar_text { font-size: 13px; }
+}
+
+@media (min-width:769px) and (max-width:991px) {
+    
+    .nav-primary a { font-size: 13px; }
+    .nav-primary a.level0 { padding: 0 6px; }
+    .list-section-mid li { width: 22%;}
+    .list-text-content h2 { font-size: 11px;}
+    .list-text-content {padding:10px 15px;}
+    .t-1 img { padding: 7px 0;}
+    .t-3 img { padding: 7px 0;}
+    .t-4 img { padding: 7px 0;}
+    .one-part img { width: 75%; }
+    .img-box img { width: 100%; }
+    .about-varnasol-left { background: #ebebeb; overflow: hidden;}
+    .about-varnasol-right { background: #fff; overflow: hidden; }
+    .banner-text h2 { font-size: 20px;}
+    .banner-text-mid { transform: translateY(20%)}
+    .theme-product { margin: 0 auto; max-width: 70%;}
+}
+
+@media (min-width:581px) and (max-width:768px) {
+.list-section-mid li { display: inline-block; float: none; margin: 0 10px 20px !important;  width: 46%;}
+    .banner-text h2 { font-size: 20px; }
+    .banner-text p { font-size: 12px;}
+    .banner-text a { font-size: 11px; padding: 5px 12px ; margin-top: 0;}
+    .t-1 img {margin-left: 0px; }
+    .t-1 a { left: 0px;}
+}
+
+@media (max-width:768px) {
+    
+    .theme-product { margin: 0 auto; max-width: 70%;}
+    .about-varnasol-div { display: block;}
+    .about-varnasol-left { background: #ebebeb; overflow: hidden; width: 100%;}
+    .about-varnasol-right { background: #fff; overflow: hidden; width: 100%;}
+    .content-text-left { width: 100%; margin: 0; padding: 30px 15px; }
+    .content-text-right { width: 100%; margin: 0; padding: 30px 15px; }
+    .one-part, .two-part, .three-part, .four-part { width: 50%}
+    .custom-skLk {   position: absolute; text-align: right; top: 75px; width: 100%; z-index: 9999;}
+    .skip-links { clear: none; display: inline-block; overflow: hidden; vertical-align: middle;  width: auto;}
+    .toll-free {display: inline-block; position: relative;  right: 0;  top: 0;  vertical-align: middle; margin-right: 10px;}
+    .skip-content.skip-active { clear: both;}
+    .custom-skLk .skip-link .label { display: none;}
+    .custom-skLk .skip-nav, .custom-skLk .skip-search { width: auto; padding: 0 10px;}
+    .img-box img { width: 100%; }
+    .footer-address { text-align: center; }
+    .one-part img { display: inline; margin-top: 20px; margin-bottom: 20px;}
+}
+
+@media (max-width:580px) {
+    .one-part, .two-part, .three-part, .four-part { width: 100%}
+    .footer .links { margin-bottom: 0;}
+    .list-section-mid li {margin: 0 0 15px !important; width: 100%;}
+    .custom-skLk {   display: table; margin: 0 auto;  position: relative;  text-align: right;  top: 0px;  width: auto;    z-index: 9999; }
+    .logo { display: table; float: none; margin: 0 auto; min-height: 44px; min-width: 100px; padding: 10px; text-align: center; width: auto;}
+    .page-header-container { margin-bottom: 20px;}
+    .banner-text { display: none; }
+    .slideshow-prev, .slideshow-next { display: none;}
+    .list-text-content { padding: 50px; }
+    .theme-product h2 { font-size: 28px; }
+    .content-text-left h2 { font-size: 30px;}
+    .content-text-right h2 { font-size: 30px; }
+    .one-part { text-align: center; }
+    .list-section { padding: 0 0 20px;}
+}
+
+@media (max-width:360px) { 
+    .custom-skLk .skip-nav, .custom-skLk .skip-search { padding: 0 5px;}
+    .custom-skLk { width: 100%; }
+    .list-text-content { padding: 25px 15px; }
+    .theme-product .owl-prev { left: -35px;}
+    .theme-product .owl-next { right: -35px;}
+}

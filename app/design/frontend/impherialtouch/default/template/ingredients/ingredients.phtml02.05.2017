@@ -1,0 +1,396 @@
+<table width="100%" cellpadding="10" cellspacing="0">
+      <!--start img block-->
+      <!--end img block-->
+      <!--START: pricing-->
+      <!--START: PRODUCT_OPTIONS_BLOCK-->
+      <!--start options block-->
+      <!--end options block-->
+      <!--END: PRODUCT_OPTIONS_BLOCK-->
+      <!--END: pricing-->
+     
+        <tbody>
+        <tr>
+          <td>
+		    
+<!--START: Tabs-->
+  <br>
+  <ul id="tablist">
+  <li><a href="#tablist;" onmouseover="expandcontent('sc1', this)" class="current">A - G</a></li>
+  <li><a href="#tablist;" onmouseover="expandcontent('sc2', this)" class="">H - L</a></li>
+  <li><a href="#tablist;" onmouseover="expandcontent('sc3', this)" class="">M - S</a></li>
+  <li><a href="#tablist;" onmouseover="expandcontent('sc4', this)" class="">T - Z</a></li>
+  </ul>
+  
+<div id="tabcontentcontainer">
+  <div id="sc1" class="tabcontent" style="display: block;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+            <tr>
+              <td width="1%" rowspan="68"><img src="images.spacer.gif" width="1" height="1"> </td>
+              <td width="8%" rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"> </td>
+              <td width="2%" rowspan="20"> </td>
+              <td width="88%"><strong class="body">Acetyl Hexapeptide-3</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Also known as Argireline. Powerful pentapeptides that block the release of a neurotransmitter which causes facial muscles to tense and wrinkles to appear. Used in: <a href="Anti-Aging-Formula_p_4-20.html" class="links">Anti-Aging Formula</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"></td>
+              <td></td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Titanium-Dioxide.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Astaxanthin</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>A carotenoid (pigment found in plants and some bacteria) which works to absorb free radicals and prevent oxidation damage in cells and tissues. Astaxanthin is seen as the red / pink coloring of lobsters, salmon, shrimp and crabs. It is fat-soluble, which means it can be absorbed into fatty tissue and cross the blood-brain barrier, and is considered to have greater antioxidant qualities than Vitamin E and Lutein. Astaxanthin is being studied for treatment of immune, neurodegenerative and arthritic diseases. Used in: <a href="Advanced-Antioxidants_p_8-32.html">Advanced Antioxidants Daily Supplement</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Allantoin</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Superior anti-irritant and soothing botanical agent derived from the root of the comfrey plant. Specially appropriate for sensitive, irritated or stressed skin. Can be found in many sun, acne and sensitive skin products, and also used in toothpastes, mouthwashes and shampoos due to its astringent properties. Used in small concentrations due to active properties. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a>, <a href="Post-Shave-Repair_p_0-18.html" class="links">Post-Shave Repair</a>, <a href="Microfine-Face-Scrub_p_0-10.html" class="links">Microfine Face Scrub</a>, <a href="Daily-Face-Wash_p_0-9.html" class="links">Daily Face Wash</a>, <a href="TiO2-Sunblock-SPF-30_p_0-21.html" class="links">TiO2 Sunblock SPF 30</a>, <a href="Daily-Body-Wash_p_5-13.html" class="links">Daily Body Wash</a>, <a href="Advanced-Deodorant_p_0-15.html" class="links">Advanced Deodorant</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Aloe Vera Extract (Aloe barbadensis)</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Obtained from the aloe vera plant, a stemless, spiky-leaved plant well-recognized for its moisturizing, healing and anti-inflammatory properties. Used in formulations for sensitive or stressed skin. Has been credited with treating burns, cuts, inflamed skin and dry skin conditions. The clear gel-like sap of the aloe plant has also been used internally as a laxative. There are over 400 species of aloe in the world today. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a>, <a href="Post-Shave-Repair_p_0-18.html" class="links">Post-Shave Repair</a>, <a href="Microfine-Face-Scrub_p_0-10.html" class="links">Microfine Face Scrub</a>, <a href="Daily-Face-Wash_p_0-9.html" class="links">Daily Face Wash</a>, <a href="TiO2-Sunblock-SPF-30_p_0-21.html" class="links">TiO2 Sunblock SPF 30</a>, <a href="Daily-Body-Wash_p_5-13.html" class="links">Daily Body Wash</a>, <a href="Advanced-Deodorant_p_0-15.html" class="links">Advanced Deodorant</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Titanium-Dioxide.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Alpha Hydroxy Acids (AHA)</strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>Family of naturally occurring acids used professionally for exfoliating and moisturizing the skin. (See Glycolic Acid, Lactic Acid and Malic Acid). Used in: <a href="Advanced-Face-Lotion_p_0-11.html" class="links">Advanced Face Lotion</a>, <a href="Daily-Shampoo_p_0-14.html" class="links">Daily Shampoo</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top">  </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Alpha Lipoic Acid</strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>An ultra-powerful antioxidant that is both water and oil soluble, meaning it can penetrate all areas of the cell to protect against damage caused by free radicals. Works with other antioxidants to boost their levels of effectiveness. Used in: <a href="Anti-Aging-Formula_p_4-20.html" class="links">Anti-Aging Formula</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Antioxidants</strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>Powerful substances critical to the body's maintenance because they help block the damaging effects of free radicals through oxidation. Oxidation is a naturally occurring process where cells are constantly created and destroyed in the body. Free radicals are byproducts of oxidation. When free radicals react with certain body chemicals, they can interfere with normal cell function and seriously damage cells. Antioxidants work to neutralize free radicals before damage can be done. Vitamins A, C, E, selenium and zinc are powerful antioxidants available in fruit, leafy vegetables, nuts, beans, green and black teas and red wine. Antioxidants can also be used externally on the skin's surface to improve its appearance. Used in: <a href="Eye-Rescue-Formula_p_0-8.html" class="links">Eye Rescue Formula</a>, <a href="TiO2-Sunblock-SPF-30_p_0-21.html" class="links">TiO2 Sunblock SPF 30</a>, <a href="Advanced-Deodorant_p_0-15.html" class="links">Advanced Deodorant</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td rowspan="48"> </td>
+              <td> </td>
+            </tr>
+            
+            
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Avocado Extract </strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>A flower well-renowned for its powerful soothing and anti-inflammatory features. Refreshes and revives delicate skin, especially the area surrounding eyes. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Azulene</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Highly effective anti-inflammatory and soothing agent derived from German chamomile flowers. Used professionally in topical applications for sensitive skin. Has been used in sun care and burn products, as well as calming face and body creams. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a>, <a href="Post-Shave-Repair_p_0-18.html" class="links">Post-Shave Repair</a></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"></td>
+              <td></td>
+            </tr>
+            
+            
+           
+        </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+    
+  <div id="sc2" class="tabcontent">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+            <tr>
+              <td width="1%" rowspan="68"><img src="images.spacer.gif" width="1" height="1"> </td>
+              <td width="8%" rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Titanium-Dioxide.jpg'); ?>" width="50" height="50"> </td>
+              <td width="2%" rowspan="20"> </td>
+              <td width="88%"><strong class="body">Acetyl Hexapeptide-3</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Also known as Argireline. Powerful pentapeptides that block the release of a neurotransmitter which causes facial muscles to tense and wrinkles to appear. Used in: <a href="Anti-Aging-Formula_p_4-20.html" class="links">Anti-Aging Formula</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"></td>
+              <td></td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Astaxanthin</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>A carotenoid (pigment found in plants and some bacteria) which works to absorb free radicals and prevent oxidation damage in cells and tissues. Astaxanthin is seen as the red / pink coloring of lobsters, salmon, shrimp and crabs. It is fat-soluble, which means it can be absorbed into fatty tissue and cross the blood-brain barrier, and is considered to have greater antioxidant qualities than Vitamin E and Lutein. Astaxanthin is being studied for treatment of immune, neurodegenerative and arthritic diseases. Used in: <a href="Advanced-Antioxidants_p_8-32.html">Advanced Antioxidants Daily Supplement</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Allantoin</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Superior anti-irritant and soothing botanical agent derived from the root of the comfrey plant. Specially appropriate for sensitive, irritated or stressed skin. Can be found in many sun, acne and sensitive skin products, and also used in toothpastes, mouthwashes and shampoos due to its astringent properties. Used in small concentrations due to active properties. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a>, <a href="Post-Shave-Repair_p_0-18.html" class="links">Post-Shave Repair</a>, <a href="Microfine-Face-Scrub_p_0-10.html" class="links">Microfine Face Scrub</a>, <a href="Daily-Face-Wash_p_0-9.html" class="links">Daily Face Wash</a>, <a href="TiO2-Sunblock-SPF-30_p_0-21.html" class="links">TiO2 Sunblock SPF 30</a>, <a href="Daily-Body-Wash_p_5-13.html" class="links">Daily Body Wash</a>, <a href="Advanced-Deodorant_p_0-15.html" class="links">Advanced Deodorant</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            
+            
+            
+           
+        </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  
+  
+  <div id="sc3" class="tabcontent">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+            <tr>
+              <td width="1%" rowspan="68"><img src="images.spacer.gif" width="1" height="1"> </td>
+              <td width="8%" rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"> </td>
+              <td width="2%" rowspan="20"> </td>
+              <td width="88%"><strong class="body">Acetyl Hexapeptide-3</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Also known as Argireline. Powerful pentapeptides that block the release of a neurotransmitter which causes facial muscles to tense and wrinkles to appear. Used in: <a href="Anti-Aging-Formula_p_4-20.html" class="links">Anti-Aging Formula</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"></td>
+              <td></td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Titanium-Dioxide.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Astaxanthin</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>A carotenoid (pigment found in plants and some bacteria) which works to absorb free radicals and prevent oxidation damage in cells and tissues. Astaxanthin is seen as the red / pink coloring of lobsters, salmon, shrimp and crabs. It is fat-soluble, which means it can be absorbed into fatty tissue and cross the blood-brain barrier, and is considered to have greater antioxidant qualities than Vitamin E and Lutein. Astaxanthin is being studied for treatment of immune, neurodegenerative and arthritic diseases. Used in: <a href="Advanced-Antioxidants_p_8-32.html">Advanced Antioxidants Daily Supplement</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Allantoin</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Superior anti-irritant and soothing botanical agent derived from the root of the comfrey plant. Specially appropriate for sensitive, irritated or stressed skin. Can be found in many sun, acne and sensitive skin products, and also used in toothpastes, mouthwashes and shampoos due to its astringent properties. Used in small concentrations due to active properties. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a>, <a href="Post-Shave-Repair_p_0-18.html" class="links">Post-Shave Repair</a>, <a href="Microfine-Face-Scrub_p_0-10.html" class="links">Microfine Face Scrub</a>, <a href="Daily-Face-Wash_p_0-9.html" class="links">Daily Face Wash</a>, <a href="TiO2-Sunblock-SPF-30_p_0-21.html" class="links">TiO2 Sunblock SPF 30</a>, <a href="Daily-Body-Wash_p_5-13.html" class="links">Daily Body Wash</a>, <a href="Advanced-Deodorant_p_0-15.html" class="links">Advanced Deodorant</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Aloe Vera Extract (Aloe barbadensis)</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Obtained from the aloe vera plant, a stemless, spiky-leaved plant well-recognized for its moisturizing, healing and anti-inflammatory properties. Used in formulations for sensitive or stressed skin. Has been credited with treating burns, cuts, inflamed skin and dry skin conditions. The clear gel-like sap of the aloe plant has also been used internally as a laxative. There are over 400 species of aloe in the world today. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a>, <a href="Post-Shave-Repair_p_0-18.html" class="links">Post-Shave Repair</a>, <a href="Microfine-Face-Scrub_p_0-10.html" class="links">Microfine Face Scrub</a>, <a href="Daily-Face-Wash_p_0-9.html" class="links">Daily Face Wash</a>, <a href="TiO2-Sunblock-SPF-30_p_0-21.html" class="links">TiO2 Sunblock SPF 30</a>, <a href="Daily-Body-Wash_p_5-13.html" class="links">Daily Body Wash</a>, <a href="Advanced-Deodorant_p_0-15.html" class="links">Advanced Deodorant</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Titanium-Dioxide.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Alpha Hydroxy Acids (AHA)</strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>Family of naturally occurring acids used professionally for exfoliating and moisturizing the skin. (See Glycolic Acid, Lactic Acid and Malic Acid). Used in: <a href="Advanced-Face-Lotion_p_0-11.html" class="links">Advanced Face Lotion</a>, <a href="Daily-Shampoo_p_0-14.html" class="links">Daily Shampoo</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top">  </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Alpha Lipoic Acid</strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>An ultra-powerful antioxidant that is both water and oil soluble, meaning it can penetrate all areas of the cell to protect against damage caused by free radicals. Works with other antioxidants to boost their levels of effectiveness. Used in: <a href="Anti-Aging-Formula_p_4-20.html" class="links">Anti-Aging Formula</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Antioxidants</strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>Powerful substances critical to the body's maintenance because they help block the damaging effects of free radicals through oxidation. Oxidation is a naturally occurring process where cells are constantly created and destroyed in the body. Free radicals are byproducts of oxidation. When free radicals react with certain body chemicals, they can interfere with normal cell function and seriously damage cells. Antioxidants work to neutralize free radicals before damage can be done. Vitamins A, C, E, selenium and zinc are powerful antioxidants available in fruit, leafy vegetables, nuts, beans, green and black teas and red wine. Antioxidants can also be used externally on the skin's surface to improve its appearance. Used in: <a href="Eye-Rescue-Formula_p_0-8.html" class="links">Eye Rescue Formula</a>, <a href="TiO2-Sunblock-SPF-30_p_0-21.html" class="links">TiO2 Sunblock SPF 30</a>, <a href="Advanced-Deodorant_p_0-15.html" class="links">Advanced Deodorant</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td rowspan="48"> </td>
+              <td> </td>
+            </tr>
+            
+            
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/acetylHexapeptide.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Avocado Extract </strong></td>
+            </tr>
+            <tr valign="top">
+              <td><p>A flower well-renowned for its powerful soothing and anti-inflammatory features. Refreshes and revives delicate skin, especially the area surrounding eyes. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a></p>                </td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"> </td>
+              <td><strong>Azulene</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Highly effective anti-inflammatory and soothing agent derived from German chamomile flowers. Used professionally in topical applications for sensitive skin. Has been used in sun care and burn products, as well as calming face and body creams. Used in: <a href="Advanced-Shave-Formula_p_0-16.html" class="links">Advanced Shave Formula</a>, <a href="Post-Shave-Repair_p_0-18.html" class="links">Post-Shave Repair</a></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"></td>
+              <td></td>
+            </tr>
+            
+            
+           
+        </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+
+
+  <div id="sc4" class="tabcontent">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+            <tr>
+              <td width="1%" rowspan="68"><img src="images.spacer.gif" width="1" height="1"> </td>
+              <td width="8%" rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Titanium-Dioxide.jpg'); ?>" width="50" height="50"> </td>
+              <td width="2%" rowspan="20"> </td>
+              <td width="88%"><strong class="body">Acetyl Hexapeptide-3</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>Also known as Argireline. Powerful pentapeptides that block the release of a neurotransmitter which causes facial muscles to tense and wrinkles to appear. Used in: <a href="Anti-Aging-Formula_p_4-20.html" class="links">Anti-Aging Formula</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"></td>
+              <td></td>
+            </tr>
+            
+            <tr valign="top">
+              <td rowspan="2" valign="top"><img src="<?php echo $this->getSkinUrl('images/Tea-Tree-Extract.jpg'); ?>" width="50" height="50"></td>
+              <td><strong>Astaxanthin</strong></td>
+            </tr>
+            <tr valign="top">
+              <td>A carotenoid (pigment found in plants and some bacteria) which works to absorb free radicals and prevent oxidation damage in cells and tissues. Astaxanthin is seen as the red / pink coloring of lobsters, salmon, shrimp and crabs. It is fat-soluble, which means it can be absorbed into fatty tissue and cross the blood-brain barrier, and is considered to have greater antioxidant qualities than Vitamin E and Lutein. Astaxanthin is being studied for treatment of immune, neurodegenerative and arthritic diseases. Used in: <a href="Advanced-Antioxidants_p_8-32.html">Advanced Antioxidants Daily Supplement</a><p></p></td>
+            </tr>
+            <tr valign="top">
+              <td valign="top"> </td>
+              <td> </td>
+            </tr>
+            
+           
+            
+            
+            
+            
+           
+        </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <!--END: extra_field_6-->
+  
+</div></td></tr>
+      
+</tbody></table>

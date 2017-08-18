@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<default>
+		<reference name="head">			
+			<action method="addItem"><type>skin_js</type><name>js/checkout/iwd-jquery-2.1.3.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/checkout/paypal-in-context.js</name></action>						
+		</reference>
+		<reference name="before_body_end">
+			<block type="incontext/js" name="paypal.incontext.js"></block>
+		</reference>
+	</default>
+	<checkout_onepage_index>
+		<reference name="checkout.onepage.payment">
+			<action method="setTemplate">
+                <template>incontext/onepage/payment.phtml</template>
+            </action>
+		</reference>
+	</checkout_onepage_index>
+</layout>

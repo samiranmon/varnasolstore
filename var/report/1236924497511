@@ -1,0 +1,11 @@
+a:5:{i:0;s:21:"Font has not been set";i:1;s:1551:"#0 /home2/rajiv/public_html/varnasolstore/app/code/local/Mage/Sales/Model/Order/Pdf/Invoice.php(189): Zend_Pdf_Canvas_Abstract->drawText('By placing your...', 20, 714, 'UTF-8')
+#1 /home2/rajiv/public_html/varnasolstore/app/code/local/Mage/Sales/Model/Order/Pdf/Invoice.php(125): Mage_Sales_Model_Order_Pdf_Invoice->insertAddress(Object(Zend_Pdf_Page), Object(Mage_Core_Model_Store))
+#2 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Adminhtml/Controller/Sales/Invoice.php(119): Mage_Sales_Model_Order_Pdf_Invoice->getPdf(Array)
+#3 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Adminhtml/controllers/Sales/Order/InvoiceController.php(489): Mage_Adminhtml_Controller_Sales_Invoice->printAction()
+#4 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Mage_Adminhtml_Sales_Order_InvoiceController->printAction()
+#5 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('print')
+#6 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#7 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#8 /home2/rajiv/public_html/varnasolstore/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#9 /home2/rajiv/public_html/varnasolstore/index.php(83): Mage::run('', 'store')
+#10 {main}";s:3:"url";s:115:"/~rajiv/varnasolstore/index.php/admin/sales_order_invoice/print/invoice_id/12/key/1478efe8ea6d5e9182c184db0ef7af9d/";s:11:"script_name";s:31:"/~rajiv/varnasolstore/index.php";s:4:"skin";s:17:"imperialtouch_com";}

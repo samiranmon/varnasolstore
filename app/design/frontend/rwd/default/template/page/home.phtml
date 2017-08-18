@@ -1,0 +1,81 @@
+<script>
+    jQuery(document).ready(function($) {
+
+        $("#owl-demo").owlCarousel({
+
+            //autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+            items: 4,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3],
+            navigation: true,
+            pagination: false,
+        });
+
+    });
+</script>
+
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('brand')->toHtml(); 
+?> 
+<div class="clearfix"></div>
+
+<?php   
+    $store_id=1;
+    $collection = Mage::getModel('catalog/product')->getCollection()->addStoreFilter($store_id)
+                ->addAttributeToSelect('*') // select all attributes
+                ->setPageSize(4) // limit number of results returned put in bractet as 8 or whatever
+                ->setCurPage(1)->addAttributeToFilter(
+                    'status',
+                    array('eq' => Mage_Catalog_Model_Product_Status::STATUS_ENABLED)
+                );   
+    $collection->getSelect()->order(new Zend_Db_Expr('RAND()'));
+ ?>
+<div class="our-feature">
+    <div class="theme-product">
+
+        <h2>OUR FEATURED PRODUCTS</h2>
+
+        <div id="owl-demo">
+           <?php foreach ($collection as $product) :  ?>
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).
+                        'catalog/product'.$product->getImage(); ?>" alt="" width="162" height="175"/>
+
+                    <div class="prod-text-box">
+                        <?php $name   = $product->getName();  
+                              $length = 45;
+                        ?>
+                        <?php if(strlen($name)<=$length){ ?>
+                             <p><?php echo $name;  ?></p>
+                        <?php  }else{ ?>
+                       
+                        <?php      $name_new=substr($name,0,$length) . '...';
+                                   echo $name_new; ?>
+                                  
+                        <?php }  ?>
+                        
+                         <!--<p><?php //echo $product->getName();  ?></p>-->
+                        <a href="">More-details <span>></span></a>
+                    </div>
+                
+                </div>
+            </div>
+            <?php endforeach; ?>
+      </div>
+
+    </div>
+
+
+</div>
+<div class="clearfix"></div>
+<div class="about-varnasol-div">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('about-varnasol-home')->toHtml(); ?>
+    <div class="about-varnasol-right">
+        <div class="content-text-right">
+            <h2>Testimonial  <a href="testimonials">View All <span> <img src="<?php echo $this->getSkinUrl('images/t-v-aroow.png') ?>" alt="" /> </span> </a> </h2>
+        
+        <?php echo $this->getLayout()->createBlock('testimonialmanager/testimonials')->setTemplate('testimonialmanager/testimonials_box.phtml')->toHtml(); ?>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

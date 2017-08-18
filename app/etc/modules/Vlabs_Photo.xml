@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vlabs_Photo>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Vlabs_Photo>
+    </modules>
+</config>

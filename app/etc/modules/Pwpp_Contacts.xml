@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pwpp_Contacts>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Pwpp_Contacts>
+    </modules>
+</config>

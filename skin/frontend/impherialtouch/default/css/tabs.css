@@ -1,0 +1,119 @@
+body {
+	margin-top: 0px;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+
+#tablist {
+	padding: 3px 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	margin-top: 0.1em;
+	font: normal 12px Arial;
+	font-weight:bold;
+	color : #000000;
+}
+
+#tablist li {
+	list-style: none;
+	display: inline;
+	margin: 0;
+	/*background-color: ebebeb;*/
+}
+
+#tablist li a {
+	text-decoration: none;
+	padding: 4px 6px 4px 6px;
+	margin: 0px 18px 0px 0px;
+	margin-left: 0px;
+	/*border: 1px solid #d6d6d6;*/
+	border-bottom: none;
+	color: #000000;
+}
+
+#tablist li a.current {
+	/*background-color: ff9900;*/
+	border: 1px solid #d6d6d6;
+}
+
+.tabcontent {
+	display:none;
+	font: normal 12px Arial;
+}
+
+#tabcontentcontainer {
+	width: 680px;
+	overflow: auto;
+	/*border: 1px solid;*/
+	border-top: 1px solid;
+    border-bottom: 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-color: d6d6d6;
+	font: normal 12px Arial;
+}
+
+.tabcontent2 {
+	display:none;
+	font: normal 12px Arial;
+}
+
+#tabcontentcontainer2 {
+	width: 300px;
+	overflow: auto;
+	border: 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-color: d6d6d6;
+	font: normal 12px Arial;
+}
+
+.chromestyle{
+	width: 99%;
+	font-weight: bold;
+}
+
+.chromestyle:after{ /*Add margin between menu and rest of content in Firefox*/
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+
+.chromestyle ul{
+	border: 1px solid white;
+	width: 100%;
+	background: url(chromebg.gif) center center repeat-x; /*THEME CHANGE HERE*/
+	padding: 4px 0;
+	margin: 0;
+	text-align: center; /*set value to "left", "center", or "right"*/
+}
+
+.chromestyle ul li{
+	display: inline;
+}
+
+.chromestyle ul li a{
+	color: #494949;
+	padding: 4px 7px;
+	margin: 0;
+	text-decoration: none;
+	border-right: 1px solid #DADADA;
+}
+
+.chromestyle ul li a:hover{
+	background: url(chromebg-over.gif) center center repeat-x; /*THEME CHANGE HERE*/
+}
+
+.chromestyle ul li a[rel]:after{ /*HTML to indicate drop down link*/
+	content: " v";
+/*content: " " url(downimage.gif); /*uncomment this line to use an image instead*/
+}

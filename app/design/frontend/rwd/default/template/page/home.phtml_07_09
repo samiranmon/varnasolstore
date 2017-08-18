@@ -1,0 +1,164 @@
+<script>
+    jQuery(document).ready(function($) {
+
+        $("#owl-demo").owlCarousel({
+
+            //autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+            items: 4,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [979, 3],
+            navigation: true,
+            pagination: false,
+        });
+
+    });
+</script>
+
+<div class="list-section">
+    <div class="list-section-mid">
+        <ul>
+            <li>
+                <img src="<?php echo $this->getSkinUrl('images/list-img-01.jpg') ?>" alt="" />
+
+                <div class="list-text-content t-1">
+                    <h2>Imperial Touch</h2>
+                    <img src="<?php echo $this->getSkinUrl('images/list-mid.jpg') ?>" alt="" />
+                    <a href="http://www.Imperialtouch.com" target="__blank">Read More</a>
+                </div>
+
+            </li>
+            <li> <img src="<?php echo $this->getSkinUrl('images/list-img-02.jpg') ?>" alt="" />
+                <div class="list-text-content t-2">
+                    <h2>Amanady <br>
+Products</h2>
+                    <img src="<?php echo $this->getSkinUrl('images/list-mid2.jpg') ?>" alt="" />
+                    <a href="http://www.amanady.com" target="__blank">Read More</a>
+                </div>
+            </li>
+            <li> <img src="<?php echo $this->getSkinUrl('images/list-img-03.jpg') ?>" alt="" />
+
+                <div class="list-text-content t-3">
+                    <h2>MaleFace</h2>
+                    <img src="<?php echo $this->getSkinUrl('images/list-mid3.jpg') ?>" alt="" />
+                    <a href="http://www.maleface.com" target="__blank">Read More</a>
+                </div>
+
+            </li>
+            <li> <img src="<?php echo $this->getSkinUrl('images/list-img-04.jpg') ?>" alt="" />
+
+                <div class="list-text-content t-4">
+                    <h2>Bumpmedic</h2>
+                    <img src="<?php echo $this->getSkinUrl('images/list-mid4.jpg') ?>" alt="" />
+                    <a href="http://www.imperialtouch.co.uk" target="__blank">Read More</a>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="our-feature">
+    <div class="theme-product">
+
+        <h2>OUR FEATURED PRODUCTS</h2>
+
+        <div id="owl-demo">
+
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-1.jpg') ?>" alt="" />
+
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-2.jpg') ?>" alt="" />
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>> </span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-3.jpg') ?>" alt="" />
+
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>> </span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-4.jpg') ?>" alt="" />
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>></span></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-1.jpg') ?>" alt="" />
+
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-2.jpg') ?>" alt="" />
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-3.jpg') ?>" alt="" />
+
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img-box"> <img src="<?php echo $this->getSkinUrl('images/prod-img-4.jpg') ?>" alt="" />
+                    <div class="prod-text-box">
+                        <p>Lorem ipsum dolor...</p>
+                        <a href="">More-details <span>></span></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+<div class="clearfix"></div>
+<div class="about-varnasol-div">
+    <div class="about-varnasol-left">
+        <div class="content-text-left">
+            <h2>About VarNasol</h2>
+            <p>What started out as a small side project selling skin care in Atlanta, GA back in 1998, slowly became Amanady Products with the focus on unparalleled customer service and quality products. Our philosophy is to provide exclusive merchandise to the barber, beauty industry with no compromise to effectiveness. Over the years Amanady grew and new brands were introduced to better service the demands of our customers. VarNasol grew out of the need to better structure the company, streamline processes to reflect growth and the vision to better serve our clients.</p>
+            <a href="aboutus">Read More</a>
+        </div>
+    </div>
+    <div class="about-varnasol-right">
+        <div class="content-text-right">
+            <h2>Testimonial  <a href="testimonials">View All <span> <img src="<?php echo $this->getSkinUrl('images/t-v-aroow.png') ?>" alt="" /> </span> </a> </h2>
+        
+        <?php echo $this->getLayout()->createBlock('testimonialmanager/testimonials')->setTemplate('testimonialmanager/testimonials_box.phtml')->toHtml(); ?>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

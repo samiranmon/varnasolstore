@@ -1,0 +1,311 @@
+<?php
+/*
+ * STORE LOCATOR EXTENSION
+ * Powered By
+ * Anx - King of the Mage World
+ *
+ * Support By : Google Maps v-3 (https://developers.google.com/maps/documentation/javascript/demogallery)
+ * 
+*/
+?>
+
+
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/stores.css');?>" media="all" />
+
+<?php
+$Locations = $this->getAllLocations(); 	
+//echo '<pre>';print_r($Locations);	exit;
+
+//code to fetch the stores data
+$storesData = Mage::getModel('stores/stores')->getCollection()->getData();
+$zipCodes = '';
+$storesCity='';
+$storesStat='';
+$storesZipCode = array();
+$storesCity = array();
+$storesState = array();
+foreach($storesData as $storess)
+{
+		if(!in_array($storess['postcode'],$storesZipCode))
+				$storesZipCode[] = $storess['postcode'];
+
+		if(!in_array($storess['city'],$storesCity))
+				$storesCity[] = $storess['city'];
+
+		$Area = explode(',',$storess['area']);
+		if(!in_array($Area[0],$storesState))
+				$storesState[] = $Area[0];
+}
+asort($storesZipCode);
+asort($storesCity);
+asort($storesState);
+?>
+
+
+<?php 
+//echo get_class($this);
+?>
+<?php $countStores=count($storesData);?>
+<?php if($countStores==0):?>
+	<div class="no-store"><?php echo $this->__('No stores are available')?></div>
+<?php else:?>
+	<div class="page-title">
+	<div class="stores-locations-main">
+
+	<div class="main_div_map">					
+				<!-- display the left side bar starts-->
+				<div id="left-sidebar-map">
+					<div class="sidebar-title">
+						<?php echo $this->__('Stores'); ?>
+					</div>
+					<div id="sidebar" class="sb_blue"></div>
+					<div class="drop-down">
+						<form method="post" action="<?php echo $this->getUrl('stores/index/searchresult')?>">
+
+						<!-- filter by city/postcode starts -->
+						<div class="content">
+								<div class="title">
+									<?php echo $this->__('Searching By Zipcode'); ?>
+								</div>
+								<div class="main-content input-box">
+											<!--input type="text" name="zipcode" class="input-text" value="<?php echo Mage::getSingleton('core/session')->getMapZipcode()?>"-->
+											<select name="zipcode">
+													<option value=""><?php echo $this->__('select a zipcode')?></option>
+													<?php foreach($storesZipCode as $code):?>
+																<option value="<?php echo $code?>" <?php if(Mage::getSingleton('core/session')->getMapZipcode()==$code):?>selected="selected"<?php endif;?>><?php echo $code?></option>
+													<?php endforeach;?>
+											</select>
+								</div>						
+						</div>
+						<div class="content">
+								<div class="title">
+									<?php echo $this->__('Searching By City'); ?>
+								</div>
+								<div class="main-content">
+											<!--input type="text" name="city" class="input-text" value="<?php echo Mage::getSingleton('core/session')->getMapCity();?>"-->
+											<select name="city">
+													<option value=""><?php echo $this->__('select a city')?></option>
+													<?php foreach($storesCity as $city):?>
+																<option value="<?php echo $city?>" <?php if(Mage::getSingleton('core/session')->getMapCity()==$city):?>selected="selected"<?php endif;?>><?php echo $city?></option>
+													<?php endforeach;?>
+											</select>
+								</div>						
+						</div>
+						<div class="content">
+								<div class="title">
+									<?php echo $this->__('Searching By State'); ?>
+								</div>
+								<div class="main-content">
+											<!--input type="text" name="area" class="input-text" value="<?php echo Mage::getSingleton('core/session')->getMapArea();?>"-->
+											<select name="area">
+													<option value=""><?php echo $this->__('select a state')?></option>
+													<?php foreach($storesState as $state):?>
+																<option value="<?php echo $state?>" <?php if(Mage::getSingleton('core/session')->getMapArea()==$state):?>selected="selected"<?php endif;?>><?php echo $state?></option>
+													<?php endforeach;?>
+											</select>
+								</div>						
+						</div>
+
+
+						<!-- filter by city/postcode ends -->
+						<!-- submit button starts-->
+						<div class="content">
+								<div class="main-content">
+											<div class="map-button-search">
+											<button type="submit" name="submit" class="button">
+												<span>
+													<span><?php echo $this->__('Search')?></span>
+												</span>
+											</button>
+											</div>
+											<div class="map-buttons">
+											<button type="button" name="submit" class="button" onclick="window.location.href = '<?php echo $this->getUrl('stores/index/clearFilter')?>';">
+												<span>
+													<span><?php echo $this->__('Clear Filters')?></span>
+												</span>
+											</button>
+											</div>
+								</div>						
+						</div>		
+						<!--submit button ends-->
+						</form>					
+					</div>
+					
+				</div>
+				<!-- display the left side bar ends-->
+				<!--map-div starts-->
+				<div id="map-div">
+				<div class="content">
+					<div><?php echo $this->getMessagesBlock()->getGroupedHtml(); ?></div>
+					<div id="map"></div>
+				</div>
+				</div>
+				<!-- map div ends -->
+
+		
+	</div>
+
+</div></div>
+<?php endif;?>
+<?php 
+	if(!empty($Locations))
+	{
+?>
+<!--Language for store-->
+<?php $language = 'en'?>
+
+
+<!-- Google Map V.3 API -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=<?php echo $language;?>"> </script> 
+<script type="text/javascript">
+	/**
+	 * map
+	 */
+	var mapOpts = {
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		scaleControl: true,
+		scrollwheel: true,
+		zoom: 14,
+	}
+
+	var map = new google.maps.Map(document.getElementById("map"), mapOpts);
+	//  We set zoom and center later by fitBounds()
+
+	/**
+	 * creates Marker and InfoWindow on a Map() named 'map'
+	 * creates sidebar row in a DIV 'sidebar'
+	 * saves marker to markerArray and markerBounds
+	 * @param options object for Marker, InfoWindow and SidebarItem
+	 */
+
+	var infoWindow = new google.maps.InfoWindow();
+	var markerBounds = new google.maps.LatLngBounds();
+	var markerArray = [];
+ 
+	function makeMarker(options, setRadius){ // Passing parameter for Options and Radius..
+
+	  // Pin-up Markers..
+	  var pushPin = new google.maps.Marker({map:map});
+
+	  // Circle Radius for MAPs
+	  var circle = new google.maps.Circle({ map: map, radius: setRadius });//SET THE RADIUS OF CIRCLE
+
+	  // Circle Shadow Setting
+	  circle.bindTo('center', pushPin, 'position');
+
+	  pushPin.setOptions(options);
+
+		
+	  // Open Infowindow onClick Event..
+	  google.maps.event.addListener(pushPin, "click", function(){
+		infoWindow.setOptions(options);
+		infoWindow.open(map, pushPin);
+
+		//if(this.sidebarButton)this.sidebarButton.button.focus();
+	  });
+
+	  var idleIcon = pushPin.getIcon();
+	  if(options.sidebarItem){
+		pushPin.sidebarButton = new SidebarItem(pushPin, options);
+		pushPin.sidebarButton.addIn("sidebar");
+	  }
+	  markerBounds.extend(options.position);
+	  markerArray.push(pushPin);
+	  return pushPin;
+	}
+
+	google.maps.event.addListener(map, "click", function(){
+	  infoWindow.close();
+	});
+
+	/**
+	 * Creates an sidebar item 
+	 */
+
+	function SidebarItem(marker, opts){
+	  var tag = opts.sidebarItemType || "div";
+	  var row = document.createElement(tag);
+	  row.innerHTML = opts.sidebarItem;
+	  row.className = opts.sidebarItemClassName || "sidebar_item tooltip";
+	  row.style.display = "block";
+	  row.style.float = "left";
+	  row.style.width = opts.sidebarItemWidth || "200px";
+	  row.style.height = opts.sidebarItemHeight || "auto";
+
+	  row.onclick = function(){
+		google.maps.event.trigger(marker, 'click');
+	  }
+	  row.onmouseover = function(){
+		row.style.background = "#EEEEEE";
+		google.maps.event.trigger(marker, 'mouseover');
+	  }
+	  row.onmouseout = function(){
+		row.style.background = "";
+		google.maps.event.trigger(marker, 'mouseout');
+	  }
+	  this.button = row;
+	}
+	// adds a sidebar item to a <div>
+	SidebarItem.prototype.addIn = function(block){
+	  if(block && block.nodeType == 1)this.div = block;
+	  else
+		this.div = document.getElementById(block)
+		|| document.getElementById("sidebar")
+		|| document.getElementsByTagName("body")[0];
+	  this.div.appendChild(this.button);
+	}
+	// deletes a sidebar item
+	SidebarItem.prototype.remove = function(){
+	  if(!this.div) return false;
+	  this.div.removeChild(this.button);
+	  return true;
+	}
+
+/**
+ * markers and info window contents using Store Collection()...
+ */
+
+	<?php
+			foreach($Locations as $location){
+				$getLocationDetails = $this->getLocationDetails($location['entity_id']);
+	?>
+		
+ 			makeMarker({
+ 			  //animation: google.maps.Animation.BOUNCE,
+ 			  position: new google.maps.LatLng(<?php echo $location['latitude']?>,<?php echo $location['longitude']?>),
+ 			  title: "NICOLE DIEM",
+ 			  sidebarItem: "<div style='clear:both; border-bottom:1px solid black;'><div style='float:left; width:190px; margin:10px;'><?php
+				echo $getLocationDetails[0]['store_name'].'<br/>';
+				echo $getLocationDetails[0]['address1'].', '.$getLocationDetails[0]['city'].',<br/>';
+				echo $getLocationDetails[0]['postcode'].'<br/>';				
+				
+				?></div></div>",
+ 			  content: "<div style='clear:both;'><div style='float:left; width:150px; margin:10px;'><?php
+				echo "<b>".$getLocationDetails[0]['store_name'].'</b><br/>';
+				echo $getLocationDetails[0]['address1'].'<br/>';
+				echo $getLocationDetails[0]['postcode'].' '.$getLocationDetails[0]['city'].'<br/><br/>';
+				echo $getLocationDetails[0]['phonenumber'].'<br/>';		
+				echo $getLocationDetails[0]['email'].'<br/>';
+				echo $getLocationDetails[0]['web'].'<br/>';
+				?></div></div>",
+ 			});
+		<?php
+				}
+		?>
+
+	/**
+	 *   fit viewport to markers
+	 */
+	map.fitBounds(markerBounds);
+
+	/*Set Zoom for map*/
+
+	var listener = google.maps.event.addListener(map, "idle", function() { 
+  if (map.getZoom() > 14) map.setZoom(14); 
+  google.maps.event.removeListener(listener); 
+});
+
+</script>
+<?php
+	}
+?>

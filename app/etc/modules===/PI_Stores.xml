@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<PI_Stores>
+			<active>true</active>
+			<codePool>community</codePool>
+		</PI_Stores>
+	</modules>
+</config>

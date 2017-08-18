@@ -1,0 +1,84 @@
+<div class="std testimonials_container">
+    <h1 class="testimonials_title" style="color: #e49e2e;"><?php echo $this->__("<span>Our</span> Testimonials"); ?></h1>
+<!--           <div class="form-button" style="float:right;">
+            <button class="button" title="<?php //echo Mage::helper('testimonialmanager')->__('Let us know how we are doing') ?>" onclick="javascript:window.location.assign('<?php //echo $this->_getWriteUrl()?>')"><span><span><?php //echo Mage::helper('testimonialmanager')->__('Let us know how we are doing') ?></span></span></button>
+        </div>-->
+    <div class="testimonials-thumb">
+        
+       
+        <?php $read = Mage::getSingleton('core/resource')->getConnection('core_read'); 
+        $results = $read->fetchAll("SELECT * FROM `testimonialmanager` WHERE `menufecturer_id`='3' and status='2'");
+        foreach($results as $result){  ?>
+         <div class="testimonial_<?php $i++; echo (is_int($i/2) ? "r " : "l ")?>">
+                            <?php if ($result['testimonial_img']): ?>
+                                <?php endif; ?>
+                                    <div class="testimonial_text">
+                                        <div class="description-box">
+                                            <?php echo $result['testimonial_text']; ?>
+                                        
+                                            <?php if($result['testimonial_website'] != '') { ?> <span><?php echo '<br>'.$result['testimonial_website']; ?></span>
+                                                        <?php } ?>
+                                        </div>
+                                         
+                                        
+                                        <div class="rating-box">
+                                            <div class="rating" style="width:<?php echo ceil($result['rating_summary'] * 20) ?>%;"></div>
+                                        </div>
+                                        <div class="testimonial_image"><?php if($result['testimonial_img'] != '') { ?> <img alt="<?php echo $result['testimonial_name']; ?>" src="<?php echo Mage::getBaseUrl('media').'/'.$result['testimonial_img']; ?>" width="120" height="120" /> <?php }  ?>   <span><?php echo $result['testimonial_name']; ?></span>
+                                          <?php if($result['testimonial_company'] != '') { ?> <span style="display: inline;"><?php echo '<br>'.$result['testimonial_company']; ?></span>
+                                                <?php }  ?>  
+                                        </div>
+                                         
+                                    </div>
+                                    
+                        </div>
+                         
+<?php } ?>
+    
+                            <div class="clearer"></div>
+    </div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+equalheight = function(container){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+ $(container).each(function() {
+
+   $el = $(this);
+   $($el).height('auto')
+   topPostion = $el.position().top;
+
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+}
+
+$(window).load(function() {
+  equalheight('.testimonial_l, .testimonial_r');
+});
+
+
+$(window).resize(function(){
+  equalheight('.testimonial_l, .testimonial_r');
+});
+
+</script>

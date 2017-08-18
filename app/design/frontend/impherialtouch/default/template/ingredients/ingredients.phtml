@@ -1,0 +1,173 @@
+<table width="100%" cellpadding="10" cellspacing="0" class="ingredient">
+
+     
+        <tbody>
+        <tr>
+          <td>
+		    
+<!--START: Tabs-->
+  <br>
+  <ul id="tablist">
+  <li><a href="#tablist;" onmouseover="expandcontent('sc1', this)" class="current">A - G</a></li>
+  <li><a href="#tablist;" onmouseover="expandcontent('sc2', this)" class="">H - L</a></li>
+  <li><a href="#tablist;" onmouseover="expandcontent('sc3', this)" class="">M - S</a></li>
+  <li><a href="#tablist;" onmouseover="expandcontent('sc4', this)" class="">T - Z</a></li>
+  </ul>
+  
+<div id="tabcontentcontainer">
+  <div id="sc1" class="tabcontent" style="display: block;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+            
+            <?php
+            $collection = Mage::getModel('photo/photo')->getCollection();
+            $collection->addFieldToFilter('status','1');
+            $collection->addFieldToFilter('category','1');
+            $collection->addFieldToFilter('stores',array('finset' => '3'));
+            $collection->setOrder('title', 'ASC');
+            ?>
+ 
+      
+      <?php foreach ($collection as $item): ?>
+          <div class="prof_info">
+              <ul>
+                  <li>
+                    <span><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "slider/" . $item->getImage(); ?>" width="106" height="106"></span>
+                      <div class="img_info">
+                        <h3><?echo $item->getTitle(); ?></h3>
+                        <p><?echo $item->getDetails(); ?></p>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      <?php endforeach; ?>
+
+         </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+    
+  <div id="sc2" class="tabcontent">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+          
+
+
+                    <?php
+          $collection = Mage::getModel('photo/photo')->getCollection();
+          $collection->addFieldToFilter('status','1');
+          $collection->addFieldToFilter('category','2');
+          $collection->addFieldToFilter('stores',array('finset' => '3'));
+          $collection->setOrder('title', 'ASC');
+          ?>
+          <?php foreach ($collection as $item): ?>
+            <div class="prof_info">
+                <ul>
+                    <li>
+                      <span><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "slider/" . $item->getImage(); ?>" width="106" height="106"></span>
+                        <div class="img_info">
+                          <h3><?echo $item->getTitle(); ?></h3>
+                          <p><?echo $item->getDetails(); ?></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <?php endforeach; ?>
+          </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  
+  
+  <div id="sc3" class="tabcontent">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+                          <?php
+              $collection = Mage::getModel('photo/photo')->getCollection();
+              $collection->addFieldToFilter('status','1');
+              $collection->addFieldToFilter('category','3');
+              $collection->addFieldToFilter('stores',array('finset' => '3'));
+              $collection->setOrder('title', 'ASC');
+              ?>
+            <?php foreach ($collection as $item): ?>
+              <div class="prof_info">
+                  <ul>
+                      <li>
+                        <span><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "slider/" . $item->getImage(); ?>" width="106" height="106"></span>
+                          <div class="img_info">
+                            <h3><?echo $item->getTitle(); ?></h3>
+                            <p><?echo $item->getDetails(); ?></p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            <?php endforeach; ?>
+           </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+
+
+  <div id="sc4" class="tabcontent">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+       <tr>
+        <td>
+           <table width="100%" border="0" cellpadding="0" cellspacing="5">
+            <tbody>
+                          <?php
+              $collection = Mage::getModel('photo/photo')->getCollection();
+              $collection->addFieldToFilter('status','1');
+              $collection->addFieldToFilter('category','4');
+              $collection->addFieldToFilter('stores',array('finset' => '3'));
+              $collection->setOrder('title', 'ASC');
+              ?>
+             <?php foreach ($collection as $item): ?>
+                <div class="prof_info">
+                    <ul>
+                        <li>
+                          <span><img src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . "slider/" . $item->getImage(); ?>" width="106" height="106"></span>
+                            <div class="img_info">
+                              <h3><?echo $item->getTitle(); ?></h3>
+                              <p><?echo $item->getDetails(); ?></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            <?php endforeach; ?>
+            
+          </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+  <!--END: extra_field_6-->
+  
+</div></td></tr>
+      
+</tbody></table>

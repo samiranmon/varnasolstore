@@ -1,0 +1,12 @@
+a:5:{i:0;s:24:"Argument must be numeric";i:1;s:1663:"#0 /home2/rajiv/public_html/varnasolstore/lib/Zend/Pdf/Canvas/Abstract.php(1049): Zend_Pdf_Element_Numeric->__construct(NULL)
+#1 /home2/rajiv/public_html/varnasolstore/app/code/local/Mage/Sales/Model/Order/Pdf/Abstract.php(292): Zend_Pdf_Canvas_Abstract->drawText()
+#2 /home2/rajiv/public_html/varnasolstore/app/code/local/Mage/Sales/Model/Order/Pdf/Invoice.php(131): Mage_Sales_Model_Order_Pdf_Abstract->insertOrder(Object(Zend_Pdf_Page), Object(Exinent_CustomerActivation_Model_Order), true)
+#3 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Adminhtml/Controller/Sales/Invoice.php(119): Mage_Sales_Model_Order_Pdf_Invoice->getPdf(Array)
+#4 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Adminhtml/controllers/Sales/Order/InvoiceController.php(489): Mage_Adminhtml_Controller_Sales_Invoice->printAction()
+#5 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Mage_Adminhtml_Sales_Order_InvoiceController->printAction()
+#6 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('print')
+#7 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#8 /home2/rajiv/public_html/varnasolstore/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#9 /home2/rajiv/public_html/varnasolstore/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#10 /home2/rajiv/public_html/varnasolstore/index.php(83): Mage::run('', 'store')
+#11 {main}";s:3:"url";s:115:"/~rajiv/varnasolstore/index.php/admin/sales_order_invoice/print/invoice_id/14/key/59e57eb7b20c9a229a3cf0dc7e582990/";s:11:"script_name";s:31:"/~rajiv/varnasolstore/index.php";s:4:"skin";s:17:"imperialtouch_com";}

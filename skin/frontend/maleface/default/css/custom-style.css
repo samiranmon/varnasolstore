@@ -1,0 +1,66 @@
+
+
+@font-face {
+    font-family:'Pathway Gothic One';
+    src: url('../fonts/Pathway Gothic One Regular.eot');
+	src: url('../fonts/Pathway Gothic One Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Pathway Gothic One Regular.woff2') format('woff2'),
+		url('../fonts/Pathway Gothic One Regular.woff') format('woff'),
+		url('../fonts/Pathway Gothic One Regular.svg#Pathway Gothic One Regular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-00FE;
+}
+
+
+.best-heading { text-align: center; font-size: 40px; text-transform: uppercase; font-family: "Pathway Gothic One", sans-serif; }
+.container-section { max-width: 1170px; padding: 30px 15px; margin: 0px auto; }
+.container-section:after,
+.container-section:before { clear: both; display: table; content: "" }
+.product-section-box { width: 25%; float: left; position: relative; }
+.product-section-image { }
+
+/*.product-section-box:hover .product-section-image { height: 120px; margin-bottom: 50px; overflow: hidden; }*/
+.product-section-image img { margin: 0 auto; display: table; }
+.product-section-price { text-align: center; padding-bottom: 15px; font-size: 17px; color: #000; }
+.product-section-btn { text-align: center; }
+.product-section-btn a { background: #0734a3; border: none; color: #fff; display: inline-block; font-family: "Pathway Gothic One", sans-serif; font-size: 16px; padding: 10px 20px; text-align: center; text-decoration: none; text-transform: uppercase; }
+.clear { clear: both; }
+.product-section-box .product-search { position: absolute; opacity: 0; top: -10px; text-align: center; transition: all 0.5s ease 0s; -moz-transition: all 0.5s ease 0s; -webkit-transition: all 0.5s ease 0s; visibility: hidden; width: 100%; }
+.product-section-box:hover .product-search { position: absolute; opacity: 1; visibility: visible; z-index: 1; display: block; top: 35%; transform: translateY(-35%); width: 100%; text-align: center; }
+.search-circle { display: inline-block; background: #fff; width: 40px; height: 40px; line-height: 40px; text-align: center; border-radius: 50%; }
+.search-circle img { display: inline-block; }
+.product-section-box .product-section-btn { position: absolute; overflow: hidden; opacity: 0; right: 0; bottom: -45px; transition: all 0.5s ease 0s; -moz-transition: all 0.5s ease 0s; -webkit-transition: all 0.5s ease 0s; visibility: hidden; width: 100%; }
+.product-section-box:hover .product-section-btn { position: absolute; opacity: 1; visibility: visible; z-index: 1; display: block; bottom: -35px; width: 100%; text-align: center; }
+.product-section-box:after { -webkit-transform: scale(0.5) rotateY(180deg); -moz-transform: scale(0.5) rotateY(180deg); -o-transform: scale(0.5) rotateY(180deg); transform: scale(0.5) rotateY(180deg); transition: all 0.4s ease 0s; -moz-transition: all 0.4s ease 0s; -webkit-transition: all 0.4s ease 0s; visibility: hidden; content: ""; position: absolute; width: 100%; height: 80%; left: 0; top: 0; pointer-events: none; }
+.product-section-box:hover:after { -webkit-transform: scale(1) rotateY(0deg); -moz-transform: scale(1) rotateY(0deg); -o-transform: scale(1) rotateY(0deg); transform: scale(1) rotateY(0deg); visibility: visible; content: ""; position: absolute; width: 100%; height: 80%; left: 0; top: 0; background: rgba(148, 148, 148, 0.9); }
+.product-label { background: #0734a3; clear: both; text-align: center; margin-top: 60px; margin-bottom: 3px; }
+.product-label h2 { color: #fff; font-size: 50px; font-family: "Pathway Gothic One", sans-serif; }
+.product-label p { color: #fff; font-size: 28px; font-family: "Pathway Gothic One", sans-serif; }
+.product-label span { text-transform: uppercase; }
+.image-effect { overflow: hidden; }
+.image-effect img { -webkit-backface-visibility: hidden; -ms-backface-visibility: hidden; backface-visibility: hidden; -webkit-transform: translate3d(0, 0, 0) scale(1); -ms-transform: translate3d(0, 0, 0) scale(1); transform: translate3d(0, 0, 0) scale(1); -webkit-transition: -webkit-transform .2s ease-out; -ms-transition: -ms-transform .2s ease-out; transition: transform .2s ease-out; position: relative; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; overflow: hidden }
+.image-effect:hover img { -webkit-transform: translate3d(0, 0, 0) scale(1.05); -ms-transform: translate3d(0, 0, 0) scale(1.05); transform: translate3d(0, 0, 0) scale(1.05); -webkit-transition: -webkit-transform .4s ease-out; -ms-transition: -ms-transform .4s ease-out; transition: transform .4s ease-out }
+.slider-label-name { position: absolute; pointer-events: none; width: 100%; z-index: 6; text-align: center; top: 50%; transform: translateY(-50%); }
+.slider-label-name a { -webkit-transition: all ease-in-out 0.2s; color: #000; font-size: 30px; font-family: 'Source Sans Pro', sans-serif; font-weight: 500; display: block; margin-left: -300px; -moz-transition: all ease-in-out 0.2s; -ms-transition: all ease-in-out 0.2s; transition: all ease-in-out 0.2s; opacity: 0; }
+.slider-place .owl-item { overflow: hidden; }
+.slider-place .owl-item:hover .slider-label-name a { margin-left: 0; opacity: 10; }
+.slider-place .owl-item:after { -webkit-transform: scale(0.5) rotateY(180deg); -moz-transform: scale(0.5) rotateY(180deg); -o-transform: scale(0.5) rotateY(180deg); transform: scale(0.5) rotateY(180deg); transition: all 0.4s ease 0s; -moz-transition: all 0.4s ease 0s; -webkit-transition: all 0.4s ease 0s; visibility: hidden; content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; pointer-events: none; }
+.slider-place .owl-item:hover:after { -webkit-transform: scale(1) rotateY(0deg); -moz-transform: scale(1) rotateY(0deg); -o-transform: scale(1) rotateY(0deg); transform: scale(1) rotateY(0deg); visibility: visible; content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgba(255, 255, 255, 0.6); }
+.email-block { background: url("../images/newsletter_bg.jpg") no-repeat; margin-top: 3px; background-size: cover; padding: 100px; text-align: center; }
+.email-label { float: left; width: 30%; }
+.email-label label { color: #fff; text-transform: uppercase; font-size: 30px; height: 60px; line-height: 66px; font-family: "Pathway Gothic One", sans-serif; font-weight: 500; }
+.email-input { float: left; width: 70%; position: relative; }
+.email-input input[type="text"] { width: 100%; height: 60px; line-height: 66px; background: transparent; border: 2px solid #fff; font-size: 20px; padding: 0 15px; font-family: "Pathway Gothic One", sans-serif; color: #fff; }
+.email-input input[type="submit"] { background: url("../images/rocket.png") no-repeat center center; text-indent: -999999px; padding: 17px 40px; border: 0; position: absolute; right: 0; top: 0; }
+.footer-bottom { background: #0734a3; }
+.footer-bottom .block { width: 33%; float: left; }
+.footer-bottom .block .block-title { letter-spacing: 2px; margin-bottom: 35px; padding-bottom: 17px; position: relative; text-transform: uppercase; position: relative; }
+.footer-bottom .block .block-title:after { position: absolute; content: ""; left: 0; bottom: 0; border-bottom: 3px solid #fff; width: 30%; }
+.footer-bottom .block .block-title strong { text-transform: uppercase; color: #fff; font-size: 25px; font-family: "Pathway Gothic One", sans-serif; }
+.block-content { }
+.block-content li { line-height: 35px; }
+.block-content li a { color: #fff; font-size: 18px; font-family: "Pathway Gothic One", sans-serif; text-transform: uppercase; }
+.socil-medi-div li { font-size: 0.857em; margin-bottom: 20px; text-transform: uppercase; font-family: 'Futura-Medium'; float: left; margin-right: 0; }
+.socil-medi-div li img { width:70%;  }

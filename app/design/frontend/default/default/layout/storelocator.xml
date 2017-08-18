@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magestore
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Magestore.com license that is
+ * available through the world-wide-web at this URL:
+ * http://www.magestore.com/license-agreement.html
+ * 
+ * DISCLAIMER
+ * 
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ * 
+ * @category 	Magestore
+ * @package 	Magestore_Storelocator
+ * @copyright 	Copyright (c) 2012 Magestore (http://www.magestore.com/)
+ * @license 	http://www.magestore.com/license-agreement.html
+ */
+-->
+<layout version="0.1.0">
+	<default>
+		<!-- update layout for all frontend page -->
+                <reference name="top.links">
+			<block type="storelocator/storelocator" name="storelocator">
+				<action method="addTopLinkStores"/>
+			</block>
+		</reference>
+                <reference name="head">
+			<action method="addJs"><script>magestore/storelocator.js</script></action>
+			<action method="addCss"><styleSheet>css/magestore/storelocator.css</styleSheet></action>
+		</reference>	
+	</default>
+	<storelocator_index_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+                    <block type="storelocator/storelocator" name="list-storelocator" template="storelocator/storelocator.phtml" />
+                </reference>
+	</storelocator_index_index>
+        <storelocator_index_view>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+                    <block type="storelocator/storelocator" name="storelocator-view" template="storelocator/view.phtml" />
+                </reference>
+	</storelocator_index_view>
+</layout>

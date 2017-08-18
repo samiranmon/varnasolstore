@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Easy Contacts Form Captcha Extension
+ *
+ * @category     Extension
+ * @copyright    Copyright © 2015 Envision Ecommerce (http://www.envisionecommerce.com/store/)
+ * @author       Envision Ecommerce
+ * @terms of use http://www.envisionecommerce.com/store/terms-of-use
+ * @version      Release: 1.0.0
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Eecom_Addcaptcha>
+            <version>1.1.0</version>
+        </Eecom_Addcaptcha>
+    </modules>
+	<frontend>
+        <layout>
+            <updates>
+                <addcaptcha>
+                    <file>eecom_addcaptcha.xml</file>
+                </addcaptcha>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <models>
+            <addcaptcha>
+                <class>Eecom_Addcaptcha_Model</class>
+            </addcaptcha>
+        </models>
+        <events>
+            <controller_action_predispatch_contacts_index_post>
+                <observers>
+                    <addcaptcha>
+                        <class>addcaptcha/observer</class>
+                        <method>checkContacts</method>
+                    </addcaptcha>
+                </observers>
+            </controller_action_predispatch_contacts_index_post>
+        </events>
+    </global>
+    <default>
+        <captcha>
+            <frontend>
+                <areas>
+                    <contacts>
+                        <label>Contacts Page</label>
+                    </contacts>
+                </areas>
+            </frontend>
+        </captcha>
+        <customer>
+            <captcha>
+                <always_for>
+                    <contacts>1</contacts>
+                </always_for>
+            </captcha>
+        </customer>
+    </default>
+</config>

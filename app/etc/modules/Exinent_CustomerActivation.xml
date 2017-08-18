@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Exinent_CustomerActivation>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core />
+                <Mage_Customer />
+                <Mage_Adminhtml />
+            </depends>
+        </Exinent_CustomerActivation>
+    </modules>
+</config>

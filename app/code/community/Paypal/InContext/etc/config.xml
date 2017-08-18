@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	 <modules>
+        <Paypal_InContext>
+            <version>2.0.0</version>
+        </Paypal_InContext>
+    </modules>
+    
+    
+    <frontend>
+        <routers>
+            <incontext>
+                <use>standard</use>
+                <args>
+                    <module>Paypal_InContext</module>
+                    <frontName>incontext</frontName>
+                </args>
+            </incontext>
+        </routers>
+        <translate>
+            <modules>
+                <Paypal_InContext>
+                    <files>
+                        <default>Paypal_InContext.csv</default>
+                    </files>
+                </Paypal_InContext>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <incontext>
+                    <file>incontext.xml</file>
+                </incontext>
+            </updates>
+        </layout>
+		<events>
+        	<checkout_cart_add_product_complete>
+        		<observers>
+        			<checkout_cart_add_product_complete>
+        				<type>singleton</type>
+                    	<class>incontext/observer</class>
+                    	<method>checkoutCartAddProductComplete</method>
+					</checkout_cart_add_product_complete>
+				</observers>
+			</checkout_cart_add_product_complete>
+    	</events>
+        
+    </frontend>
+    <global>
+    
+        <models>
+            <incontext>
+                <class>Paypal_InContext_Model</class>                
+            </incontext>
+        </models>
+
+     
+        <blocks>
+            <incontext>
+                <class>Paypal_InContext_Block</class>
+            </incontext>
+            
+            <paypal>
+            	<rewrite>
+            		<express_shortcut>Paypal_InContext_Block_Paypal_Shortcut</express_shortcut>
+            		<config>Paypal_InContext_Model_Paypal_Config</config>
+            	</rewrite>
+            </paypal>
+            
+            <paypaluk>
+            	<rewrite>
+            		<express_shortcut>Paypal_InContext_Block_Paypal_Shortcutuk</express_shortcut>
+            	</rewrite>
+            </paypaluk>
+            
+        </blocks>
+       
+    </global>
+    
+    <default>
+    	<payment>
+    		<incontext>
+    			<enable>0</enable>
+    			<sandbox>1</sandbox>
+    		</incontext>
+    	</payment>
+    </default>
+    
+</config>
